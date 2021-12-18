@@ -89,7 +89,7 @@ namespace Kurs2021 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegZadForm::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
@@ -305,9 +305,9 @@ namespace Kurs2021 {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::ColumnHeader;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::Honeydew;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -391,6 +391,7 @@ namespace Kurs2021 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1109, 721);
 			this->Controls->Add(this->toolStrip1);
@@ -401,6 +402,7 @@ namespace Kurs2021 {
 			this->Name = L"RegZadForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &RegZadForm::RegZadForm_FormClosed);
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
@@ -419,5 +421,6 @@ namespace Kurs2021 {
 	private: System::Void èçìåíèòüÑòğîêóToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void íàéòèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void RegZadForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
 };
 }

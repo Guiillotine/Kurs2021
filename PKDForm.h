@@ -37,7 +37,8 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^ ôàéëToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ñîçäàòüÔàéëToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ openRegZadToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^ îòêğûòüÔàéëToolStripMenuItem;
 
 
@@ -83,11 +84,11 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PKDForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ñîçäàòüÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openRegZadToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->îòêğûòüÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ğåäàêòèğîâàòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->äîáàâèòüÑòğîêóToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -135,19 +136,19 @@ namespace Kurs2021 {
 			// ôàéëToolStripMenuItem
 			// 
 			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->ñîçäàòüÔàéëToolStripMenuItem,
+				this->openRegZadToolStripMenuItem,
 					this->îòêğûòüÔàéëToolStripMenuItem
 			});
 			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
 			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(63, 20);
 			this->ôàéëToolStripMenuItem->Text = L"Æóğíàë";
 			// 
-			// ñîçäàòüÔàéëToolStripMenuItem
+			// openRegZadToolStripMenuItem
 			// 
-			this->ñîçäàòüÔàéëToolStripMenuItem->Name = L"ñîçäàòüÔàéëToolStripMenuItem";
-			this->ñîçäàòüÔàéëToolStripMenuItem->Size = System::Drawing::Size(336, 22);
-			this->ñîçäàòüÔàéëToolStripMenuItem->Text = L"Ğåãèñòğàöèÿ çàäàíèÿ íà ïğîåêòèğîâàíèå";
-			this->ñîçäàòüÔàéëToolStripMenuItem->Click += gcnew System::EventHandler(this, &PKDForm::ñîçäàòüÔàéëToolStripMenuItem_Click);
+			this->openRegZadToolStripMenuItem->Name = L"openRegZadToolStripMenuItem";
+			this->openRegZadToolStripMenuItem->Size = System::Drawing::Size(336, 22);
+			this->openRegZadToolStripMenuItem->Text = L"Ğåãèñòğàöèÿ çàäàíèÿ íà ïğîåêòèğîâàíèå";
+			this->openRegZadToolStripMenuItem->Click += gcnew System::EventHandler(this, &PKDForm::ñîçäàòüÔàéëToolStripMenuItem_Click);
 			// 
 			// îòêğûòüÔàéëToolStripMenuItem
 			// 
@@ -252,9 +253,9 @@ namespace Kurs2021 {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::ColumnHeader;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::Honeydew;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -388,6 +389,7 @@ namespace Kurs2021 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1109, 703);
 			this->Controls->Add(this->toolStrip1);
@@ -399,7 +401,7 @@ namespace Kurs2021 {
 			this->Name = L"PKDForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &PKDForm::PKDForm_FormClosing);
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &PKDForm::PKDForm_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &PKDForm::PKDForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -421,5 +423,6 @@ namespace Kurs2021 {
 	private: System::Void íàéòèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void PKDForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
 	private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void PKDForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
 };
 }

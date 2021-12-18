@@ -347,6 +347,7 @@ namespace Kurs2021 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1109, 410);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->textBox5);

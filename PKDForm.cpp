@@ -18,49 +18,49 @@ System::Void Kurs2021::PKDForm::ñîçäàòüÔàéëToolStripMenuItem_Click(System::Objec
 {
 	RegZadForm^ form = gcnew RegZadForm();
 	form->Show();
-	PKDForm::Close();//Hide();
+	PKDForm::Hide();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::æóðíàëÓ÷åòàÍîìåðîâÏÊÄToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Exp1^ form = gcnew Exp1();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::æóðíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Exp2^ form = gcnew Exp2();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::æóðíàëÐåãèñòðàöèèÇàäàíèéToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Exp3^ form = gcnew Exp3();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::äîáàâèòüÑòðîêóToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	AddProjForm^ form = gcnew AddProjForm();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::èçìåíèòüÑòðîêóToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	CorrectProjForm^ form = gcnew CorrectProjForm();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
 System::Void Kurs2021::PKDForm::íàéòèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	RequestProjForm^ form = gcnew RequestProjForm();
-	form->Show();
+	form->ShowDialog();
 	return System::Void();
 }
 
@@ -76,6 +76,12 @@ System::Void Kurs2021::PKDForm::PKDForm_FormClosing(System::Object^ sender, Syst
 System::Void Kurs2021::PKDForm::ñïðàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	HelpForm^ form = gcnew HelpForm();
-	form->Show();
+	form->ShowDialog();
+	return System::Void();
+}
+
+System::Void Kurs2021::PKDForm::PKDForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e)
+{
+	Application::Exit();
 	return System::Void();
 }
