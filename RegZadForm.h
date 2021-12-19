@@ -48,8 +48,10 @@ namespace Kurs2021 {
 
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ создатьФайлToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ открытьФайлToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ openRegZadToolStripMenuItem;
+
+	private: System::Windows::Forms::ToolStripMenuItem^ openPKDToolStripMenuItem;
+
 
 
 
@@ -75,6 +77,87 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_prim;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -89,7 +172,7 @@ namespace Kurs2021 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegZadForm::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
@@ -98,8 +181,8 @@ namespace Kurs2021 {
 			this->toolStripButtonRequest = (gcnew System::Windows::Forms::ToolStripButton());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->создатьФайлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->открытьФайлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openRegZadToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openPKDToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->редактироватьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->добавитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->изменитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -111,15 +194,15 @@ namespace Kurs2021 {
 			this->справкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_fio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_napr = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_kurs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_chas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_prim = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_chas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_kurs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_napr = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_fio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->toolStrip1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -133,7 +216,7 @@ namespace Kurs2021 {
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1109, 25);
+			this->toolStrip1->Size = System::Drawing::Size(1439, 25);
 			this->toolStrip1->TabIndex = 13;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -144,7 +227,7 @@ namespace Kurs2021 {
 			this->toolStripButtonOpenPKD->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButtonOpenPKD->Name = L"toolStripButtonOpenPKD";
 			this->toolStripButtonOpenPKD->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenPKD->Text = L"Создать файл";
+			this->toolStripButtonOpenPKD->Text = L"Регистрация задания на проектирование";
 			// 
 			// toolStripButtonOpenZad
 			// 
@@ -153,7 +236,8 @@ namespace Kurs2021 {
 			this->toolStripButtonOpenZad->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButtonOpenZad->Name = L"toolStripButtonOpenZad";
 			this->toolStripButtonOpenZad->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenZad->Text = L"Открыть файл";
+			this->toolStripButtonOpenZad->Text = L"Учет ПКД";
+			this->toolStripButtonOpenZad->Click += gcnew System::EventHandler(this, &RegZadForm::openPKDToolStripMenuItem_Click);
 			// 
 			// toolStripButtonAdd
 			// 
@@ -163,6 +247,7 @@ namespace Kurs2021 {
 			this->toolStripButtonAdd->Name = L"toolStripButtonAdd";
 			this->toolStripButtonAdd->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonAdd->Text = L"Добавить строку";
+			this->toolStripButtonAdd->Click += gcnew System::EventHandler(this, &RegZadForm::добавитьСтрокуToolStripMenuItem_Click);
 			// 
 			// toolStripButtonCorrect
 			// 
@@ -172,6 +257,7 @@ namespace Kurs2021 {
 			this->toolStripButtonCorrect->Name = L"toolStripButtonCorrect";
 			this->toolStripButtonCorrect->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonCorrect->Text = L"Изменить строку";
+			this->toolStripButtonCorrect->Click += gcnew System::EventHandler(this, &RegZadForm::изменитьСтрокуToolStripMenuItem_Click);
 			// 
 			// toolStripButtonRequest
 			// 
@@ -181,6 +267,7 @@ namespace Kurs2021 {
 			this->toolStripButtonRequest->Name = L"toolStripButtonRequest";
 			this->toolStripButtonRequest->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonRequest->Text = L"Найти";
+			this->toolStripButtonRequest->Click += gcnew System::EventHandler(this, &RegZadForm::найтиToolStripMenuItem_Click);
 			// 
 			// menuStrip1
 			// 
@@ -190,32 +277,32 @@ namespace Kurs2021 {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1109, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1439, 24);
 			this->menuStrip1->TabIndex = 11;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// файлToolStripMenuItem
 			// 
 			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->создатьФайлToolStripMenuItem,
-					this->открытьФайлToolStripMenuItem
+				this->openRegZadToolStripMenuItem,
+					this->openPKDToolStripMenuItem
 			});
 			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
 			this->файлToolStripMenuItem->Size = System::Drawing::Size(63, 20);
 			this->файлToolStripMenuItem->Text = L"Журнал";
 			// 
-			// создатьФайлToolStripMenuItem
+			// openRegZadToolStripMenuItem
 			// 
-			this->создатьФайлToolStripMenuItem->Name = L"создатьФайлToolStripMenuItem";
-			this->создатьФайлToolStripMenuItem->Size = System::Drawing::Size(336, 22);
-			this->создатьФайлToolStripMenuItem->Text = L"Регистрация задания на проектирование";
+			this->openRegZadToolStripMenuItem->Name = L"openRegZadToolStripMenuItem";
+			this->openRegZadToolStripMenuItem->Size = System::Drawing::Size(336, 22);
+			this->openRegZadToolStripMenuItem->Text = L"Регистрация задания на проектирование";
 			// 
-			// открытьФайлToolStripMenuItem
+			// openPKDToolStripMenuItem
 			// 
-			this->открытьФайлToolStripMenuItem->Name = L"открытьФайлToolStripMenuItem";
-			this->открытьФайлToolStripMenuItem->Size = System::Drawing::Size(336, 22);
-			this->открытьФайлToolStripMenuItem->Text = L"Учет проектно-конструкторской документации";
-			this->открытьФайлToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::открытьФайлToolStripMenuItem_Click);
+			this->openPKDToolStripMenuItem->Name = L"openPKDToolStripMenuItem";
+			this->openPKDToolStripMenuItem->Size = System::Drawing::Size(336, 22);
+			this->openPKDToolStripMenuItem->Text = L"Учет проектно-конструкторской документации";
+			this->openPKDToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::openPKDToolStripMenuItem_Click);
 			// 
 			// редактироватьToolStripMenuItem
 			// 
@@ -231,7 +318,7 @@ namespace Kurs2021 {
 			// 
 			this->добавитьСтрокуToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"добавитьСтрокуToolStripMenuItem.Image")));
 			this->добавитьСтрокуToolStripMenuItem->Name = L"добавитьСтрокуToolStripMenuItem";
-			this->добавитьСтрокуToolStripMenuItem->Size = System::Drawing::Size(168, 22);
+			this->добавитьСтрокуToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->добавитьСтрокуToolStripMenuItem->Text = L"Добавить строку";
 			this->добавитьСтрокуToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::добавитьСтрокуToolStripMenuItem_Click);
 			// 
@@ -239,7 +326,7 @@ namespace Kurs2021 {
 			// 
 			this->изменитьСтрокуToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"изменитьСтрокуToolStripMenuItem.Image")));
 			this->изменитьСтрокуToolStripMenuItem->Name = L"изменитьСтрокуToolStripMenuItem";
-			this->изменитьСтрокуToolStripMenuItem->Size = System::Drawing::Size(168, 22);
+			this->изменитьСтрокуToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->изменитьСтрокуToolStripMenuItem->Text = L"Изменить строку";
 			this->изменитьСтрокуToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::изменитьСтрокуToolStripMenuItem_Click);
 			// 
@@ -291,11 +378,11 @@ namespace Kurs2021 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(385, 75);
+			this->label1->Location = System::Drawing::Point(523, 71);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(325, 20);
+			this->label1->Size = System::Drawing::Size(387, 24);
 			this->label1->TabIndex = 12;
 			this->label1->Text = L"Регистрация заданий на проектирование";
 			// 
@@ -305,9 +392,9 @@ namespace Kurs2021 {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::ColumnHeader;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::Honeydew;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -316,76 +403,88 @@ namespace Kurs2021 {
 					this->Column_numb, this->Column_name, this->Column_fio, this->Column_napr, this->Column_kurs, this->Column_chas, this->Column_att,
 					this->Column_prim
 			});
-			this->dataGridView1->Location = System::Drawing::Point(52, 98);
+			this->dataGridView1->Location = System::Drawing::Point(52, 108);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->dataGridView1->Size = System::Drawing::Size(1002, 578);
+			this->dataGridView1->Size = System::Drawing::Size(1333, 686);
 			this->dataGridView1->TabIndex = 10;
 			// 
-			// Column1
+			// Column_prim
 			// 
-			this->Column1->HeaderText = L"№";
-			this->Column1->Name = L"Column1";
-			this->Column1->ReadOnly = true;
-			this->Column1->Width = 43;
+			this->Column_prim->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_prim->HeaderText = L"                        Примечание";
+			this->Column_prim->Name = L"Column_prim";
+			this->Column_prim->ReadOnly = true;
+			this->Column_prim->Width = 216;
 			// 
-			// Column_numb
+			// Column_att
 			// 
-			this->Column_numb->HeaderText = L"Номер задания";
-			this->Column_numb->Name = L"Column_numb";
-			this->Column_numb->ReadOnly = true;
-			this->Column_numb->Width = 102;
-			// 
-			// Column_name
-			// 
-			this->Column_name->HeaderText = L"Дата выдачи задания";
-			this->Column_name->Name = L"Column_name";
-			this->Column_name->ReadOnly = true;
-			this->Column_name->Width = 131;
-			// 
-			// Column_fio
-			// 
-			this->Column_fio->HeaderText = L"Наименование заказчика";
-			this->Column_fio->Name = L"Column_fio";
-			this->Column_fio->ReadOnly = true;
-			this->Column_fio->Width = 150;
-			// 
-			// Column_napr
-			// 
-			this->Column_napr->HeaderText = L"Содержание задания";
-			this->Column_napr->Name = L"Column_napr";
-			this->Column_napr->ReadOnly = true;
-			this->Column_napr->Width = 128;
-			// 
-			// Column_kurs
-			// 
-			this->Column_kurs->HeaderText = L"Номер проекта";
-			this->Column_kurs->Name = L"Column_kurs";
-			this->Column_kurs->ReadOnly = true;
-			this->Column_kurs->Width = 101;
+			this->Column_att->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_att->HeaderText = L"         Статус";
+			this->Column_att->Name = L"Column_att";
+			this->Column_att->ReadOnly = true;
 			// 
 			// Column_chas
 			// 
-			this->Column_chas->HeaderText = L"Фамилия инженера-конструктора";
+			this->Column_chas->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_chas->HeaderText = L"                    Фамилия                         инженера-конструктора";
 			this->Column_chas->Name = L"Column_chas";
 			this->Column_chas->ReadOnly = true;
 			this->Column_chas->Width = 187;
 			// 
-			// Column_att
+			// Column_kurs
 			// 
-			this->Column_att->HeaderText = L"Статус";
-			this->Column_att->Name = L"Column_att";
-			this->Column_att->ReadOnly = true;
-			this->Column_att->Width = 66;
+			this->Column_kurs->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_kurs->HeaderText = L"         Номер           проекта";
+			this->Column_kurs->Name = L"Column_kurs";
+			this->Column_kurs->ReadOnly = true;
+			this->Column_kurs->Width = 101;
 			// 
-			// Column_prim
+			// Column_napr
 			// 
-			this->Column_prim->HeaderText = L"Примечание";
-			this->Column_prim->Name = L"Column_prim";
-			this->Column_prim->ReadOnly = true;
-			this->Column_prim->Width = 95;
+			this->Column_napr->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_napr->HeaderText = L"                             Содержание задания";
+			this->Column_napr->Name = L"Column_napr";
+			this->Column_napr->ReadOnly = true;
+			this->Column_napr->Width = 300;
+			// 
+			// Column_fio
+			// 
+			this->Column_fio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_fio->Frozen = true;
+			this->Column_fio->HeaderText = L"           Наименование                   заказчика";
+			this->Column_fio->Name = L"Column_fio";
+			this->Column_fio->ReadOnly = true;
+			this->Column_fio->Width = 150;
+			// 
+			// Column_name
+			// 
+			this->Column_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_name->Frozen = true;
+			this->Column_name->HeaderText = L"         Дата выдачи               задания";
+			this->Column_name->Name = L"Column_name";
+			this->Column_name->ReadOnly = true;
+			this->Column_name->Width = 131;
+			// 
+			// Column_numb
+			// 
+			this->Column_numb->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_numb->Frozen = true;
+			this->Column_numb->HeaderText = L"         Номер            задания";
+			this->Column_numb->Name = L"Column_numb";
+			this->Column_numb->ReadOnly = true;
+			this->Column_numb->Width = 102;
+			// 
+			// Column1
+			// 
+			this->Column1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column1->Frozen = true;
+			this->Column1->HeaderText = L"№";
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			this->Column1->Width = 43;
 			// 
 			// RegZadForm
 			// 
@@ -393,7 +492,7 @@ namespace Kurs2021 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1109, 721);
+			this->ClientSize = System::Drawing::Size(1439, 837);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->label1);
@@ -401,7 +500,7 @@ namespace Kurs2021 {
 			this->MaximizeBox = false;
 			this->Name = L"RegZadForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MyForm";
+			this->Text = L"Учет ПКД";
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &RegZadForm::RegZadForm_FormClosed);
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
@@ -413,7 +512,7 @@ namespace Kurs2021 {
 
 		}
 #pragma endregion
-	private: System::Void открытьФайлToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void openPKDToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналУчетаНомеровПКДToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналУчетаВыполненнойПКДToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналРегистрацииЗаданийToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);

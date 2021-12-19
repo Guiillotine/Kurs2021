@@ -14,7 +14,7 @@ System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::Eve
 	return System::Void();
 }
 
-System::Void Kurs2021::PKDForm::ñîçäàòüÔàéëToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void Kurs2021::PKDForm::openRegZadToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	RegZadForm^ form = gcnew RegZadForm();
 	form->Show();
@@ -62,15 +62,6 @@ System::Void Kurs2021::PKDForm::íàéòèToolStripMenuItem_Click(System::Object^ sen
 	RequestProjForm^ form = gcnew RequestProjForm();
 	form->ShowDialog();
 	return System::Void();
-}
-
-System::Void Kurs2021::PKDForm::PKDForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
-{
-	/*LoginForm^ form1 = gcnew LoginForm();
-	form1->Close();
-	RegZadForm^ form2 = gcnew RegZadForm();
-	form2->Close();
-	return System::Void();*/
 }
 
 System::Void Kurs2021::PKDForm::ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)

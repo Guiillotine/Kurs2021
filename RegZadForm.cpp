@@ -8,7 +8,7 @@
 #include "RequestZadForm.h"
 #include "HelpForm.h"
 
-System::Void Kurs2021::RegZadForm::îòêðûòüÔàéëToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void Kurs2021::RegZadForm::openPKDToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	PKDForm^ form = gcnew PKDForm();
 	form->Show();
