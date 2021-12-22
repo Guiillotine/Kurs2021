@@ -74,38 +74,6 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
