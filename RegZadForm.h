@@ -76,88 +76,6 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_prim;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -508,7 +426,7 @@ namespace Kurs2021 {
 			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
+			this->PerformLayout(); 
 
 		}
 #pragma endregion
@@ -520,6 +438,6 @@ namespace Kurs2021 {
 	private: System::Void изменитьСтрокуToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void найтиToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void RegZadForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
+	private: System::Void RegZadForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e); 
 };
 }

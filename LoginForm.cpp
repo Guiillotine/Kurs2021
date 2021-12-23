@@ -13,10 +13,10 @@
 #include "HelpForm.h"
 #include "RegZadClass.h"
 
-
 using namespace System;
 using namespace System::Windows::Forms;
 
+TableRegZad tableRegZad;
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)
