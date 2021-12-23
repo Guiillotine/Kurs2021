@@ -34,16 +34,24 @@ namespace Kurs2021 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ dateEnd;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
+	private: System::Windows::Forms::TextBox^ cipher;
+	protected:
+
+	private: System::Windows::Forms::TextBox^ taskNumber;
+	private: System::Windows::Forms::TextBox^ dateReg;
+	private: System::Windows::Forms::TextBox^ projName;
+
+
+
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ volume;
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ surname;
+
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
@@ -76,15 +84,15 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->dateEnd = (gcnew System::Windows::Forms::TextBox());
+			this->cipher = (gcnew System::Windows::Forms::TextBox());
+			this->taskNumber = (gcnew System::Windows::Forms::TextBox());
+			this->dateReg = (gcnew System::Windows::Forms::TextBox());
+			this->projName = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->volume = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->surname = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -104,45 +112,45 @@ namespace Kurs2021 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// textBox7
+			// dateEnd
 			// 
-			this->textBox7->Location = System::Drawing::Point(810, 67);
-			this->textBox7->MaxLength = 16;
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(116, 20);
-			this->textBox7->TabIndex = 67;
+			this->dateEnd->Location = System::Drawing::Point(810, 67);
+			this->dateEnd->MaxLength = 16;
+			this->dateEnd->Name = L"dateEnd";
+			this->dateEnd->Size = System::Drawing::Size(116, 20);
+			this->dateEnd->TabIndex = 67;
 			// 
-			// textBox6
+			// cipher
 			// 
-			this->textBox6->Location = System::Drawing::Point(336, 66);
-			this->textBox6->MaxLength = 16;
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(118, 20);
-			this->textBox6->TabIndex = 66;
+			this->cipher->Location = System::Drawing::Point(336, 66);
+			this->cipher->MaxLength = 16;
+			this->cipher->Name = L"cipher";
+			this->cipher->Size = System::Drawing::Size(118, 20);
+			this->cipher->TabIndex = 66;
 			// 
-			// textBox5
+			// taskNumber
 			// 
-			this->textBox5->Location = System::Drawing::Point(39, 66);
-			this->textBox5->MaxLength = 16;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(109, 20);
-			this->textBox5->TabIndex = 65;
+			this->taskNumber->Location = System::Drawing::Point(39, 66);
+			this->taskNumber->MaxLength = 16;
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(109, 20);
+			this->taskNumber->TabIndex = 65;
 			// 
-			// textBox2
+			// dateReg
 			// 
-			this->textBox2->Location = System::Drawing::Point(197, 66);
-			this->textBox2->MaxLength = 14;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(83, 20);
-			this->textBox2->TabIndex = 64;
+			this->dateReg->Location = System::Drawing::Point(197, 66);
+			this->dateReg->MaxLength = 14;
+			this->dateReg->Name = L"dateReg";
+			this->dateReg->Size = System::Drawing::Size(83, 20);
+			this->dateReg->TabIndex = 64;
 			// 
-			// textBox4
+			// projName
 			// 
-			this->textBox4->Location = System::Drawing::Point(492, 66);
-			this->textBox4->MaxLength = 16;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(133, 20);
-			this->textBox4->TabIndex = 63;
+			this->projName->Location = System::Drawing::Point(492, 66);
+			this->projName->MaxLength = 16;
+			this->projName->Name = L"projName";
+			this->projName->Size = System::Drawing::Size(133, 20);
+			this->projName->TabIndex = 63;
 			// 
 			// label9
 			// 
@@ -152,13 +160,13 @@ namespace Kurs2021 {
 			this->label9->TabIndex = 62;
 			this->label9->Text = L"Объём проекта";
 			// 
-			// textBox3
+			// volume
 			// 
-			this->textBox3->Location = System::Drawing::Point(967, 67);
-			this->textBox3->MaxLength = 16;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(80, 20);
-			this->textBox3->TabIndex = 61;
+			this->volume->Location = System::Drawing::Point(967, 67);
+			this->volume->MaxLength = 16;
+			this->volume->Name = L"volume";
+			this->volume->Size = System::Drawing::Size(80, 20);
+			this->volume->TabIndex = 61;
 			// 
 			// label8
 			// 
@@ -168,13 +176,13 @@ namespace Kurs2021 {
 			this->label8->TabIndex = 60;
 			this->label8->Text = L"Дата завершения";
 			// 
-			// textBox1
+			// surname
 			// 
-			this->textBox1->Location = System::Drawing::Point(658, 66);
-			this->textBox1->MaxLength = 16;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(117, 20);
-			this->textBox1->TabIndex = 59;
+			this->surname->Location = System::Drawing::Point(658, 66);
+			this->surname->MaxLength = 16;
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(117, 20);
+			this->surname->TabIndex = 59;
 			// 
 			// dataGridView_in
 			// 
@@ -324,15 +332,15 @@ namespace Kurs2021 {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1118, 299);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->dateEnd);
+			this->Controls->Add(this->cipher);
+			this->Controls->Add(this->taskNumber);
+			this->Controls->Add(this->dateReg);
+			this->Controls->Add(this->projName);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->volume);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->surname);
 			this->Controls->Add(this->dataGridView_in);
 			this->Controls->Add(this->buttonOk);
 			this->Controls->Add(this->label6);

@@ -36,30 +36,16 @@ namespace Kurs2021 {
 		}
 	private: System::Windows::Forms::TextBox^ status;
 	protected:
-
 	private: System::Windows::Forms::TextBox^ projNumber;
 	protected:
-
 	private: System::Windows::Forms::TextBox^ date;
 	private: System::Windows::Forms::TextBox^ task;
-
-
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ note;
-
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ surname;
-
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_fio;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_napr;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_prim;
 	private: System::Windows::Forms::Button^ button_in_ok;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
@@ -73,6 +59,14 @@ namespace Kurs2021 {
 
 
 	private: System::Windows::Forms::Button^ button_in_back;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_fio;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_napr;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_prim;
 
 	private:
 		/// <summary>
@@ -145,7 +139,7 @@ namespace Kurs2021 {
 			// task
 			// 
 			this->task->Location = System::Drawing::Point(433, 67);
-			this->task->MaxLength = 16;
+			this->task->MaxLength = 100;
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 46;
@@ -216,18 +210,23 @@ namespace Kurs2021 {
 			// 
 			// Column_numb
 			// 
+			this->Column_numb->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_numb->HeaderText = L"Номер задания";
 			this->Column_numb->Name = L"Column_numb";
 			this->Column_numb->ReadOnly = true;
+			this->Column_numb->Width = 90;
 			// 
 			// Column_name
 			// 
-			this->Column_name->HeaderText = L"Дата выдачи задания";
+			this->Column_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_name->HeaderText = L"Дата выд. задания";
 			this->Column_name->Name = L"Column_name";
 			this->Column_name->ReadOnly = true;
+			this->Column_name->Width = 90;
 			// 
 			// Column_fio
 			// 
+			this->Column_fio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_fio->HeaderText = L"Наименование заказчика";
 			this->Column_fio->Name = L"Column_fio";
 			this->Column_fio->ReadOnly = true;
@@ -240,21 +239,27 @@ namespace Kurs2021 {
 			// 
 			// Column_kurs
 			// 
+			this->Column_kurs->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_kurs->HeaderText = L"Номер проекта";
 			this->Column_kurs->Name = L"Column_kurs";
 			this->Column_kurs->ReadOnly = true;
+			this->Column_kurs->Width = 90;
 			// 
 			// Column_chas
 			// 
+			this->Column_chas->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_chas->HeaderText = L"Фамилия инженера-конструктора";
 			this->Column_chas->Name = L"Column_chas";
 			this->Column_chas->ReadOnly = true;
+			this->Column_chas->Width = 160;
 			// 
 			// Column_att
 			// 
+			this->Column_att->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
 			this->Column_att->HeaderText = L"Статус";
 			this->Column_att->Name = L"Column_att";
 			this->Column_att->ReadOnly = true;
+			this->Column_att->Width = 90;
 			// 
 			// Column_prim
 			// 
@@ -383,6 +388,7 @@ namespace Kurs2021 {
 			this->Name = L"AddZadForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Добавление заданий на проектирование";
+			this->Load += gcnew System::EventHandler(this, &AddZadForm::AddZadForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -391,5 +397,6 @@ namespace Kurs2021 {
 #pragma endregion
 	private: System::Void button_in_back_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void AddZadForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

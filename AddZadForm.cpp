@@ -12,6 +12,7 @@ using namespace std;
 
 
 int f; // Флажок для вывода единственного сообщения о пропущенных полях
+int ix; // Номер строки в таблице введённых строк
 extern TableRegZad tableRegZad;
 
 System::Void Kurs2021::AddZadForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)
@@ -62,18 +63,41 @@ System::Void Kurs2021::AddZadForm::button_in_ok_Click(System::Object^ sender, Sy
 		String^ str4 = gcnew String(row.GetSurname().c_str());
 		String^ str5 = gcnew String(row.GetStatus().c_str());
 		String^ str6 = gcnew String(row.GetNote().c_str());
-		MessageBox::Show(row.GetTaskNumber().ToString() + " " + str1 + " " + str2 + " " + str3 + " " + row.GetProjNumber().ToString() + " " + str4 + " " + str5 + " " + str6, "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		//MessageBox::Show(row.GetTaskNumber().ToString() + " " + str1 + " " + str2 + " " + str3 + " " + row.GetProjNumber().ToString() + " " + str4 + " " + str5 + " " + str6, "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
-
 	if (f) tableRegZad.AddStr(row);
 
-    //AddZadForm::Close();
+	if (f)
+	{
+		//putfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, 0);
+		dataGridView_in->Rows->Add();
+		dataGridView_in->Rows[ix]->Cells[0]->Value = row.GetTaskNumber().ToString();
+		dataGridView_in->Rows[ix]->Cells[1]->Value = gcnew String(row.GetDate().c_str());
+		dataGridView_in->Rows[ix]->Cells[2]->Value = gcnew String(row.GetCustomer().c_str());
+		dataGridView_in->Rows[ix]->Cells[3]->Value = gcnew String(row.GetTask().c_str());
+		dataGridView_in->Rows[ix]->Cells[4]->Value = row.GetProjNumber().ToString();
+		dataGridView_in->Rows[ix]->Cells[5]->Value = gcnew String(row.GetSurname().c_str());
+		dataGridView_in->Rows[ix]->Cells[6]->Value = gcnew String(row.GetStatus().c_str());
+		dataGridView_in->Rows[ix]->Cells[7]->Value = gcnew String(row.GetNote().c_str());
+		ix++;
+		// Очистка полей для заполнения
+		this->taskNumber->Text = L"";
+		this->date->Text = L"";
+		this->customer->Text = L"";
+		this->task->Text = L"";
+		this->projNumber->Text = L"";
+		this->surname->Text = L"";
+		this->status->Text = L"";
+		this->note->Text = L"";
+	}
     return System::Void();
 
 	//Из массива в текстбокс
 	string str = "test";
 	String^ str2 = gcnew String(str.c_str());
 	//
-
+}
+System::Void Kurs2021::AddZadForm::AddZadForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	ix = 0;
 }

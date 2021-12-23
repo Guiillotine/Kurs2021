@@ -12,11 +12,13 @@
 #include "RequestProjForm.h"
 #include "HelpForm.h"
 #include "RegZadClass.h"
+#include "PKDClass.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
 
 TableRegZad tableRegZad;
+TablePKD tablePKD;
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)

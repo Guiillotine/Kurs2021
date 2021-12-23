@@ -101,17 +101,21 @@ class TableRegZad;
         void EditTable();*/
         void AddStr(RowRegZad tableRow)
         {
-            if (RowsNum > 0) ArrResize();
-            tableRows[RowsNum] = tableRow;
-            RowsNum++;
+            if (rowsNum > 0) ArrResize();
+            tableRows[rowsNum] = tableRow;
+            rowsNum++;
         }
         void ArrResize()
         {
-            RowRegZad* tableRow2 = new RowRegZad[RowsNum + 1];
-            for (int i = 0; i < RowsNum; i++) tableRow2[i] = tableRows[i];
+            RowRegZad* tableRow2 = new RowRegZad[rowsNum + 1];
+            for (int i = 0; i < rowsNum; i++) tableRow2[i] = tableRows[i];
             tableRows = tableRow2;
+        }
+        int GetRowsNum()
+        {
+            return(rowsNum);
         }
     private:
         RowRegZad* tableRows = new RowRegZad[1];
-        int RowsNum;
+        int rowsNum;
     };
