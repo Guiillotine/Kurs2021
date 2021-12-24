@@ -12,10 +12,10 @@ namespace Kurs2021 {
 	/// <summary>
 	/// Ñâîäêà äëÿ MyForm
 	/// </summary>
-	public ref class RegZadForm : public System::Windows::Forms::Form
+	public ref class RegZdForm : public System::Windows::Forms::Form
 	{
 	public:
-		RegZadForm(void)
+		RegZdForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace Kurs2021 {
 		/// <summary>
 		/// Îñâîáîäèòü âñå èñïîëüçóåìûå ğåñóğñû.
 		/// </summary>
-		~RegZadForm()
+		~RegZdForm()
 		{
 			if (components)
 			{
@@ -36,7 +36,7 @@ namespace Kurs2021 {
 		}
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenPKD;
-	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenZad;
+	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenZd;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonAdd;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonCorrect;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonRequest;
@@ -48,7 +48,7 @@ namespace Kurs2021 {
 
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ ôàéëToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ openRegZadToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ openRegZdToolStripMenuItem;
 
 	private: System::Windows::Forms::ToolStripMenuItem^ openPKDToolStripMenuItem;
 
@@ -89,17 +89,17 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegZadForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegZdForm::typeid));
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonOpenZd = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonAdd = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonCorrect = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonRequest = (gcnew System::Windows::Forms::ToolStripButton());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->openRegZadToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openRegZdToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openPKDToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ğåäàêòèğîâàòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->äîáàâèòüÑòğîêóToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -130,7 +130,7 @@ namespace Kurs2021 {
 			// 
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->toolStripButtonOpenPKD,
-					this->toolStripButtonOpenZad, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
+					this->toolStripButtonOpenZd, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -147,15 +147,15 @@ namespace Kurs2021 {
 			this->toolStripButtonOpenPKD->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonOpenPKD->Text = L"Ğåãèñòğàöèÿ çàäàíèÿ íà ïğîåêòèğîâàíèå";
 			// 
-			// toolStripButtonOpenZad
+			// toolStripButtonOpenZd
 			// 
-			this->toolStripButtonOpenZad->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonOpenZad->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZad.Image")));
-			this->toolStripButtonOpenZad->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonOpenZad->Name = L"toolStripButtonOpenZad";
-			this->toolStripButtonOpenZad->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenZad->Text = L"Ó÷åò ÏÊÄ";
-			this->toolStripButtonOpenZad->Click += gcnew System::EventHandler(this, &RegZadForm::openPKDToolStripMenuItem_Click);
+			this->toolStripButtonOpenZd->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonOpenZd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZd.Image")));
+			this->toolStripButtonOpenZd->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonOpenZd->Name = L"toolStripButtonOpenZd";
+			this->toolStripButtonOpenZd->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonOpenZd->Text = L"Ó÷åò ÏÊÄ";
+			this->toolStripButtonOpenZd->Click += gcnew System::EventHandler(this, &RegZdForm::openPKDToolStripMenuItem_Click);
 			// 
 			// toolStripButtonAdd
 			// 
@@ -165,7 +165,7 @@ namespace Kurs2021 {
 			this->toolStripButtonAdd->Name = L"toolStripButtonAdd";
 			this->toolStripButtonAdd->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonAdd->Text = L"Äîáàâèòü ñòğîêó";
-			this->toolStripButtonAdd->Click += gcnew System::EventHandler(this, &RegZadForm::äîáàâèòüÑòğîêóToolStripMenuItem_Click);
+			this->toolStripButtonAdd->Click += gcnew System::EventHandler(this, &RegZdForm::äîáàâèòüÑòğîêóToolStripMenuItem_Click);
 			// 
 			// toolStripButtonCorrect
 			// 
@@ -175,7 +175,7 @@ namespace Kurs2021 {
 			this->toolStripButtonCorrect->Name = L"toolStripButtonCorrect";
 			this->toolStripButtonCorrect->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonCorrect->Text = L"Èçìåíèòü ñòğîêó";
-			this->toolStripButtonCorrect->Click += gcnew System::EventHandler(this, &RegZadForm::èçìåíèòüÑòğîêóToolStripMenuItem_Click);
+			this->toolStripButtonCorrect->Click += gcnew System::EventHandler(this, &RegZdForm::èçìåíèòüÑòğîêóToolStripMenuItem_Click);
 			// 
 			// toolStripButtonRequest
 			// 
@@ -185,7 +185,7 @@ namespace Kurs2021 {
 			this->toolStripButtonRequest->Name = L"toolStripButtonRequest";
 			this->toolStripButtonRequest->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonRequest->Text = L"Íàéòè";
-			this->toolStripButtonRequest->Click += gcnew System::EventHandler(this, &RegZadForm::íàéòèToolStripMenuItem_Click);
+			this->toolStripButtonRequest->Click += gcnew System::EventHandler(this, &RegZdForm::íàéòèToolStripMenuItem_Click);
 			// 
 			// menuStrip1
 			// 
@@ -202,25 +202,25 @@ namespace Kurs2021 {
 			// ôàéëToolStripMenuItem
 			// 
 			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->openRegZadToolStripMenuItem,
+				this->openRegZdToolStripMenuItem,
 					this->openPKDToolStripMenuItem
 			});
 			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
 			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(63, 20);
 			this->ôàéëToolStripMenuItem->Text = L"Æóğíàë";
 			// 
-			// openRegZadToolStripMenuItem
+			// openRegZdToolStripMenuItem
 			// 
-			this->openRegZadToolStripMenuItem->Name = L"openRegZadToolStripMenuItem";
-			this->openRegZadToolStripMenuItem->Size = System::Drawing::Size(336, 22);
-			this->openRegZadToolStripMenuItem->Text = L"Ğåãèñòğàöèÿ çàäàíèÿ íà ïğîåêòèğîâàíèå";
+			this->openRegZdToolStripMenuItem->Name = L"openRegZdToolStripMenuItem";
+			this->openRegZdToolStripMenuItem->Size = System::Drawing::Size(336, 22);
+			this->openRegZdToolStripMenuItem->Text = L"Ğåãèñòğàöèÿ çàäàíèÿ íà ïğîåêòèğîâàíèå";
 			// 
 			// openPKDToolStripMenuItem
 			// 
 			this->openPKDToolStripMenuItem->Name = L"openPKDToolStripMenuItem";
 			this->openPKDToolStripMenuItem->Size = System::Drawing::Size(336, 22);
 			this->openPKDToolStripMenuItem->Text = L"Ó÷åò ïğîåêòíî-êîíñòğóêòîğñêîé äîêóìåíòàöèè";
-			this->openPKDToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::openPKDToolStripMenuItem_Click);
+			this->openPKDToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::openPKDToolStripMenuItem_Click);
 			// 
 			// ğåäàêòèğîâàòüToolStripMenuItem
 			// 
@@ -238,7 +238,7 @@ namespace Kurs2021 {
 			this->äîáàâèòüÑòğîêóToolStripMenuItem->Name = L"äîáàâèòüÑòğîêóToolStripMenuItem";
 			this->äîáàâèòüÑòğîêóToolStripMenuItem->Size = System::Drawing::Size(168, 22);
 			this->äîáàâèòüÑòğîêóToolStripMenuItem->Text = L"Äîáàâèòü ñòğîêó";
-			this->äîáàâèòüÑòğîêóToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::äîáàâèòüÑòğîêóToolStripMenuItem_Click);
+			this->äîáàâèòüÑòğîêóToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::äîáàâèòüÑòğîêóToolStripMenuItem_Click);
 			// 
 			// èçìåíèòüÑòğîêóToolStripMenuItem
 			// 
@@ -246,14 +246,14 @@ namespace Kurs2021 {
 			this->èçìåíèòüÑòğîêóToolStripMenuItem->Name = L"èçìåíèòüÑòğîêóToolStripMenuItem";
 			this->èçìåíèòüÑòğîêóToolStripMenuItem->Size = System::Drawing::Size(168, 22);
 			this->èçìåíèòüÑòğîêóToolStripMenuItem->Text = L"Èçìåíèòü ñòğîêó";
-			this->èçìåíèòüÑòğîêóToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::èçìåíèòüÑòğîêóToolStripMenuItem_Click);
+			this->èçìåíèòüÑòğîêóToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::èçìåíèòüÑòğîêóToolStripMenuItem_Click);
 			// 
 			// íàéòèToolStripMenuItem
 			// 
 			this->íàéòèToolStripMenuItem->Name = L"íàéòèToolStripMenuItem";
 			this->íàéòèToolStripMenuItem->Size = System::Drawing::Size(62, 20);
 			this->íàéòèToolStripMenuItem->Text = L"Íàéòè...";
-			this->íàéòèToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::íàéòèToolStripMenuItem_Click);
+			this->íàéòèToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::íàéòèToolStripMenuItem_Click);
 			// 
 			// ıêñïîğòToolStripMenuItem
 			// 
@@ -270,28 +270,28 @@ namespace Kurs2021 {
 			this->æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem->Name = L"æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem";
 			this->æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem->Size = System::Drawing::Size(258, 22);
 			this->æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem->Text = L"Æóğíàë ó÷åòà íîìåğîâ ÏÊÄ";
-			this->æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem_Click);
+			this->æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::æóğíàëÓ÷åòàÍîìåğîâÏÊÄToolStripMenuItem_Click);
 			// 
 			// æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem
 			// 
 			this->æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem->Name = L"æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem";
 			this->æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem->Size = System::Drawing::Size(258, 22);
 			this->æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem->Text = L"Æóğíàë ó÷åòà âûïîëíåííîé ÏÊÄ";
-			this->æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem_Click);
+			this->æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::æóğíàëÓ÷åòàÂûïîëíåííîéÏÊÄToolStripMenuItem_Click);
 			// 
 			// æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem
 			// 
 			this->æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem->Name = L"æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem";
 			this->æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem->Size = System::Drawing::Size(258, 22);
 			this->æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem->Text = L"Æóğíàë ğåãèñòğàöèè çàäàíèé ";
-			this->æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem_Click);
+			this->æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::æóğíàëĞåãèñòğàöèèÇàäàíèéToolStripMenuItem_Click);
 			// 
 			// ñïğàâêàToolStripMenuItem
 			// 
 			this->ñïğàâêàToolStripMenuItem->Name = L"ñïğàâêàToolStripMenuItem";
 			this->ñïğàâêàToolStripMenuItem->Size = System::Drawing::Size(65, 20);
 			this->ñïğàâêàToolStripMenuItem->Text = L"Ñïğàâêà";
-			this->ñïğàâêàToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZadForm::ñïğàâêàToolStripMenuItem_Click);
+			this->ñïğàâêàToolStripMenuItem->Click += gcnew System::EventHandler(this, &RegZdForm::ñïğàâêàToolStripMenuItem_Click);
 			// 
 			// label1
 			// 
@@ -404,7 +404,7 @@ namespace Kurs2021 {
 			this->Column_prim->ReadOnly = true;
 			this->Column_prim->Width = 216;
 			// 
-			// RegZadForm
+			// RegZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -416,11 +416,11 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->MaximizeBox = false;
-			this->Name = L"RegZadForm";
+			this->Name = L"RegZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ó÷åò ÏÊÄ";
-			this->Activated += gcnew System::EventHandler(this, &RegZadForm::RegZadForm_Activated);
-			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &RegZadForm::RegZadForm_FormClosed);
+			this->Activated += gcnew System::EventHandler(this, &RegZdForm::RegZdForm_Activated);
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &RegZdForm::RegZdForm_FormClosed);
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
@@ -439,7 +439,7 @@ namespace Kurs2021 {
 	private: System::Void èçìåíèòüÑòğîêóToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void íàéòèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void RegZadForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e); 
-	private: System::Void RegZadForm_Activated(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void RegZdForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e); 
+	private: System::Void RegZdForm_Activated(System::Object^ sender, System::EventArgs^ e);
 };
 }

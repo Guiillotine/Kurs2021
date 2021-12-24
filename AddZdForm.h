@@ -10,12 +10,12 @@ namespace Kurs2021 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для AddZadForm
+	/// Сводка для AddZdForm
 	/// </summary>
-	public ref class AddZadForm : public System::Windows::Forms::Form
+	public ref class AddZdForm : public System::Windows::Forms::Form
 	{
 	public:
-		AddZadForm(void)
+		AddZdForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace Kurs2021 {
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
-		~AddZadForm()
+		~AddZdForm()
 		{
 			if (components)
 			{
@@ -273,7 +273,7 @@ namespace Kurs2021 {
 			this->button_in_ok->TabIndex = 39;
 			this->button_in_ok->Text = L"Ок";
 			this->button_in_ok->UseVisualStyleBackColor = true;
-			this->button_in_ok->Click += gcnew System::EventHandler(this, &AddZadForm::button_in_ok_Click);
+			this->button_in_ok->Click += gcnew System::EventHandler(this, &AddZdForm::button_in_ok_Click);
 			// 
 			// label6
 			// 
@@ -344,7 +344,7 @@ namespace Kurs2021 {
 			this->button_in_back->TabIndex = 30;
 			this->button_in_back->Text = L"Назад";
 			this->button_in_back->UseVisualStyleBackColor = true;
-			this->button_in_back->Click += gcnew System::EventHandler(this, &AddZadForm::button_in_back_Click);
+			this->button_in_back->Click += gcnew System::EventHandler(this, &AddZdForm::button_in_back_Click);
 			// 
 			// taskNumber
 			// 
@@ -372,7 +372,7 @@ namespace Kurs2021 {
 			this->projNumber->TabIndex = 75;
 			this->projNumber->ValidatingType = System::Int32::typeid;
 			// 
-			// AddZadForm
+			// AddZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -399,10 +399,10 @@ namespace Kurs2021 {
 			this->Controls->Add(this->customer);
 			this->Controls->Add(this->button_in_back);
 			this->MaximizeBox = false;
-			this->Name = L"AddZadForm";
+			this->Name = L"AddZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Добавление заданий на проектирование";
-			this->Load += gcnew System::EventHandler(this, &AddZadForm::AddZadForm_Load);
+			this->Load += gcnew System::EventHandler(this, &AddZdForm::AddZdForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -411,6 +411,6 @@ namespace Kurs2021 {
 #pragma endregion
 	private: System::Void button_in_back_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void AddZadForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void AddZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

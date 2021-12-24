@@ -2,15 +2,30 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <fstream>
 
 using namespace std;
-class RowRegZad;
-class TableRegZad; 
+class RowRegZd;
+class TableRegZd; 
+extern string fnameRegZd;
 
-    class RowRegZad
+    class RowRegZd
     {
     public:
-        //void InputStr();
+        RowRegZd()
+        {
+        }
+        RowRegZd(const RowRegZd& row)
+        {
+            this->taskNumber = row.taskNumber;
+            this->date = row.date;
+            this->customer = row.customer;
+            this->task = row.task;
+            this->projNumber = row.projNumber;
+            this->surname = row.surname;
+            this->status = row.status;
+            this->note = row.note;
+        }
         void SetTaskNumber(string taskNumber)
         {
             this->taskNumber = taskNumber;
@@ -75,6 +90,15 @@ class TableRegZad;
         {
             return(note);
         }
+        int Putfile()
+        {
+            fstream f;
+            f.open(fnameRegZd, fstream::in | fstream::app);
+            if (!f.is_open()) return 0;
+            else f << taskNumber << '_' << date << '_' << customer << '_' << task << '_' << projNumber << '_' << surname << '_' << status << '_' << note << '\n';
+            f.close();
+            return (1);
+        }
 
     private:
         string taskNumber;//int taskNumber;
@@ -87,7 +111,7 @@ class TableRegZad;
         string note;
     };
 
-    public class TableRegZad
+    public class TableRegZd
     {
     public:
         /*void FillTable();
@@ -99,7 +123,7 @@ class TableRegZad;
         void ShowExpTable();
         int Request();
         void EditTable();*/
-        void AddStr(RowRegZad tableRow)
+        void AddStr(RowRegZd tableRow)
         {
             if (rowsNum > 0) ArrResize();
             tableRows[rowsNum] = tableRow;
@@ -107,7 +131,7 @@ class TableRegZad;
         }
         void ArrResize()
         {
-            RowRegZad* tableRow2 = new RowRegZad[rowsNum + 1];
+            RowRegZd* tableRow2 = new RowRegZd[rowsNum + 1];
             for (int i = 0; i < rowsNum; i++) tableRow2[i] = tableRows[i];
             tableRows = tableRow2;
         }
@@ -115,11 +139,11 @@ class TableRegZad;
         {
             return(rowsNum);
         }
-        RowRegZad GetTableRow(int index)
+        RowRegZd GetTableRow(int index)
         {
             return *(tableRows + (index));
         }
     private:
-        RowRegZad* tableRows = new RowRegZad[1];
+        RowRegZd* tableRows = new RowRegZd[1];
         int rowsNum;
     };

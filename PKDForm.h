@@ -37,7 +37,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	protected:
 	private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ openRegZadToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ openRegZdToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ openPKDToolStripMenuItem;
 
 	private: System::Windows::Forms::ToolStripMenuItem^ редактироватьToolStripMenuItem;
@@ -62,7 +62,7 @@ namespace Kurs2021 {
 
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenPKD;
-	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenZad;
+	private: System::Windows::Forms::ToolStripButton^ toolStripButtonOpenZd;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonAdd;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonCorrect;
 	private: System::Windows::Forms::ToolStripButton^ toolStripButtonRequest;
@@ -91,7 +91,7 @@ namespace Kurs2021 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PKDForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->openRegZadToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->openRegZdToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openPKDToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->редактироватьToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->добавитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -115,7 +115,7 @@ namespace Kurs2021 {
 			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonOpenZd = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonAdd = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonCorrect = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButtonRequest = (gcnew System::Windows::Forms::ToolStripButton());
@@ -139,19 +139,19 @@ namespace Kurs2021 {
 			// файлToolStripMenuItem
 			// 
 			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->openRegZadToolStripMenuItem,
+				this->openRegZdToolStripMenuItem,
 					this->openPKDToolStripMenuItem
 			});
 			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
 			this->файлToolStripMenuItem->Size = System::Drawing::Size(63, 20);
 			this->файлToolStripMenuItem->Text = L"Журнал";
 			// 
-			// openRegZadToolStripMenuItem
+			// openRegZdToolStripMenuItem
 			// 
-			this->openRegZadToolStripMenuItem->Name = L"openRegZadToolStripMenuItem";
-			this->openRegZadToolStripMenuItem->Size = System::Drawing::Size(336, 22);
-			this->openRegZadToolStripMenuItem->Text = L"Регистрация задания на проектирование";
-			this->openRegZadToolStripMenuItem->Click += gcnew System::EventHandler(this, &PKDForm::openRegZadToolStripMenuItem_Click);
+			this->openRegZdToolStripMenuItem->Name = L"openRegZdToolStripMenuItem";
+			this->openRegZdToolStripMenuItem->Size = System::Drawing::Size(336, 22);
+			this->openRegZdToolStripMenuItem->Text = L"Регистрация задания на проектирование";
+			this->openRegZdToolStripMenuItem->Click += gcnew System::EventHandler(this, &PKDForm::openRegZdToolStripMenuItem_Click);
 			// 
 			// openPKDToolStripMenuItem
 			// 
@@ -341,7 +341,7 @@ namespace Kurs2021 {
 			// 
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->toolStripButtonOpenPKD,
-					this->toolStripButtonOpenZad, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
+					this->toolStripButtonOpenZd, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -357,16 +357,16 @@ namespace Kurs2021 {
 			this->toolStripButtonOpenPKD->Name = L"toolStripButtonOpenPKD";
 			this->toolStripButtonOpenPKD->Size = System::Drawing::Size(23, 22);
 			this->toolStripButtonOpenPKD->Text = L"Регистрация задания на проектирование";
-			this->toolStripButtonOpenPKD->Click += gcnew System::EventHandler(this, &PKDForm::openRegZadToolStripMenuItem_Click);
+			this->toolStripButtonOpenPKD->Click += gcnew System::EventHandler(this, &PKDForm::openRegZdToolStripMenuItem_Click);
 			// 
-			// toolStripButtonOpenZad
+			// toolStripButtonOpenZd
 			// 
-			this->toolStripButtonOpenZad->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonOpenZad->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZad.Image")));
-			this->toolStripButtonOpenZad->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonOpenZad->Name = L"toolStripButtonOpenZad";
-			this->toolStripButtonOpenZad->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenZad->Text = L"Учет ПКД";
+			this->toolStripButtonOpenZd->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonOpenZd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZd.Image")));
+			this->toolStripButtonOpenZd->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonOpenZd->Name = L"toolStripButtonOpenZd";
+			this->toolStripButtonOpenZd->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonOpenZd->Text = L"Учет ПКД";
 			// 
 			// toolStripButtonAdd
 			// 
@@ -428,7 +428,7 @@ namespace Kurs2021 {
 		}
 #pragma endregion
 	private: System::Void PKDForm_Load(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void openRegZadToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void openRegZdToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналУчетаНомеровПКДToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналУчетаВыполненнойПКДToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void журналРегистрацииЗаданийToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);

@@ -1,24 +1,26 @@
 #include "LoginForm.h"
 #include "PKDForm.h"
-#include "RegZadForm.h"
+#include "RegZdForm.h"
 #include "Exp1.h"
 #include "Exp2.h"
 #include "Exp3.h"
-#include "AddZadForm.h"
+#include "AddZdForm.h"
 #include "AddProjForm.h"
 #include "CorrectProjForm.h"
-#include "CorrectZadForm.h"
-#include "RequestZadForm.h"
+#include "CorrectZdForm.h"
+#include "RequestZdForm.h"
 #include "RequestProjForm.h"
 #include "HelpForm.h"
-#include "RegZadClass.h"
+#include "RegZdClass.h"
 #include "PKDClass.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
 
-TableRegZad tableRegZad;
+TableRegZd tableRegZd;
 TablePKD tablePKD;
+string fnamePKD = "PKD";
+string fnameRegZd = "RegZ";
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)

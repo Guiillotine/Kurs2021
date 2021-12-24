@@ -121,30 +121,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddProjForm.cpp" />
-    <ClCompile Include="AddZadForm.cpp" />
+    <ClCompile Include="AddZdForm.cpp" />
     <ClCompile Include="CorrectProjForm.cpp" />
-    <ClCompile Include="CorrectZadForm.cpp" />
+    <ClCompile Include="CorrectZdForm.cpp" />
     <ClCompile Include="Exp1.cpp" />
     <ClCompile Include="Exp2.cpp" />
     <ClCompile Include="Exp3.cpp" />
     <ClCompile Include="HelpForm.cpp" />
     <ClCompile Include="LoginForm.cpp" />
-    <ClCompile Include="RegZadForm.cpp" />
+    <ClCompile Include="RegZdForm.cpp" />
     <ClCompile Include="PKDForm.cpp" />
     <ClCompile Include="RequestProjForm.cpp" />
-    <ClCompile Include="RequestZadForm.cpp" />
+    <ClCompile Include="RequestZdForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddProjForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="AddZadForm.h">
+    <ClInclude Include="AddZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CorrectProjForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="CorrectZadForm.h">
+    <ClInclude Include="CorrectZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Exp1.h">
@@ -162,7 +162,7 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="RegZadForm.h">
+    <ClInclude Include="RegZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PKDForm.h">
@@ -171,7 +171,7 @@
     <ClInclude Include="RequestProjForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="RequestZadForm.h">
+    <ClInclude Include="RequestZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -179,14 +179,14 @@
     <EmbeddedResource Include="AddProjForm.resx">
       <DependentUpon>AddProjForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddZadForm.resx">
-      <DependentUpon>AddZadForm.h</DependentUpon>
+    <EmbeddedResource Include="AddZdForm.resx">
+      <DependentUpon>AddZdForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CorrectProjForm.resx">
       <DependentUpon>CorrectProjForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CorrectZadForm.resx">
-      <DependentUpon>CorrectZadForm.h</DependentUpon>
+    <EmbeddedResource Include="CorrectZdForm.resx">
+      <DependentUpon>CorrectZdForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exp1.resx">
       <DependentUpon>Exp1.h</DependentUpon>
@@ -206,14 +206,14 @@
     <EmbeddedResource Include="PKDForm.resx">
       <DependentUpon>PKDForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegZadForm.resx">
-      <DependentUpon>RegZadForm.h</DependentUpon>
+    <EmbeddedResource Include="RegZdForm.resx">
+      <DependentUpon>RegZdForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RequestProjForm.resx">
       <DependentUpon>RequestProjForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RequestZadForm.resx">
-      <DependentUpon>RequestZadForm.h</DependentUpon>
+    <EmbeddedResource Include="RequestZdForm.resx">
+      <DependentUpon>RequestZdForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
