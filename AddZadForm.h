@@ -35,10 +35,12 @@ namespace Kurs2021 {
 			}
 		}
 	private: System::Windows::Forms::TextBox^ status;
+
 	protected:
-	private: System::Windows::Forms::TextBox^ projNumber;
+
+
 	protected:
-	private: System::Windows::Forms::TextBox^ date;
+
 	private: System::Windows::Forms::TextBox^ task;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ note;
@@ -55,7 +57,8 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ customer;
 
-	private: System::Windows::Forms::TextBox^ taskNumber;
+
+
 
 
 	private: System::Windows::Forms::Button^ button_in_back;
@@ -67,6 +70,15 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_prim;
+	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
+	private: System::Windows::Forms::MaskedTextBox^ date;
+
+	private: System::Windows::Forms::MaskedTextBox^ projNumber;
+
+
+
+
+
 
 	private:
 		/// <summary>
@@ -82,8 +94,6 @@ namespace Kurs2021 {
 		void InitializeComponent(void)
 		{
 			this->status = (gcnew System::Windows::Forms::TextBox());
-			this->projNumber = (gcnew System::Windows::Forms::TextBox());
-			this->date = (gcnew System::Windows::Forms::TextBox());
 			this->task = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->note = (gcnew System::Windows::Forms::TextBox());
@@ -107,8 +117,10 @@ namespace Kurs2021 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
-			this->taskNumber = (gcnew System::Windows::Forms::TextBox());
 			this->button_in_back = (gcnew System::Windows::Forms::Button());
+			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->date = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->projNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -119,22 +131,6 @@ namespace Kurs2021 {
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 49;
-			// 
-			// projNumber
-			// 
-			this->projNumber->Location = System::Drawing::Point(598, 67);
-			this->projNumber->MaxLength = 16;
-			this->projNumber->Name = L"projNumber";
-			this->projNumber->Size = System::Drawing::Size(70, 20);
-			this->projNumber->TabIndex = 48;
-			// 
-			// date
-			// 
-			this->date->Location = System::Drawing::Point(143, 67);
-			this->date->MaxLength = 16;
-			this->date->Name = L"date";
-			this->date->Size = System::Drawing::Size(115, 20);
-			this->date->TabIndex = 47;
 			// 
 			// task
 			// 
@@ -338,14 +334,6 @@ namespace Kurs2021 {
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 32;
 			// 
-			// taskNumber
-			// 
-			this->taskNumber->Location = System::Drawing::Point(39, 67);
-			this->taskNumber->MaxLength = 14;
-			this->taskNumber->Name = L"taskNumber";
-			this->taskNumber->Size = System::Drawing::Size(83, 20);
-			this->taskNumber->TabIndex = 31;
-			// 
 			// button_in_back
 			// 
 			this->button_in_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -358,15 +346,42 @@ namespace Kurs2021 {
 			this->button_in_back->UseVisualStyleBackColor = true;
 			this->button_in_back->Click += gcnew System::EventHandler(this, &AddZadForm::button_in_back_Click);
 			// 
+			// taskNumber
+			// 
+			this->taskNumber->Location = System::Drawing::Point(60, 65);
+			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(40, 20);
+			this->taskNumber->TabIndex = 72;
+			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			// 
+			// date
+			// 
+			this->date->Location = System::Drawing::Point(163, 67);
+			this->date->Mask = L"00/00/0000";
+			this->date->Name = L"date";
+			this->date->Size = System::Drawing::Size(68, 20);
+			this->date->TabIndex = 73;
+			// 
+			// projNumber
+			// 
+			this->projNumber->Location = System::Drawing::Point(603, 67);
+			this->projNumber->Mask = L"00-000";
+			this->projNumber->Name = L"projNumber";
+			this->projNumber->Size = System::Drawing::Size(57, 20);
+			this->projNumber->TabIndex = 75;
+			this->projNumber->ValidatingType = System::Int32::typeid;
+			// 
 			// AddZadForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1124, 289);
-			this->Controls->Add(this->status);
 			this->Controls->Add(this->projNumber);
 			this->Controls->Add(this->date);
+			this->Controls->Add(this->taskNumber);
+			this->Controls->Add(this->status);
 			this->Controls->Add(this->task);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->note);
@@ -382,7 +397,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->customer);
-			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->button_in_back);
 			this->MaximizeBox = false;
 			this->Name = L"AddZadForm";

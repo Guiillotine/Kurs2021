@@ -34,32 +34,38 @@ namespace Kurs2021 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ dateEnd;
+
 	protected:
 
-	private: System::Windows::Forms::TextBox^ cipher;
+
+
 	protected:
 
-	private: System::Windows::Forms::TextBox^ taskNumber;
-	private: System::Windows::Forms::TextBox^ dateReg;
+
+	protected:
+
+
+
+
 	private: System::Windows::Forms::TextBox^ projName;
 
 
 
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ volume;
+
+
 
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ surname;
 
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_fio;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_napr;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ buttonOk;
 
 	private: System::Windows::Forms::Label^ label6;
@@ -69,6 +75,23 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ buttonBack;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::MaskedTextBox^ cipher;
+	private: System::Windows::Forms::MaskedTextBox^ dateReg;
+	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
+	private: System::Windows::Forms::MaskedTextBox^ volume;
+	private: System::Windows::Forms::MaskedTextBox^ dateEnd;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_fio;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_napr;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
+
+
+
+
+
 
 
 	private:
@@ -84,23 +107,11 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dateEnd = (gcnew System::Windows::Forms::TextBox());
-			this->cipher = (gcnew System::Windows::Forms::TextBox());
-			this->taskNumber = (gcnew System::Windows::Forms::TextBox());
-			this->dateReg = (gcnew System::Windows::Forms::TextBox());
 			this->projName = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->volume = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->surname = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
-			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_fio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_napr = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_kurs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_chas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->buttonOk = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -109,45 +120,25 @@ namespace Kurs2021 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonBack = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->cipher = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->dateReg = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->volume = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->dateEnd = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_fio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_napr = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_kurs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_chas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// dateEnd
-			// 
-			this->dateEnd->Location = System::Drawing::Point(810, 67);
-			this->dateEnd->MaxLength = 16;
-			this->dateEnd->Name = L"dateEnd";
-			this->dateEnd->Size = System::Drawing::Size(116, 20);
-			this->dateEnd->TabIndex = 67;
-			// 
-			// cipher
-			// 
-			this->cipher->Location = System::Drawing::Point(336, 66);
-			this->cipher->MaxLength = 16;
-			this->cipher->Name = L"cipher";
-			this->cipher->Size = System::Drawing::Size(118, 20);
-			this->cipher->TabIndex = 66;
-			// 
-			// taskNumber
-			// 
-			this->taskNumber->Location = System::Drawing::Point(39, 66);
-			this->taskNumber->MaxLength = 16;
-			this->taskNumber->Name = L"taskNumber";
-			this->taskNumber->Size = System::Drawing::Size(109, 20);
-			this->taskNumber->TabIndex = 65;
-			// 
-			// dateReg
-			// 
-			this->dateReg->Location = System::Drawing::Point(197, 66);
-			this->dateReg->MaxLength = 14;
-			this->dateReg->Name = L"dateReg";
-			this->dateReg->Size = System::Drawing::Size(83, 20);
-			this->dateReg->TabIndex = 64;
 			// 
 			// projName
 			// 
 			this->projName->Location = System::Drawing::Point(492, 66);
-			this->projName->MaxLength = 16;
+			this->projName->MaxLength = 200;
 			this->projName->Name = L"projName";
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 63;
@@ -160,17 +151,9 @@ namespace Kurs2021 {
 			this->label9->TabIndex = 62;
 			this->label9->Text = L"Объём проекта";
 			// 
-			// volume
-			// 
-			this->volume->Location = System::Drawing::Point(967, 67);
-			this->volume->MaxLength = 16;
-			this->volume->Name = L"volume";
-			this->volume->Size = System::Drawing::Size(80, 20);
-			this->volume->TabIndex = 61;
-			// 
 			// label8
 			// 
-			this->label8->Location = System::Drawing::Point(816, 44);
+			this->label8->Location = System::Drawing::Point(827, 44);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(99, 18);
 			this->label8->TabIndex = 60;
@@ -178,7 +161,7 @@ namespace Kurs2021 {
 			// 
 			// surname
 			// 
-			this->surname->Location = System::Drawing::Point(658, 66);
+			this->surname->Location = System::Drawing::Point(670, 66);
 			this->surname->MaxLength = 16;
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 20);
@@ -205,48 +188,6 @@ namespace Kurs2021 {
 			this->dataGridView_in->Size = System::Drawing::Size(1064, 105);
 			this->dataGridView_in->TabIndex = 58;
 			// 
-			// Column_numb
-			// 
-			this->Column_numb->HeaderText = L"Номер задания";
-			this->Column_numb->Name = L"Column_numb";
-			this->Column_numb->ReadOnly = true;
-			// 
-			// Column_name
-			// 
-			this->Column_name->HeaderText = L"Дата регистрации";
-			this->Column_name->Name = L"Column_name";
-			this->Column_name->ReadOnly = true;
-			// 
-			// Column_fio
-			// 
-			this->Column_fio->HeaderText = L"Шифр проекта";
-			this->Column_fio->Name = L"Column_fio";
-			this->Column_fio->ReadOnly = true;
-			// 
-			// Column_napr
-			// 
-			this->Column_napr->HeaderText = L"Наименование проекта";
-			this->Column_napr->Name = L"Column_napr";
-			this->Column_napr->ReadOnly = true;
-			// 
-			// Column_kurs
-			// 
-			this->Column_kurs->HeaderText = L"Исполнитель";
-			this->Column_kurs->Name = L"Column_kurs";
-			this->Column_kurs->ReadOnly = true;
-			// 
-			// Column_chas
-			// 
-			this->Column_chas->HeaderText = L"Дата завершения проекта";
-			this->Column_chas->Name = L"Column_chas";
-			this->Column_chas->ReadOnly = true;
-			// 
-			// Column_att
-			// 
-			this->Column_att->HeaderText = L"Объем проекта";
-			this->Column_att->Name = L"Column_att";
-			this->Column_att->ReadOnly = true;
-			// 
 			// buttonOk
 			// 
 			this->buttonOk->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -261,7 +202,7 @@ namespace Kurs2021 {
 			// 
 			// label6
 			// 
-			this->label6->Location = System::Drawing::Point(676, 44);
+			this->label6->Location = System::Drawing::Point(691, 44);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(84, 15);
 			this->label6->TabIndex = 56;
@@ -325,20 +266,121 @@ namespace Kurs2021 {
 			this->label7->TabIndex = 68;
 			this->label7->Text = L"Добавленные проекты:";
 			// 
+			// cipher
+			// 
+			this->cipher->Location = System::Drawing::Point(369, 66);
+			this->cipher->Mask = L"00-000";
+			this->cipher->Name = L"cipher";
+			this->cipher->Size = System::Drawing::Size(57, 20);
+			this->cipher->TabIndex = 69;
+			this->cipher->ValidatingType = System::Int32::typeid;
+			// 
+			// dateReg
+			// 
+			this->dateReg->Location = System::Drawing::Point(204, 66);
+			this->dateReg->Mask = L"00/00/0000";
+			this->dateReg->Name = L"dateReg";
+			this->dateReg->Size = System::Drawing::Size(68, 20);
+			this->dateReg->TabIndex = 70;
+			// 
+			// taskNumber
+			// 
+			this->taskNumber->Location = System::Drawing::Point(71, 66);
+			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(40, 20);
+			this->taskNumber->TabIndex = 71;
+			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			// 
+			// volume
+			// 
+			this->volume->Location = System::Drawing::Point(985, 67);
+			this->volume->Mask = L"00000";
+			this->volume->Name = L"volume";
+			this->volume->Size = System::Drawing::Size(42, 20);
+			this->volume->TabIndex = 72;
+			this->volume->ValidatingType = System::Int32::typeid;
+			// 
+			// dateEnd
+			// 
+			this->dateEnd->Location = System::Drawing::Point(841, 67);
+			this->dateEnd->Mask = L"00/00/0000";
+			this->dateEnd->Name = L"dateEnd";
+			this->dateEnd->Size = System::Drawing::Size(68, 20);
+			this->dateEnd->TabIndex = 73;
+			// 
+			// Column_numb
+			// 
+			this->Column_numb->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_numb->HeaderText = L"Номер задания";
+			this->Column_numb->Name = L"Column_numb";
+			this->Column_numb->ReadOnly = true;
+			this->Column_numb->Width = 90;
+			// 
+			// Column_name
+			// 
+			this->Column_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_name->FillWeight = 459.8131F;
+			this->Column_name->HeaderText = L"Дата регистрации";
+			this->Column_name->Name = L"Column_name";
+			this->Column_name->ReadOnly = true;
+			// 
+			// Column_fio
+			// 
+			this->Column_fio->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_fio->FillWeight = 28.03738F;
+			this->Column_fio->HeaderText = L"Шифр проекта";
+			this->Column_fio->Name = L"Column_fio";
+			this->Column_fio->ReadOnly = true;
+			this->Column_fio->Width = 105;
+			// 
+			// Column_napr
+			// 
+			this->Column_napr->FillWeight = 28.03738F;
+			this->Column_napr->HeaderText = L"Наименование проекта";
+			this->Column_napr->Name = L"Column_napr";
+			this->Column_napr->ReadOnly = true;
+			// 
+			// Column_kurs
+			// 
+			this->Column_kurs->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_kurs->FillWeight = 28.03738F;
+			this->Column_kurs->HeaderText = L"Исполнитель";
+			this->Column_kurs->Name = L"Column_kurs";
+			this->Column_kurs->ReadOnly = true;
+			this->Column_kurs->Width = 200;
+			// 
+			// Column_chas
+			// 
+			this->Column_chas->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_chas->FillWeight = 28.03738F;
+			this->Column_chas->HeaderText = L"Дата завершения проекта";
+			this->Column_chas->Name = L"Column_chas";
+			this->Column_chas->ReadOnly = true;
+			this->Column_chas->Width = 140;
+			// 
+			// Column_att
+			// 
+			this->Column_att->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
+			this->Column_att->FillWeight = 28.03738F;
+			this->Column_att->HeaderText = L"Объем проекта";
+			this->Column_att->Name = L"Column_att";
+			this->Column_att->ReadOnly = true;
+			// 
 			// AddProjForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1118, 299);
-			this->Controls->Add(this->label7);
 			this->Controls->Add(this->dateEnd);
-			this->Controls->Add(this->cipher);
+			this->Controls->Add(this->volume);
 			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->dateReg);
+			this->Controls->Add(this->cipher);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->projName);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->volume);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->surname);
 			this->Controls->Add(this->dataGridView_in);

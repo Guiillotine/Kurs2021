@@ -11,11 +11,11 @@ class TableRegZad;
     {
     public:
         //void InputStr();
-        void SetTaskNumber(int taskNumber)
+        void SetTaskNumber(string taskNumber)
         {
             this->taskNumber = taskNumber;
         }
-        int GetTaskNumber()
+        string GetTaskNumber()//int GetTaskNumber()
         {
             return(taskNumber);
         }
@@ -43,11 +43,11 @@ class TableRegZad;
         {
             return(task);
         }
-        void SetProjNumber(int projNumber)
+        void SetProjNumber(string projNumber)
         {
             this->projNumber = projNumber;
         }
-        int GetProjNumber()
+        string GetProjNumber()
         {
             return(projNumber);
         }
@@ -77,11 +77,11 @@ class TableRegZad;
         }
 
     private:
-        int taskNumber;
+        string taskNumber;//int taskNumber;
         string date;
         string customer;
         string task;
-        int projNumber;
+        string projNumber;//int projNumber;
         string surname;
         string status;
         string note;

@@ -87,7 +87,8 @@ System::Void Kurs2021::PKDForm::PKDForm_Activated(System::Object^ sender, System
 		//getfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, x);
 		dataGridView1->Rows->Add();	
 		dataGridView1->Rows[x]->Cells[0]->Value = (x + 1).ToString();
-		dataGridView1->Rows[x]->Cells[1]->Value = tablePKD.GetTableRow(x).GetTaskNumber().ToString();
+		//dataGridView1->Rows[x]->Cells[1]->Value = tablePKD.GetTableRow(x).GetTaskNumber().ToString();
+		dataGridView1->Rows[x]->Cells[1]->Value = gcnew String(tablePKD.GetTableRow(x).GetTaskNumber().c_str());
 		dataGridView1->Rows[x]->Cells[2]->Value = gcnew String(tablePKD.GetTableRow(x).GetDateReg().c_str());
 		dataGridView1->Rows[x]->Cells[3]->Value = gcnew String(tablePKD.GetTableRow(x).GetCipher().c_str());
 		dataGridView1->Rows[x]->Cells[4]->Value = gcnew String(tablePKD.GetTableRow(x).GetProjName().c_str());

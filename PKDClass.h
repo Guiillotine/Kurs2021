@@ -11,11 +11,11 @@ class TablePKD;
     {
     public:
         //void InputStr();
-        void SetTaskNumber(int taskNumber)
+        void SetTaskNumber(string taskNumber)
         {
             this->taskNumber = taskNumber;
         }
-        int GetTaskNumber()
+        string GetTaskNumber()//int GetTaskNumber()
         {
             return(taskNumber);
         }
@@ -68,7 +68,7 @@ class TablePKD;
             return(volume);
         }
     private:
-        int taskNumber;
+        string taskNumber;//int taskNumber;
         string dateReg;
         string cipher;
         string projName;

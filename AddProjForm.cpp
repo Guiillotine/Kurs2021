@@ -26,11 +26,14 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	RowPKD row;
 	f = 1;
 	using namespace System::Runtime::InteropServices;
+	msclr::interop::marshal_context context;
 
-	if (this->taskNumber->Text != "") row.SetTaskNumber(Convert::ToInt32(this->taskNumber->Text));
+	/*if (this->taskNumber->Text != "") row.SetTaskNumber(Convert::ToInt32(this->taskNumber->Text));
+	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }*/
+	std::string stringTaskNumber = context.marshal_as<std::string>(this->taskNumber->Text);
+	if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	msclr::interop::marshal_context context;
 	std::string stringDate = context.marshal_as<std::string>(this->dateReg->Text);
 	if (this->dateReg->Text != "") row.SetDateReg(stringDate);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
@@ -60,7 +63,8 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	{
 		//putfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, 0);
 		dataGridView_in->Rows->Add();
-		dataGridView_in->Rows[ix]->Cells[0]->Value = row.GetTaskNumber().ToString();
+		//dataGridView_in->Rows[ix]->Cells[0]->Value = row.GetTaskNumber().ToString();
+		dataGridView_in->Rows[ix]->Cells[0]->Value = gcnew String(row.GetTaskNumber().c_str());
 		dataGridView_in->Rows[ix]->Cells[1]->Value = gcnew String(row.GetDateReg().c_str());
 		dataGridView_in->Rows[ix]->Cells[2]->Value = gcnew String(row.GetCipher().c_str());
 		dataGridView_in->Rows[ix]->Cells[3]->Value = gcnew String(row.GetProjName().c_str());
