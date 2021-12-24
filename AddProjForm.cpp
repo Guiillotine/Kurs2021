@@ -14,6 +14,7 @@ using namespace std;
 extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
 extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
+extern string fname;
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -28,8 +29,6 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	using namespace System::Runtime::InteropServices;
 	msclr::interop::marshal_context context;
 
-	/*if (this->taskNumber->Text != "") row.SetTaskNumber(Convert::ToInt32(this->taskNumber->Text));
-	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }*/
 	std::string stringTaskNumber = context.marshal_as<std::string>(this->taskNumber->Text);
 	if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
@@ -57,13 +56,17 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 
 	if (this->volume->Text != "") row.SetVolume(Convert::ToInt32(this->volume->Text));
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
-	if (f) tablePKD.AddStr(row);
+	if (f)
+	{
+		tablePKD.AddStr(row);
+		//fnamePKD = "list";
+		if (row.Putfile() == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
 
 	if (f)
 	{
 		//putfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, 0);
 		dataGridView_in->Rows->Add();
-		//dataGridView_in->Rows[ix]->Cells[0]->Value = row.GetTaskNumber().ToString();
 		dataGridView_in->Rows[ix]->Cells[0]->Value = gcnew String(row.GetTaskNumber().c_str());
 		dataGridView_in->Rows[ix]->Cells[1]->Value = gcnew String(row.GetDateReg().c_str());
 		dataGridView_in->Rows[ix]->Cells[2]->Value = gcnew String(row.GetCipher().c_str());
@@ -72,7 +75,6 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 		dataGridView_in->Rows[ix]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
 		dataGridView_in->Rows[ix]->Cells[6]->Value = row.GetVolume().ToString();
 		ix++;
-		// Очистка полей для заполнения
 		this->taskNumber->Text = L"";
 		this->dateReg->Text = L"";
 		this->cipher->Text = L"";

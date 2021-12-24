@@ -19,6 +19,8 @@ using namespace System::Windows::Forms;
 
 TableRegZad tableRegZad;
 TablePKD tablePKD;
+string fnamePKD = "PKD";
+string fnameRegZad = "RegZ";
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)

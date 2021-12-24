@@ -2,14 +2,29 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <fstream>
 
 using namespace std;
 class RowPKD;
 class TablePKD;
+extern string fnamePKD;
 
     class RowPKD
     {
     public:
+        RowPKD()
+        {
+        }
+        RowPKD(const RowPKD& row)
+        {
+            this->taskNumber = row.taskNumber;
+            this->dateReg = row.dateReg;
+            this->cipher = row.cipher;
+            this->projName = row.projName;
+            this->surname = row.surname;
+            this->dateEnd = row.dateEnd;
+            this->volume = row.volume;
+        }
         //void InputStr();
         void SetTaskNumber(string taskNumber)
         {
@@ -67,6 +82,15 @@ class TablePKD;
         {
             return(volume);
         }
+        int Putfile()
+        {
+            fstream f;
+            f.open(fnamePKD, fstream::in | fstream::app);
+            if (!f.is_open()) return 0;
+            else f << taskNumber << '_' << dateReg << '_' << cipher << '_' << projName << '_' << surname << '_' << dateEnd << '_' << volume << '\n';
+            f.close();
+            return (1);
+        }
     private:
         string taskNumber;//int taskNumber;
         string dateReg;
@@ -109,6 +133,27 @@ class TablePKD;
         {
             return *(tableRows + (index));
         }
+        /*int Putfile()
+        {
+            fstream f;
+            f.open(fname, fstream::in | fstream::out | fstream::app);
+            if (!f.is_open())
+            {
+                MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+                return 0;
+            }
+            else
+            {
+                RowPKD row;
+                for (int i = 0; i < GetRowsNum(); i++)
+                {
+                    row = GetTableRow(i);
+                    f << row.GetTaskNumber() << '_' << row.GetDateReg() << '_' << row.GetCipher() << '_' << row.GetProjName() << '_' << row.GetSurname() << '_' << row.GetDateEnd() << '_' << row.GetVolume() << '\n';
+                }
+            }
+            f.close();
+            return (1);
+        }*/
     private: 
         RowPKD* tableRows = new RowPKD[1];
         int rowsNum;

@@ -2,15 +2,30 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <fstream>
 
 using namespace std;
 class RowRegZad;
 class TableRegZad; 
+extern string fnameRegZad;
 
     class RowRegZad
     {
     public:
-        //void InputStr();
+        RowRegZad()
+        {
+        }
+        RowRegZad(const RowRegZad& row)
+        {
+            this->taskNumber = row.taskNumber;
+            this->date = row.date;
+            this->customer = row.customer;
+            this->task = row.task;
+            this->projNumber = row.projNumber;
+            this->surname = row.surname;
+            this->status = row.status;
+            this->note = row.note;
+        }
         void SetTaskNumber(string taskNumber)
         {
             this->taskNumber = taskNumber;
@@ -74,6 +89,15 @@ class TableRegZad;
         string GetNote()
         {
             return(note);
+        }
+        int Putfile()
+        {
+            fstream f;
+            f.open(fnameRegZad, fstream::in | fstream::app);
+            if (!f.is_open()) return 0;
+            else f << taskNumber << '_' << date << '_' << customer << '_' << task << '_' << projNumber << '_' << surname << '_' << status << '_' << note << '\n';
+            f.close();
+            return (1);
         }
 
     private:
