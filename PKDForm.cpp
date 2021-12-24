@@ -84,7 +84,6 @@ System::Void Kurs2021::PKDForm::PKDForm_Activated(System::Object^ sender, System
 	while (dataGridView1->Rows->Count != 0) dataGridView1->Rows->Remove(dataGridView1->Rows[dataGridView1->Rows->Count - 1]);
 	for (int x = 0; x < tablePKD.GetRowsNum(); x++)
 	{
-		//getfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, x);
 		dataGridView1->Rows->Add();	
 		dataGridView1->Rows[x]->Cells[0]->Value = (x + 1).ToString();
 		dataGridView1->Rows[x]->Cells[1]->Value = gcnew String(tablePKD.GetTableRow(x).GetTaskNumber().c_str());

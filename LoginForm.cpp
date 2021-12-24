@@ -24,7 +24,6 @@ string fnameRegZd = "RegZ";
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)
-//void main(array<String^>^ args)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);

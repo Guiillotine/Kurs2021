@@ -25,12 +25,11 @@ extern string fnamePKD;
             this->dateEnd = row.dateEnd;
             this->volume = row.volume;
         }
-        //void InputStr();
         void SetTaskNumber(string taskNumber)
         {
             this->taskNumber = taskNumber;
         }
-        string GetTaskNumber()//int GetTaskNumber()
+        string GetTaskNumber()
         {
             return(taskNumber);
         }
@@ -92,7 +91,7 @@ extern string fnamePKD;
             return (1);
         }
     private:
-        string taskNumber;//int taskNumber;
+        string taskNumber;
         string dateReg;
         string cipher;
         string projName;
@@ -133,27 +132,6 @@ extern string fnamePKD;
         {
             return *(tableRows + (index));
         }
-        /*int Putfile()
-        {
-            fstream f;
-            f.open(fname, fstream::in | fstream::out | fstream::app);
-            if (!f.is_open())
-            {
-                MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-                return 0;
-            }
-            else
-            {
-                RowPKD row;
-                for (int i = 0; i < GetRowsNum(); i++)
-                {
-                    row = GetTableRow(i);
-                    f << row.GetTaskNumber() << '_' << row.GetDateReg() << '_' << row.GetCipher() << '_' << row.GetProjName() << '_' << row.GetSurname() << '_' << row.GetDateEnd() << '_' << row.GetVolume() << '\n';
-                }
-            }
-            f.close();
-            return (1);
-        }*/
     private: 
         RowPKD* tableRows = new RowPKD[1];
         int rowsNum;

@@ -30,7 +30,7 @@ extern string fnameRegZd;
         {
             this->taskNumber = taskNumber;
         }
-        string GetTaskNumber()//int GetTaskNumber()
+        string GetTaskNumber()
         {
             return(taskNumber);
         }
@@ -101,11 +101,11 @@ extern string fnameRegZd;
         }
 
     private:
-        string taskNumber;//int taskNumber;
+        string taskNumber;
         string date;
         string customer;
         string task;
-        string projNumber;//int projNumber;
+        string projNumber;
         string surname;
         string status;
         string note;
