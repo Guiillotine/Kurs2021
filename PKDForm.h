@@ -87,7 +87,7 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PKDForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->Ù‡ÈÎToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -105,12 +105,6 @@ namespace Kurs2021 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
-			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonAdd = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonCorrect = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButtonRequest = (gcnew System::Windows::Forms::ToolStripButton());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -119,6 +113,12 @@ namespace Kurs2021 {
 			this->Column_kurs = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_chas = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_att = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->toolStripButtonOpenPKD = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonOpenZad = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonAdd = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonCorrect = (gcnew System::Windows::Forms::ToolStripButton());
+			this->toolStripButtonRequest = (gcnew System::Windows::Forms::ToolStripButton());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->toolStrip1->SuspendLayout();
@@ -256,9 +256,9 @@ namespace Kurs2021 {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AllowUserToResizeColumns = false;
 			this->dataGridView1->AllowUserToResizeRows = false;
-			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::Black;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::ColumnHeader;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::Honeydew;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -273,67 +273,6 @@ namespace Kurs2021 {
 			this->dataGridView1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->dataGridView1->Size = System::Drawing::Size(1342, 677);
 			this->dataGridView1->TabIndex = 13;
-			// 
-			// toolStrip1
-			// 
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
-				this->toolStripButtonOpenPKD,
-					this->toolStripButtonOpenZad, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
-			});
-			this->toolStrip1->Location = System::Drawing::Point(0, 24);
-			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1438, 25);
-			this->toolStrip1->TabIndex = 16;
-			this->toolStrip1->Text = L"toolStrip1";
-			// 
-			// toolStripButtonOpenPKD
-			// 
-			this->toolStripButtonOpenPKD->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonOpenPKD->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenPKD.Image")));
-			this->toolStripButtonOpenPKD->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonOpenPKD->Name = L"toolStripButtonOpenPKD";
-			this->toolStripButtonOpenPKD->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenPKD->Text = L"–Â„ËÒÚ‡ˆËˇ Á‡‰‡ÌËˇ Ì‡ ÔÓÂÍÚËÓ‚‡ÌËÂ";
-			this->toolStripButtonOpenPKD->Click += gcnew System::EventHandler(this, &PKDForm::openRegZadToolStripMenuItem_Click);
-			// 
-			// toolStripButtonOpenZad
-			// 
-			this->toolStripButtonOpenZad->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonOpenZad->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZad.Image")));
-			this->toolStripButtonOpenZad->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonOpenZad->Name = L"toolStripButtonOpenZad";
-			this->toolStripButtonOpenZad->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonOpenZad->Text = L"”˜ÂÚ œ ƒ";
-			// 
-			// toolStripButtonAdd
-			// 
-			this->toolStripButtonAdd->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonAdd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonAdd.Image")));
-			this->toolStripButtonAdd->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonAdd->Name = L"toolStripButtonAdd";
-			this->toolStripButtonAdd->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonAdd->Text = L"ƒÓ·‡‚ËÚ¸ ÒÚÓÍÛ";
-			this->toolStripButtonAdd->Click += gcnew System::EventHandler(this, &PKDForm::‰Ó·‡‚ËÚ¸—ÚÓÍÛToolStripMenuItem_Click);
-			// 
-			// toolStripButtonCorrect
-			// 
-			this->toolStripButtonCorrect->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonCorrect->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonCorrect.Image")));
-			this->toolStripButtonCorrect->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonCorrect->Name = L"toolStripButtonCorrect";
-			this->toolStripButtonCorrect->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonCorrect->Text = L"»ÁÏÂÌËÚ¸ ÒÚÓÍÛ";
-			this->toolStripButtonCorrect->Click += gcnew System::EventHandler(this, &PKDForm::ËÁÏÂÌËÚ¸—ÚÓÍÛToolStripMenuItem_Click);
-			// 
-			// toolStripButtonRequest
-			// 
-			this->toolStripButtonRequest->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-			this->toolStripButtonRequest->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonRequest.Image")));
-			this->toolStripButtonRequest->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButtonRequest->Name = L"toolStripButtonRequest";
-			this->toolStripButtonRequest->Size = System::Drawing::Size(23, 22);
-			this->toolStripButtonRequest->Text = L"Õ‡ÈÚË";
-			this->toolStripButtonRequest->Click += gcnew System::EventHandler(this, &PKDForm::Ì‡ÈÚËToolStripMenuItem_Click);
 			// 
 			// Column1
 			// 
@@ -398,6 +337,67 @@ namespace Kurs2021 {
 			this->Column_att->ReadOnly = true;
 			this->Column_att->Width = 155;
 			// 
+			// toolStrip1
+			// 
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->toolStripButtonOpenPKD,
+					this->toolStripButtonOpenZad, this->toolStripButtonAdd, this->toolStripButtonCorrect, this->toolStripButtonRequest
+			});
+			this->toolStrip1->Location = System::Drawing::Point(0, 24);
+			this->toolStrip1->Name = L"toolStrip1";
+			this->toolStrip1->Size = System::Drawing::Size(1438, 25);
+			this->toolStrip1->TabIndex = 16;
+			this->toolStrip1->Text = L"toolStrip1";
+			// 
+			// toolStripButtonOpenPKD
+			// 
+			this->toolStripButtonOpenPKD->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonOpenPKD->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenPKD.Image")));
+			this->toolStripButtonOpenPKD->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonOpenPKD->Name = L"toolStripButtonOpenPKD";
+			this->toolStripButtonOpenPKD->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonOpenPKD->Text = L"–Â„ËÒÚ‡ˆËˇ Á‡‰‡ÌËˇ Ì‡ ÔÓÂÍÚËÓ‚‡ÌËÂ";
+			this->toolStripButtonOpenPKD->Click += gcnew System::EventHandler(this, &PKDForm::openRegZadToolStripMenuItem_Click);
+			// 
+			// toolStripButtonOpenZad
+			// 
+			this->toolStripButtonOpenZad->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonOpenZad->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonOpenZad.Image")));
+			this->toolStripButtonOpenZad->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonOpenZad->Name = L"toolStripButtonOpenZad";
+			this->toolStripButtonOpenZad->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonOpenZad->Text = L"”˜ÂÚ œ ƒ";
+			// 
+			// toolStripButtonAdd
+			// 
+			this->toolStripButtonAdd->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonAdd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonAdd.Image")));
+			this->toolStripButtonAdd->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonAdd->Name = L"toolStripButtonAdd";
+			this->toolStripButtonAdd->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonAdd->Text = L"ƒÓ·‡‚ËÚ¸ ÒÚÓÍÛ";
+			this->toolStripButtonAdd->Click += gcnew System::EventHandler(this, &PKDForm::‰Ó·‡‚ËÚ¸—ÚÓÍÛToolStripMenuItem_Click);
+			// 
+			// toolStripButtonCorrect
+			// 
+			this->toolStripButtonCorrect->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonCorrect->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonCorrect.Image")));
+			this->toolStripButtonCorrect->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonCorrect->Name = L"toolStripButtonCorrect";
+			this->toolStripButtonCorrect->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonCorrect->Text = L"»ÁÏÂÌËÚ¸ ÒÚÓÍÛ";
+			this->toolStripButtonCorrect->Click += gcnew System::EventHandler(this, &PKDForm::ËÁÏÂÌËÚ¸—ÚÓÍÛToolStripMenuItem_Click);
+			// 
+			// toolStripButtonRequest
+			// 
+			this->toolStripButtonRequest->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
+			this->toolStripButtonRequest->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButtonRequest.Image")));
+			this->toolStripButtonRequest->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButtonRequest->Name = L"toolStripButtonRequest";
+			this->toolStripButtonRequest->Size = System::Drawing::Size(23, 22);
+			this->toolStripButtonRequest->Text = L"Õ‡ÈÚË";
+			this->toolStripButtonRequest->Click += gcnew System::EventHandler(this, &PKDForm::Ì‡ÈÚËToolStripMenuItem_Click);
+			// 
 			// PKDForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -414,6 +414,7 @@ namespace Kurs2021 {
 			this->Name = L"PKDForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"”˜ÂÚ œ ƒ";
+			this->Activated += gcnew System::EventHandler(this, &PKDForm::PKDForm_Activated);
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &PKDForm::PKDForm_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &PKDForm::PKDForm_Load);
 			this->menuStrip1->ResumeLayout(false);
@@ -436,5 +437,6 @@ namespace Kurs2021 {
 	private: System::Void Ì‡ÈÚËToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ÒÔ‡‚Í‡ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void PKDForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e);
+	private: System::Void PKDForm_Activated(System::Object^ sender, System::EventArgs^ e);
 };
 }

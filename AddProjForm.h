@@ -353,6 +353,7 @@ namespace Kurs2021 {
 			this->Name = L"AddProjForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Добавление проекта";
+			this->Load += gcnew System::EventHandler(this, &AddProjForm::AddProjForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -361,5 +362,6 @@ namespace Kurs2021 {
 #pragma endregion
 	private: System::Void buttonBack_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void AddProjForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

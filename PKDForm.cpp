@@ -8,6 +8,8 @@
 #include "CorrectProjForm.h"
 #include "RequestProjForm.h"
 #include "HelpForm.h"
+#include "PKDClass.h"
+extern TablePKD tablePKD;
 
 System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
@@ -75,4 +77,24 @@ System::Void Kurs2021::PKDForm::PKDForm_FormClosed(System::Object^ sender, Syste
 {
 	Application::Exit();
 	return System::Void();
+}
+
+System::Void Kurs2021::PKDForm::PKDForm_Activated(System::Object^ sender, System::EventArgs^ e)
+{
+
+	for (int x = 0; x < tablePKD.GetRowsNum(); x++)
+	{
+		//getfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, x);
+		dataGridView1->Rows->Add();	
+		dataGridView1->Rows[x]->Cells[0]->Value = (x + 1).ToString();
+		dataGridView1->Rows[x]->Cells[1]->Value = tablePKD.GetTableRow(x).GetTaskNumber().ToString();
+		dataGridView1->Rows[x]->Cells[2]->Value = gcnew String(tablePKD.GetTableRow(x).GetDateReg().c_str());
+		dataGridView1->Rows[x]->Cells[3]->Value = gcnew String(tablePKD.GetTableRow(x).GetCipher().c_str());
+		dataGridView1->Rows[x]->Cells[4]->Value = gcnew String(tablePKD.GetTableRow(x).GetProjName().c_str());
+		dataGridView1->Rows[x]->Cells[5]->Value = gcnew String(tablePKD.GetTableRow(x).GetSurname().c_str());
+		dataGridView1->Rows[x]->Cells[6]->Value = gcnew String(tablePKD.GetTableRow(x).GetDateEnd().c_str());
+		dataGridView1->Rows[x]->Cells[7]->Value = tablePKD.GetTableRow(x).GetVolume().ToString();
+	}
+
+
 }

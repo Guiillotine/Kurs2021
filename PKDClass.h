@@ -101,6 +101,14 @@ class TablePKD;
             for (int i = 0; i < rowsNum; i++) tableRows2[i] = tableRows[i];
             tableRows = tableRows2;
         }
+        int GetRowsNum()
+        {
+            return(rowsNum);
+        }
+        RowPKD GetTableRow(int index)
+        {
+            return *(tableRows + (index));
+        }
     private: 
         RowPKD* tableRows = new RowPKD[1];
         int rowsNum;

@@ -7,6 +7,8 @@
 #include "CorrectZadForm.h"
 #include "RequestZadForm.h"
 #include "HelpForm.h"
+#include "RegZadClass.h"
+extern TableRegZad tableRegZad;
 
 System::Void Kurs2021::RegZadForm::openPKDToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -69,4 +71,25 @@ System::Void Kurs2021::RegZadForm::RegZadForm_FormClosed(System::Object^ sender,
 {
 	Application::Exit();
 	return System::Void();
+}
+
+System::Void Kurs2021::RegZadForm::RegZadForm_Activated(System::Object^ sender, System::EventArgs^ e) 
+{
+
+	for (int x = 0; x < tableRegZad.GetRowsNum(); x++)
+	{
+		//getfile(pDIST3->name, pDIST3->fio, pDIST3->napr, pDIST3->kurs, pDIST3->chas, pDIST3->att, fname, x);
+		dataGridView1->Rows->Add();
+		dataGridView1->Rows[x]->Cells[0]->Value = (x + 1).ToString();
+		dataGridView1->Rows[x]->Cells[1]->Value = tableRegZad.GetTableRow(x).GetTaskNumber().ToString();
+		dataGridView1->Rows[x]->Cells[2]->Value = gcnew String(tableRegZad.GetTableRow(x).GetDate().c_str());
+		dataGridView1->Rows[x]->Cells[3]->Value = gcnew String(tableRegZad.GetTableRow(x).GetCustomer().c_str());
+		dataGridView1->Rows[x]->Cells[4]->Value = gcnew String(tableRegZad.GetTableRow(x).GetTask().c_str());
+		dataGridView1->Rows[x]->Cells[5]->Value = tableRegZad.GetTableRow(x).GetProjNumber().ToString();
+		dataGridView1->Rows[x]->Cells[6]->Value = gcnew String(tableRegZad.GetTableRow(x).GetSurname().c_str());
+		dataGridView1->Rows[x]->Cells[7]->Value = gcnew String(tableRegZad.GetTableRow(x).GetStatus().c_str());
+		dataGridView1->Rows[x]->Cells[8]->Value = gcnew String(tableRegZad.GetTableRow(x).GetNote().c_str());
+
+	}
+
 }

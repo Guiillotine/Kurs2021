@@ -115,6 +115,10 @@ class TableRegZad;
         {
             return(rowsNum);
         }
+        RowRegZad GetTableRow(int index)
+        {
+            return *(tableRows + (index));
+        }
     private:
         RowRegZad* tableRows = new RowRegZad[1];
         int rowsNum;

@@ -79,3 +79,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	}
     return System::Void();
 }
+System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	ix = 0;
+}
