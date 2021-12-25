@@ -6,14 +6,6 @@
 #include <string.h>
 
 
-
-// запись 1 строки в файл
-int putfile(char name[], char fio[], char napr[], int &kurs, int &chas, int &att, char fname[], int x) // x - номер строки (0 для добавления новой)
-{
-
-    return (1);
-}
-
 // подсчет количества строк в существующем файле
 int countfile(char fname[])
 {

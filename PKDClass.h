@@ -86,7 +86,7 @@ extern string fnamePKD;
             fstream f;
             f.open(fnamePKD, fstream::in | fstream::app);
             if (!f.is_open()) return 0;
-            else f << taskNumber << '_' << dateReg << '_' << cipher << '_' << projName << '_' << surname << '_' << dateEnd << '_' << volume << '\n';
+            else f << taskNumber << '\n' << dateReg << '\n' << cipher << '\n' << projName << '\n' << surname << '\n' << dateEnd << '\n' << volume << '\n';
             f.close();
             return (1);
         }
@@ -112,6 +112,10 @@ extern string fnamePKD;
         void ShowExpTable();
         int Request();
         void EditTable();*/
+        TablePKD()
+        {
+            rowsNum = 0;
+        }
         void AddStr(RowPKD tableRow)
         {
             if (rowsNum > 0) ArrResize();
@@ -132,27 +136,33 @@ extern string fnamePKD;
         {
             return *(tableRows + (index));
         }
-        /*int Putfile()
+        int Getfile()
         {
             fstream f;
-            f.open(fname, fstream::in | fstream::out | fstream::app);
-            if (!f.is_open())
+            string str;
+            f.open(fnamePKD, fstream::in | fstream::out | fstream::app);
+            if (!f.is_open()) return 0;
+            int i = 0;    
+            RowPKD row;
+            while (!f.eof())
             {
-                MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-                return 0;
-            }
-            else
-            {
-                RowPKD row;
-                for (int i = 0; i < GetRowsNum(); i++)
+                getline(f, str);
+                switch (i)
                 {
-                    row = GetTableRow(i);
-                    f << row.GetTaskNumber() << '_' << row.GetDateReg() << '_' << row.GetCipher() << '_' << row.GetProjName() << '_' << row.GetSurname() << '_' << row.GetDateEnd() << '_' << row.GetVolume() << '\n';
+                case 0: row.SetTaskNumber(str); break;
+                case 1: row.SetDateReg(str); break;
+                case 2: row.SetCipher(str); break;
+                case 3: row.SetProjName(str); break;
+                case 4: row.SetSurname(str); break;
+                case 5: row.SetDateEnd(str); break;
+                case 6: row.SetVolume(stoi(str)); AddStr(row);
                 }
+                i++;
+                if (i == 7) i = 0;
             }
             f.close();
-            return (1);
-        }*/
+            return 1;
+        }
     private: 
         RowPKD* tableRows = new RowPKD[1];
         int rowsNum;

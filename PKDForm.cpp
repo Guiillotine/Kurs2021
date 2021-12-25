@@ -13,6 +13,7 @@ extern TablePKD tablePKD;
 
 System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	tablePKD.Getfile();
 	return System::Void();
 }
 
