@@ -59,7 +59,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	if (f)
 	{
 		tablePKD.AddStr(row);
-		if (row.Putfile() == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		if (row.Putfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 
 	if (f)

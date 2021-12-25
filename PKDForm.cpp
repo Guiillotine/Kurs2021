@@ -13,7 +13,7 @@ extern TablePKD tablePKD;
 
 System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	tablePKD.Getfile();
+	if (tablePKD.GetRowsNum() == 0) if (tablePKD.Getfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	return System::Void();
 }
 
@@ -82,7 +82,8 @@ System::Void Kurs2021::PKDForm::PKDForm_FormClosed(System::Object^ sender, Syste
 
 System::Void Kurs2021::PKDForm::PKDForm_Activated(System::Object^ sender, System::EventArgs^ e)
 {
-	while (dataGridView1->Rows->Count != 0) dataGridView1->Rows->Remove(dataGridView1->Rows[dataGridView1->Rows->Count - 1]);
+	while (dataGridView1->Rows->Count != 0) 
+		dataGridView1->Rows->Remove(dataGridView1->Rows[dataGridView1->Rows->Count - 1]);
 	for (int x = 0; x < tablePKD.GetRowsNum(); x++)
 	{
 		dataGridView1->Rows->Add();	

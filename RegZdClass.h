@@ -90,12 +90,12 @@ extern string fnameRegZd;
         {
             return(note);
         }
-        int Putfile()
+        int Putfile(string fnameRegZd)
         {
             fstream f;
             f.open(fnameRegZd, fstream::in | fstream::app);
             if (!f.is_open()) return 0;
-            else f << taskNumber << '_' << date << '_' << customer << '_' << task << '_' << projNumber << '_' << surname << '_' << status << '_' << note << '\n';
+            else f << taskNumber << '\n' << date << '\n' << customer << '\n' << task << '\n' << projNumber << '\n' << surname << '\n' << status << '\n' << note << '\n';
             f.close();
             return (1);
         }
@@ -142,6 +142,34 @@ extern string fnameRegZd;
         RowRegZd GetTableRow(int index)
         {
             return *(tableRows + (index));
+        }
+        int Getfile(string fnameRegZd)
+        {
+            fstream f;
+            string str;
+            f.open(fnameRegZd, fstream::in | fstream::out | fstream::app);
+            if (!f.is_open()) return 0;
+            int i = 0;
+            RowRegZd row;
+            while (!f.eof())
+            {
+                getline(f, str);
+                switch (i)
+                {
+                case 0: row.SetTaskNumber(str); break;
+                case 1: row.SetDate(str); break;
+                case 2: row.SetCustomer(str); break;
+                case 3: row.SetTask(str); break;
+                case 4: row.SetProjNumber(str); break;
+                case 5: row.SetSurname(str); break;
+                case 6: row.SetStatus(str); break;
+                case 7: row.SetNote(str); AddStr(row);
+                }
+                i++;
+                if (i == 8) i = 0;
+            }
+            f.close();
+            return 1;
         }
     private:
         RowRegZd* tableRows = new RowRegZd[1];

@@ -81,15 +81,6 @@ extern string fnamePKD;
         {
             return(volume);
         }
-        int Putfile()
-        {
-            fstream f;
-            f.open(fnamePKD, fstream::in | fstream::app);
-            if (!f.is_open()) return 0;
-            else f << taskNumber << '\n' << dateReg << '\n' << cipher << '\n' << projName << '\n' << surname << '\n' << dateEnd << '\n' << volume << '\n';
-            f.close();
-            return (1);
-        }
     private:
         string taskNumber;
         string dateReg;
@@ -136,7 +127,17 @@ extern string fnamePKD;
         {
             return *(tableRows + (index));
         }
-        int Getfile()
+        int Putfile()
+        {
+            fstream f;
+            f.open(fnamePKD, fstream::in);
+            if (!f.is_open()) return 0;
+            for (int i = 0; i < GetRowsNum(); i++)
+            f << tableRows[i].GetTaskNumber() << '\n' << tableRows[i].GetDateReg() << '\n' << tableRows[i].GetCipher() << '\n' << tableRows[i].GetProjName() << '\n' << tableRows[i].GetSurname() << '\n' << tableRows[i].GetDateEnd() << '\n' << tableRows[i].GetVolume() << '\n';
+            f.close();
+            return (1);
+        }
+        int Getfile(string fnamePKD)
         {
             fstream f;
             string str;

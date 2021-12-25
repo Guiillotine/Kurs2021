@@ -421,6 +421,7 @@ namespace Kurs2021 {
 			this->Text = L"”˜ÂÚ œ ƒ";
 			this->Activated += gcnew System::EventHandler(this, &RegZdForm::RegZdForm_Activated);
 			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &RegZdForm::RegZdForm_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &RegZdForm::RegZdForm_Load);
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			this->menuStrip1->ResumeLayout(false);
@@ -441,5 +442,6 @@ namespace Kurs2021 {
 	private: System::Void ÒÔ‡‚Í‡ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void RegZdForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e); 
 	private: System::Void RegZdForm_Activated(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void RegZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

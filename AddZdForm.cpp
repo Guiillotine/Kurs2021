@@ -60,7 +60,7 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 	if (this->note->Text != "") row.SetNote(stringNote);
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	if (f) tableRegZd.AddStr(row);
-	if (row.Putfile() == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	if (row.Putfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 	if (f)
 	{
