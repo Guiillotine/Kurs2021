@@ -143,6 +143,16 @@ extern string fnameRegZd;
         {
             return *(tableRows + (index));
         }
+        int Putfile(string fnameRegZd)
+        {
+            ofstream f;
+            f.open(fnameRegZd);
+            if (!f.is_open()) return 0;
+            for (int i = 0; i < GetRowsNum(); i++)
+            f << tableRows[i].GetTaskNumber() << '\n' << tableRows[i].GetDate() << '\n' << tableRows[i].GetCustomer() << '\n' << tableRows[i].GetTask() << '\n' << tableRows[i].GetProjNumber() << '\n' << tableRows[i].GetSurname() << '\n' << tableRows[i].GetStatus() << '\n' << tableRows[i].GetNote() << '\n';
+            f.close();
+            return (1);
+        }
         int Getfile(string fnameRegZd)
         {
             fstream f;
