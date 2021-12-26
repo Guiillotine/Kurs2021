@@ -121,13 +121,16 @@ extern string fnameRegZd;
         void ShowEditTask();
         void ShowRequestTask();
         void ShowExpTable();
-        int Request();
-        void EditTable();*/
+        int Request();*/
         void AddStr(RowRegZd tableRow)
         {
             if (rowsNum > 0) ArrResize();
             tableRows[rowsNum] = tableRow;
             rowsNum++;
+        }
+        void EditStr(int numberStr, RowRegZd tableRow)
+        {
+            tableRows[numberStr - 1] = tableRow;
         }
         void ArrResize()
         {

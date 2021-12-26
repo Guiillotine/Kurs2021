@@ -53,7 +53,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ customer;
 
@@ -74,6 +74,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MaskedTextBox^ date;
 
 	private: System::Windows::Forms::MaskedTextBox^ projNumber;
+	private: System::Windows::Forms::Label^ label10;
 
 
 
@@ -114,19 +115,19 @@ namespace Kurs2021 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
 			this->button_in_back = (gcnew System::Windows::Forms::Button());
 			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->date = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->projNumber = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// status
 			// 
-			this->status->Location = System::Drawing::Point(845, 67);
+			this->status->Location = System::Drawing::Point(822, 65);
 			this->status->MaxLength = 16;
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
@@ -134,15 +135,15 @@ namespace Kurs2021 {
 			// 
 			// task
 			// 
-			this->task->Location = System::Drawing::Point(433, 67);
-			this->task->MaxLength = 100;
+			this->task->Location = System::Drawing::Point(413, 65);
+			this->task->MaxLength = 50;
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 46;
 			// 
 			// label9
 			// 
-			this->label9->Location = System::Drawing::Point(986, 38);
+			this->label9->Location = System::Drawing::Point(978, 38);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(72, 19);
 			this->label9->TabIndex = 45;
@@ -150,15 +151,15 @@ namespace Kurs2021 {
 			// 
 			// note
 			// 
-			this->note->Location = System::Drawing::Point(965, 65);
-			this->note->MaxLength = 16;
+			this->note->Location = System::Drawing::Point(944, 65);
+			this->note->MaxLength = 50;
 			this->note->Name = L"note";
-			this->note->Size = System::Drawing::Size(114, 20);
+			this->note->Size = System::Drawing::Size(145, 20);
 			this->note->TabIndex = 44;
 			// 
 			// label8
 			// 
-			this->label8->Location = System::Drawing::Point(860, 38);
+			this->label8->Location = System::Drawing::Point(841, 38);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(51, 19);
 			this->label8->TabIndex = 43;
@@ -166,8 +167,8 @@ namespace Kurs2021 {
 			// 
 			// surname
 			// 
-			this->surname->Location = System::Drawing::Point(698, 67);
-			this->surname->MaxLength = 16;
+			this->surname->Location = System::Drawing::Point(669, 65);
+			this->surname->MaxLength = 20;
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(121, 20);
 			this->surname->TabIndex = 42;
@@ -277,7 +278,7 @@ namespace Kurs2021 {
 			// 
 			// label6
 			// 
-			this->label6->Location = System::Drawing::Point(695, 29);
+			this->label6->Location = System::Drawing::Point(666, 29);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(131, 28);
 			this->label6->TabIndex = 38;
@@ -285,7 +286,7 @@ namespace Kurs2021 {
 			// 
 			// label5
 			// 
-			this->label5->Location = System::Drawing::Point(609, 29);
+			this->label5->Location = System::Drawing::Point(585, 29);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(69, 28);
 			this->label5->TabIndex = 37;
@@ -294,7 +295,7 @@ namespace Kurs2021 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(442, 38);
+			this->label4->Location = System::Drawing::Point(421, 38);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(115, 13);
 			this->label4->TabIndex = 36;
@@ -302,20 +303,11 @@ namespace Kurs2021 {
 			// 
 			// label3
 			// 
-			this->label3->Location = System::Drawing::Point(302, 36);
+			this->label3->Location = System::Drawing::Point(280, 34);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(89, 28);
 			this->label3->TabIndex = 35;
 			this->label3->Text = L"Наименование       заказчика";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(140, 44);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(118, 13);
-			this->label2->TabIndex = 34;
-			this->label2->Text = L"Дата выдачи задания";
 			// 
 			// label1
 			// 
@@ -328,7 +320,7 @@ namespace Kurs2021 {
 			// 
 			// customer
 			// 
-			this->customer->Location = System::Drawing::Point(289, 67);
+			this->customer->Location = System::Drawing::Point(267, 65);
 			this->customer->MaxLength = 16;
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
@@ -357,7 +349,7 @@ namespace Kurs2021 {
 			// 
 			// date
 			// 
-			this->date->Location = System::Drawing::Point(163, 67);
+			this->date->Location = System::Drawing::Point(154, 65);
 			this->date->Mask = L"00/00/0000";
 			this->date->Name = L"date";
 			this->date->Size = System::Drawing::Size(68, 20);
@@ -365,12 +357,20 @@ namespace Kurs2021 {
 			// 
 			// projNumber
 			// 
-			this->projNumber->Location = System::Drawing::Point(603, 67);
+			this->projNumber->Location = System::Drawing::Point(578, 65);
 			this->projNumber->Mask = L"00-000";
 			this->projNumber->Name = L"projNumber";
 			this->projNumber->Size = System::Drawing::Size(57, 20);
 			this->projNumber->TabIndex = 75;
 			this->projNumber->ValidatingType = System::Int32::typeid;
+			// 
+			// label10
+			// 
+			this->label10->Location = System::Drawing::Point(151, 38);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(89, 28);
+			this->label10->TabIndex = 76;
+			this->label10->Text = L"Дата выдачи          задания";
 			// 
 			// AddZdForm
 			// 
@@ -378,6 +378,7 @@ namespace Kurs2021 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1124, 289);
+			this->Controls->Add(this->label10);
 			this->Controls->Add(this->projNumber);
 			this->Controls->Add(this->date);
 			this->Controls->Add(this->taskNumber);
@@ -394,7 +395,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->customer);
 			this->Controls->Add(this->button_in_back);

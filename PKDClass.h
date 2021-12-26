@@ -110,8 +110,7 @@ extern string fnamePKD;
         void ShowEditPKD();
         void ShowRequestPKD();
         void ShowExpTable();
-        int Request();
-        void EditTable();*/
+        int Request();*/
         TablePKD()
         {
             rowsNum = 0;
@@ -121,6 +120,10 @@ extern string fnamePKD;
             if (rowsNum > 0) ArrResize();
             tableRows[rowsNum] = tableRow;
             rowsNum++;
+        }
+        void EditStr(int numberStr, RowPKD tableRow)
+        {
+            tableRows[numberStr - 1] = tableRow;
         }
         void ArrResize()
         {

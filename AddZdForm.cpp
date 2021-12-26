@@ -59,11 +59,10 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 	std::string stringNote = context.marshal_as<std::string>(this->note->Text);
 	if (this->note->Text != "") row.SetNote(stringNote);
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
-	if (f) tableRegZd.AddStr(row);
-	if (row.Putfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
 	if (f)
-	{
+	{ 
+		tableRegZd.AddStr(row);
+		if (row.Putfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл. Запись строки невозможна", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		dataGridView_in->Rows->Add();
 		dataGridView_in->Rows[ix]->Cells[0]->Value = gcnew String(row.GetTaskNumber().c_str());
 		dataGridView_in->Rows[ix]->Cells[1]->Value = gcnew String(row.GetDate().c_str());

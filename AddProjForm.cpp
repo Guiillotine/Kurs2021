@@ -14,7 +14,7 @@ using namespace std;
 extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
 extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
-extern string fname;
+extern string fnamePKD;
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -59,11 +59,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	if (f)
 	{
 		tablePKD.AddStr(row);
-		if (row.Putfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-	}
-
-	if (f)
-	{
+		if (row.Putfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл. Запись строки невозможна", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		dataGridView_in->Rows->Add();
 		dataGridView_in->Rows[ix]->Cells[0]->Value = gcnew String(row.GetTaskNumber().c_str());
 		dataGridView_in->Rows[ix]->Cells[1]->Value = gcnew String(row.GetDateReg().c_str());
