@@ -238,7 +238,7 @@ namespace Kurs2021 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(445, 34);
+			this->label4->Location = System::Drawing::Point(436, 34);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(115, 13);
 			this->label4->TabIndex = 62;
@@ -317,7 +317,7 @@ namespace Kurs2021 {
 			// 
 			this->status->Enabled = false;
 			this->status->Location = System::Drawing::Point(827, 63);
-			this->status->MaxLength = 16;
+			this->status->MaxLength = 15;
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 80;
@@ -353,7 +353,7 @@ namespace Kurs2021 {
 			// 
 			this->customer->Enabled = false;
 			this->customer->Location = System::Drawing::Point(280, 63);
-			this->customer->MaxLength = 16;
+			this->customer->MaxLength = 15;
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 76;

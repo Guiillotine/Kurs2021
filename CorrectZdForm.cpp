@@ -6,7 +6,7 @@
 #include "CorrectZdForm.h"
 #include "RegZdClass.h"
 #include <msclr\marshal_cppstd.h>
-extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
+//extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
 extern TableRegZd tableRegZd;
 extern string fnameRegZd;
 
@@ -24,7 +24,7 @@ System::Void Kurs2021::CorrectZdForm::button_in_back_Click(System::Object^ sende
 System::Void Kurs2021::CorrectZdForm::button_in_ok_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	RowRegZd row;
-	f = 1;
+	int f = 1;
 	int numberStr = 0;
 	using namespace System::Runtime::InteropServices;
 

@@ -36,14 +36,16 @@ namespace Kurs2021 {
 		}
 	private: System::Windows::Forms::Label^ label4;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ buttonOk;
 	private: System::Windows::Forms::Button^ buttonBack;
+	private: System::Windows::Forms::MaskedTextBox^ to;
+	private: System::Windows::Forms::MaskedTextBox^ from;
 
 	private:
 		/// <summary>
@@ -59,14 +61,14 @@ namespace Kurs2021 {
 		void InitializeComponent(void)
 		{
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonOk = (gcnew System::Windows::Forms::Button());
 			this->buttonBack = (gcnew System::Windows::Forms::Button());
+			this->to = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->from = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->SuspendLayout();
 			// 
 			// label4
@@ -77,20 +79,6 @@ namespace Kurs2021 {
 			this->label4->Size = System::Drawing::Size(13, 13);
 			this->label4->TabIndex = 43;
 			this->label4->Text = L"_";
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(212, 64);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(22, 20);
-			this->textBox3->TabIndex = 42;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(165, 64);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(22, 20);
-			this->textBox2->TabIndex = 41;
 			// 
 			// label3
 			// 
@@ -141,9 +129,27 @@ namespace Kurs2021 {
 			this->buttonBack->Name = L"buttonBack";
 			this->buttonBack->Size = System::Drawing::Size(60, 23);
 			this->buttonBack->TabIndex = 45;
-			this->buttonBack->Text = L"Отмена";
+			this->buttonBack->Text = L"Назад";
 			this->buttonBack->UseVisualStyleBackColor = true;
 			this->buttonBack->Click += gcnew System::EventHandler(this, &Exp1::buttonBack_Click);
+			// 
+			// to
+			// 
+			this->to->Location = System::Drawing::Point(213, 64);
+			this->to->Mask = L"0000";
+			this->to->Name = L"to";
+			this->to->Size = System::Drawing::Size(31, 20);
+			this->to->TabIndex = 76;
+			this->to->ValidatingType = System::DateTime::typeid;
+			// 
+			// from
+			// 
+			this->from->Location = System::Drawing::Point(157, 64);
+			this->from->Mask = L"0000";
+			this->from->Name = L"from";
+			this->from->Size = System::Drawing::Size(31, 20);
+			this->from->TabIndex = 75;
+			this->from->ValidatingType = System::DateTime::typeid;
 			// 
 			// Exp1
 			// 
@@ -151,11 +157,11 @@ namespace Kurs2021 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(307, 171);
+			this->Controls->Add(this->to);
+			this->Controls->Add(this->from);
 			this->Controls->Add(this->buttonBack);
 			this->Controls->Add(this->buttonOk);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->textBox4);

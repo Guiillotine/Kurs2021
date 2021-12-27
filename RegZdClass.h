@@ -116,11 +116,6 @@ extern string fnameRegZd;
     public:
         /*void FillTable();
         void SaveToFile();
-        void ExpTable();
-        void ShowAddTask();
-        void ShowEditTask();
-        void ShowRequestTask();
-        void ShowExpTable();
         int Request();*/
         void AddStr(RowRegZd tableRow)
         {
@@ -183,6 +178,43 @@ extern string fnameRegZd;
             }
             f.close();
             return 1;
+        }
+        int ExpTable(string fname, int from, int to)
+        {
+            ofstream f;
+            f.open(fname);
+            if (!f.is_open()) return 0;
+            f << "  ÍÎÌÅÐ    ÄÀÒÀ ÂÛÄ.     ÍÀÈÌÅÍÎÂÀÍÈÅ                     ÑÎÄÅÐÆÀÍÈÅ ÇÀÄÀÍÈß                   ÍÎÌÅÐ          ÔÀÌÈËÈß              ÑÒÀÒÓÑ                          ÏÐÈÌÅ×ÀÍÈÅ\n";
+            for (int i = from-1; i < to; i++)
+            {
+                f << "| ";
+                f << tableRows[i].GetTaskNumber();
+                for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetDate();
+                for (int j = tableRows[i].GetDate().length(); j < 11; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetCustomer();
+                for (int j = tableRows[i].GetCustomer().length(); j < 16; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetTask();
+                for (int j = tableRows[i].GetTask().length(); j < 51; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetProjNumber();
+                for (int j = tableRows[i].GetProjNumber().length(); j < 7; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetSurname();
+                for (int j = tableRows[i].GetSurname().length(); j < 21; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetStatus();
+                for (int j = tableRows[i].GetStatus().length(); j < 16; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetNote();
+                for (int j = tableRows[i].GetNote().length(); j < 51; j++) f << ' ';
+                f << "|\n";
+            }
+            f.close();
+            return (1);
         }
     private:
         RowRegZd* tableRows = new RowRegZd[1];

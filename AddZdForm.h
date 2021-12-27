@@ -128,7 +128,7 @@ namespace Kurs2021 {
 			// status
 			// 
 			this->status->Location = System::Drawing::Point(822, 65);
-			this->status->MaxLength = 16;
+			this->status->MaxLength = 15;
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 49;
@@ -321,7 +321,7 @@ namespace Kurs2021 {
 			// customer
 			// 
 			this->customer->Location = System::Drawing::Point(267, 65);
-			this->customer->MaxLength = 16;
+			this->customer->MaxLength = 15;
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 32;

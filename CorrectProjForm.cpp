@@ -6,7 +6,7 @@
 #include "CorrectProjForm.h"
 #include "PKDClass.h"
 #include <msclr\marshal_cppstd.h>
-extern int f; // ‘лажок дл€ вывода единственного сообщени€ о пропущенных пол€х
+//extern int f; // ‘лажок дл€ вывода единственного сообщени€ о пропущенных пол€х
 extern TablePKD tablePKD;
 extern string fnamePKD;
 
@@ -24,7 +24,7 @@ System::Void Kurs2021::CorrectProjForm::button_in_back_Click(System::Object^ sen
 System::Void Kurs2021::CorrectProjForm::button_in_ok_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	RowPKD row;
-	f = 1;
+	int f = 1;
 	int numberStr = 0;
 	using namespace System::Runtime::InteropServices;
 	
@@ -37,24 +37,24 @@ System::Void Kurs2021::CorrectProjForm::button_in_ok_Click(System::Object^ sende
 	if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	std::string stringDate = context.marshal_as<std::string>(this->dateReg->Text);
-	if (this->dateReg->Text != "") row.SetDateReg(stringDate);
+	std::string stringDateReg = context.marshal_as<std::string>(this->dateReg->Text);
+	if (this->dateReg->Text != "") row.SetDateReg(stringDateReg);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	std::string stringCustomer = context.marshal_as<std::string>(this->cipher->Text);
-	if (this->cipher->Text != "") row.SetCipher(stringCustomer);
+	std::string stringCipher = context.marshal_as<std::string>(this->cipher->Text);
+	if (this->cipher->Text != "") row.SetCipher(stringCipher);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	std::string stringTask = context.marshal_as<std::string>(this->projName->Text);
-	if (this->projName->Text != "") row.SetProjName(stringTask);
+	std::string stringProjName = context.marshal_as<std::string>(this->projName->Text);
+	if (this->projName->Text != "") row.SetProjName(stringProjName);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
 	if (this->surname->Text != "") row.SetSurname(stringSurname);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	std::string stringStatus = context.marshal_as<std::string>(this->dateEnd->Text);
-	if (this->dateEnd->Text != "") row.SetDateEnd(stringStatus);
+	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
+	if (this->dateEnd->Text != "") row.SetDateEnd(stringDateEnd);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	if (this->volume->Text != "") row.SetVolume(Convert::ToInt32(this->volume->Text));

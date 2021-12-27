@@ -11,7 +11,7 @@ using namespace System;
 using namespace std;
 
 
-int f; // Флажок для вывода единственного сообщения о пропущенных полях
+//int f; // Флажок для вывода единственного сообщения о пропущенных полях
 int ix; // Номер строки в таблице введённых строк
 extern TableRegZd tableRegZd;
 
@@ -24,7 +24,7 @@ System::Void Kurs2021::AddZdForm::button_in_back_Click(System::Object^ sender, S
 System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	RowRegZd row;
-    f = 1;
+    int f = 1;
 	using namespace System::Runtime::InteropServices;
 	msclr::interop::marshal_context context;
 
