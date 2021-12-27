@@ -103,14 +103,6 @@ extern string fnamePKD;
     public class TablePKD
     {
     public:
-        /*void FillTable();
-        void SaveToFile();
-        void ExpTable();
-        void ShowAddPKD();
-        void ShowEditPKD();
-        void ShowRequestPKD();
-        void ShowExpTable();
-        int Request();*/
         TablePKD()
         {
             rowsNum = 0;
@@ -175,6 +167,73 @@ extern string fnamePKD;
             }
             f.close();
             return 1;
+        }
+        int ExpBigTable(string fname, int from, int to)
+        {
+            ofstream f;
+            f.open(fname);
+            if (!f.is_open()) return 0;
+            f << "                                  ÆÓÐÍÀË Ó×ÅÒÀ ÂÛÏÎËÍÅÍÍÎÉ ÏÐÎÅÊÒÍÎ-ÊÎÍÑÒÐÓÊÒÎÐÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
+            f << "  ÍÎÌÅÐ       ÄÀÒÀ      ØÈÔÐ                    ÍÀÈÌÅÍÎÂÀÍÈÅ ÏÐÎÅÊÒÀ                     ÈÑÏÎËÍÈÒÅËÜ      ÄÀÒÀ ÇÀÂÅÐØÅÍÈß ÎÁÚÅÌ\n";
+            f << " ÇÀÄÀÍÈß  ÐÅÃÈÑÒÐÀÖÈÈ  ÏÐÎÅÊÒÀ                                                                                ÏÐÎÅÊÒÀ   (â  ë.À4)\n";
+            for (int i = from - 1; i < to; i++)
+            {
+                if ((tableRows[i].GetVolume() == 0)||(tableRows[i].GetDateEnd() == "00.00.000")) continue;
+                f << "| ";
+                f << tableRows[i].GetTaskNumber();
+                for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetDateReg();
+                for (int j = tableRows[i].GetDateReg().length(); j < 11; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetCipher();
+                for (int j = tableRows[i].GetCipher().length(); j < 7; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetProjName();
+                for (int j = tableRows[i].GetProjName().length(); j < 51; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetSurname();
+                for (int j = tableRows[i].GetSurname().length(); j < 21; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetDateEnd();
+                for (int j = tableRows[i].GetDateEnd().length(); j < 12; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetVolume();
+                for (int j = to_string(tableRows[i].GetVolume()).length(); j < 6; j++) f << ' ';
+                f << "|\n";
+            }
+            f.close();
+            return (1);
+        }
+        int ExpSmallTable(string fname, int from, int to)
+        {
+            ofstream f;
+            f.open(fname);
+            if (!f.is_open()) return 0;
+            f << "                         ÆÓÐÍÀË Ó×ÅÒÀ ÍÎÌÅÐÎÂ ÏÐÎÅÊÒÍÎ-ÊÎÍÑÒÐÓÊÒÎÐÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
+            f << "  ÍÎÌÅÐ       ÄÀÒÀ      ØÈÔÐ                    ÍÀÈÌÅÍÎÂÀÍÈÅ ÏÐÎÅÊÒÀ                     ÈÑÏÎËÍÈÒÅËÜ\n";
+            f << " ÇÀÄÀÍÈß  ÐÅÃÈÑÒÐÀÖÈÈ  ÏÐÎÅÊÒÀ\n";
+            for (int i = from - 1; i < to; i++)
+            {
+                f << "| ";
+                f << tableRows[i].GetTaskNumber();
+                for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetDateReg();
+                for (int j = tableRows[i].GetDateReg().length(); j < 11; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetCipher();
+                for (int j = tableRows[i].GetCipher().length(); j < 7; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetProjName();
+                for (int j = tableRows[i].GetProjName().length(); j < 51; j++) f << ' ';
+                f << "| ";
+                f << tableRows[i].GetSurname();
+                for (int j = tableRows[i].GetSurname().length(); j < 21; j++) f << ' ';
+                f << "|\n";
+            }
+            f.close();
+            return (1);
         }
     private: 
         RowPKD* tableRows = new RowPKD[1];

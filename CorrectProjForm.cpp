@@ -57,8 +57,8 @@ System::Void Kurs2021::CorrectProjForm::button_in_ok_Click(System::Object^ sende
 	if (this->dateEnd->Text != "") row.SetDateEnd(stringDateEnd);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	if (this->volume->Text != "") row.SetVolume(Convert::ToInt32(this->volume->Text));
-	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	if (this->volume->Text == "")  row.SetVolume(0);
+	else row.SetVolume(Convert::ToInt32(this->volume->Text));
 	if (f)
 	{
 		tablePKD.EditStr(numberStr, row);

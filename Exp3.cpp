@@ -18,7 +18,7 @@ System::Void Kurs2021::Exp3::Exp3_Load(System::Object^ sender, System::EventArgs
             MessageBox::Show("Не удалось открыть файл с таблицей регистрации заданий для экспорта", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); 
             Exp3::Close();
         }
-    this->from->Text = L"1";
+    if (tableRegZd.GetRowsNum() != 0) this->from->Text = L"1"; else this->from->Text = L"0";
     this->to->Text = tableRegZd.GetRowsNum().ToString();
     return System::Void();
 }
@@ -30,7 +30,6 @@ System::Void Kurs2021::Exp3::buttonBack_Click(System::Object^ sender, System::Ev
 System::Void Kurs2021::Exp3::buttonOk_Click(System::Object^ sender, System::EventArgs^ e)
 {
     int f = 1;
-    string fName;
     int from = 0, to = 0;
     if (this->from->Text == "") { MessageBox::Show("Поле оставлено пустым", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); f = 0; }
     else if (((Convert::ToInt32(this->from->Text) > tableRegZd.GetRowsNum()) || (Convert::ToInt32(this->from->Text) == 0)) && f) { MessageBox::Show("Строки с данным номером не существует", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); f = 0;}
@@ -48,9 +47,6 @@ System::Void Kurs2021::Exp3::buttonOk_Click(System::Object^ sender, System::Even
 
     if (f)
     {
-        /*ofstream file;
-        file.open(fileName); file.close();
-        for (int i = from - 1; i < to; i++) tableRegZd.GetTableRow(i).Putfile(fileName);*/
         if (tableRegZd.ExpTable(fileName, from, to) == 0) MessageBox::Show("Не удалось открыть файл помещения в него экспортируемой таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
         else
         {

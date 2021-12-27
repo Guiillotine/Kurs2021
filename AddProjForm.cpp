@@ -50,11 +50,11 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
-	if (this->dateEnd->Text != "") row.SetDateEnd(stringDateEnd);
-	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	if (this->dateEnd->Text == "") row.SetDateEnd("00.00.0000");
+	else row.SetDateEnd(stringDateEnd);
 
-	if (this->volume->Text != "") row.SetVolume(Convert::ToInt32(this->volume->Text));
-	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	if (this->volume->Text == "")  row.SetVolume(0);
+	else row.SetVolume(Convert::ToInt32(this->volume->Text));
 	if (f)
 	{
 		tablePKD.AddStr(row);

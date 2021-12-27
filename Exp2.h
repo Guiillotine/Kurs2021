@@ -41,7 +41,9 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ fileName;
+
+
 	private: System::Windows::Forms::Button^ buttonBack;
 	private: System::Windows::Forms::Button^ buttonOk;
 	private: System::Windows::Forms::MaskedTextBox^ to;
@@ -64,7 +66,7 @@ namespace Kurs2021 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->fileName = (gcnew System::Windows::Forms::TextBox());
 			this->buttonBack = (gcnew System::Windows::Forms::Button());
 			this->buttonOk = (gcnew System::Windows::Forms::Button());
 			this->to = (gcnew System::Windows::Forms::MaskedTextBox());
@@ -107,12 +109,12 @@ namespace Kurs2021 {
 			this->label1->TabIndex = 32;
 			this->label1->Text = L"Ёкспорт журнала учета выполненной ѕ ƒ";
 			// 
-			// textBox1
+			// fileName
 			// 
-			this->textBox1->Location = System::Drawing::Point(156, 105);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(88, 20);
-			this->textBox1->TabIndex = 31;
+			this->fileName->Location = System::Drawing::Point(156, 105);
+			this->fileName->Name = L"fileName";
+			this->fileName->Size = System::Drawing::Size(88, 20);
+			this->fileName->TabIndex = 31;
 			// 
 			// buttonBack
 			// 
@@ -132,6 +134,7 @@ namespace Kurs2021 {
 			this->buttonOk->TabIndex = 46;
 			this->buttonOk->Text = L"ќк";
 			this->buttonOk->UseVisualStyleBackColor = true;
+			this->buttonOk->Click += gcnew System::EventHandler(this, &Exp2::buttonOk_Click);
 			// 
 			// to
 			// 
@@ -165,16 +168,19 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->fileName);
 			this->MaximizeBox = false;
 			this->Name = L"Exp2";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Ёкспорт журнала";
+			this->Load += gcnew System::EventHandler(this, &Exp2::Exp2_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void buttonBack_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Exp2_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }
