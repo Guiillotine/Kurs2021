@@ -30,15 +30,15 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	msclr::interop::marshal_context context;
 
 	std::string stringTaskNumber = context.marshal_as<std::string>(this->taskNumber->Text);
-	if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
+	if (this->taskNumber->Text != "  .") row.SetTaskNumber(stringTaskNumber);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringDateReg = context.marshal_as<std::string>(this->dateReg->Text);
-	if (this->dateReg->Text != "") row.SetDateReg(stringDateReg);
+	if (this->dateReg->Text != "  .  .") row.SetDateReg(stringDateReg);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringCipher = context.marshal_as<std::string>(this->cipher->Text);
-	if (this->cipher->Text != "") row.SetCipher(stringCipher);
+	if (this->cipher->Text != "  -") row.SetCipher(stringCipher);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringProjName = context.marshal_as<std::string>(this->projName->Text);
@@ -50,7 +50,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
-	if (this->dateEnd->Text == "") row.SetDateEnd("00.00.0000");
+	if (this->dateEnd->Text == "  .  .") row.SetDateEnd("00.00.0000");
 	else row.SetDateEnd(stringDateEnd);
 
 	if (this->volume->Text == "")  row.SetVolume(0);

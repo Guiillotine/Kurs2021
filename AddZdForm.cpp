@@ -29,11 +29,11 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 	msclr::interop::marshal_context context;
 
 	std::string stringTaskNumber = context.marshal_as<std::string>(this->taskNumber->Text);
-	if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
+	if (this->taskNumber->Text != "  .") row.SetTaskNumber(stringTaskNumber);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	
 	std::string stringDate = context.marshal_as<std::string>(this->date->Text);
-	if (this->date->Text != "") row.SetDate(stringDate);
+	if (this->date->Text != "  .  .") row.SetDate(stringDate);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringCustomer = context.marshal_as<std::string>(this->customer->Text);
@@ -45,7 +45,7 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringProjNumber = context.marshal_as<std::string>(this->projNumber->Text);
-	if (this->projNumber->Text != "") row.SetProjNumber(stringProjNumber);
+	if (this->projNumber->Text != "  -") row.SetProjNumber(stringProjNumber);
 	else if (f) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);

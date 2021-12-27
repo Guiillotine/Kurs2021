@@ -34,24 +34,25 @@ namespace Kurs2021 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox6;
+
 	protected:
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
+
+
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox_fio_in;
-	private: System::Windows::Forms::TextBox^ textBox_name_in;
-	private: System::Windows::Forms::DataGridView^ dataGridView_in;
+
+
+	private: System::Windows::Forms::DataGridView^ dataGridView;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_name;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_fio;
@@ -63,6 +64,14 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Button^ button_ok_req;
 	private: System::Windows::Forms::Button^ button_back_req;
+	private: System::Windows::Forms::MaskedTextBox^ projNumber;
+	private: System::Windows::Forms::MaskedTextBox^ date;
+	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
+	private: System::Windows::Forms::TextBox^ status;
+	private: System::Windows::Forms::TextBox^ task;
+	private: System::Windows::Forms::TextBox^ note;
+	private: System::Windows::Forms::TextBox^ surname;
+	private: System::Windows::Forms::TextBox^ customer;
 
 	private:
 		/// <summary>
@@ -77,23 +86,15 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox_fio_in = (gcnew System::Windows::Forms::TextBox());
-			this->textBox_name_in = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_fio = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -105,76 +106,36 @@ namespace Kurs2021 {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->button_ok_req = (gcnew System::Windows::Forms::Button());
 			this->button_back_req = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
+			this->projNumber = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->date = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->status = (gcnew System::Windows::Forms::TextBox());
+			this->task = (gcnew System::Windows::Forms::TextBox());
+			this->note = (gcnew System::Windows::Forms::TextBox());
+			this->surname = (gcnew System::Windows::Forms::TextBox());
+			this->customer = (gcnew System::Windows::Forms::TextBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(844, 72);
-			this->textBox6->MaxLength = 16;
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(96, 20);
-			this->textBox6->TabIndex = 93;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(603, 70);
-			this->textBox5->MaxLength = 16;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(71, 20);
-			this->textBox5->TabIndex = 92;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(151, 70);
-			this->textBox2->MaxLength = 16;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(106, 20);
-			this->textBox2->TabIndex = 91;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(439, 72);
-			this->textBox4->MaxLength = 16;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(133, 20);
-			this->textBox4->TabIndex = 90;
 			// 
 			// label9
 			// 
-			this->label9->Location = System::Drawing::Point(992, 43);
+			this->label9->Location = System::Drawing::Point(976, 43);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(72, 19);
 			this->label9->TabIndex = 89;
 			this->label9->Text = L"Примечание";
 			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(971, 72);
-			this->textBox3->MaxLength = 16;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(114, 20);
-			this->textBox3->TabIndex = 88;
-			// 
 			// label8
 			// 
-			this->label8->Location = System::Drawing::Point(866, 43);
+			this->label8->Location = System::Drawing::Point(831, 43);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(51, 19);
 			this->label8->TabIndex = 87;
 			this->label8->Text = L"  Статус";
 			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(704, 72);
-			this->textBox1->MaxLength = 16;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(121, 20);
-			this->textBox1->TabIndex = 86;
-			// 
 			// label6
 			// 
-			this->label6->Location = System::Drawing::Point(701, 34);
+			this->label6->Location = System::Drawing::Point(652, 34);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(131, 28);
 			this->label6->TabIndex = 85;
@@ -182,7 +143,7 @@ namespace Kurs2021 {
 			// 
 			// label5
 			// 
-			this->label5->Location = System::Drawing::Point(615, 34);
+			this->label5->Location = System::Drawing::Point(572, 34);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(69, 28);
 			this->label5->TabIndex = 84;
@@ -191,7 +152,7 @@ namespace Kurs2021 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(448, 43);
+			this->label4->Location = System::Drawing::Point(416, 49);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(115, 13);
 			this->label4->TabIndex = 83;
@@ -199,7 +160,7 @@ namespace Kurs2021 {
 			// 
 			// label3
 			// 
-			this->label3->Location = System::Drawing::Point(309, 41);
+			this->label3->Location = System::Drawing::Point(277, 43);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(89, 28);
 			this->label3->TabIndex = 82;
@@ -208,7 +169,7 @@ namespace Kurs2021 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(146, 49);
+			this->label2->Location = System::Drawing::Point(126, 49);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(118, 13);
 			this->label2->TabIndex = 81;
@@ -217,48 +178,32 @@ namespace Kurs2021 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(42, 49);
+			this->label1->Location = System::Drawing::Point(34, 49);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(86, 13);
 			this->label1->TabIndex = 80;
 			this->label1->Text = L"Номер задания";
 			// 
-			// textBox_fio_in
+			// dataGridView
 			// 
-			this->textBox_fio_in->Location = System::Drawing::Point(293, 72);
-			this->textBox_fio_in->MaxLength = 16;
-			this->textBox_fio_in->Name = L"textBox_fio_in";
-			this->textBox_fio_in->Size = System::Drawing::Size(114, 20);
-			this->textBox_fio_in->TabIndex = 79;
-			// 
-			// textBox_name_in
-			// 
-			this->textBox_name_in->Location = System::Drawing::Point(45, 72);
-			this->textBox_name_in->MaxLength = 14;
-			this->textBox_name_in->Name = L"textBox_name_in";
-			this->textBox_name_in->Size = System::Drawing::Size(83, 20);
-			this->textBox_name_in->TabIndex = 78;
-			// 
-			// dataGridView_in
-			// 
-			this->dataGridView_in->AllowUserToAddRows = false;
-			this->dataGridView_in->AllowUserToDeleteRows = false;
-			this->dataGridView_in->AllowUserToResizeColumns = false;
-			this->dataGridView_in->AllowUserToResizeRows = false;
-			this->dataGridView_in->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->dataGridView_in->BackgroundColor = System::Drawing::Color::LightGray;
-			this->dataGridView_in->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView_in->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
+			this->dataGridView->AllowUserToAddRows = false;
+			this->dataGridView->AllowUserToDeleteRows = false;
+			this->dataGridView->AllowUserToResizeColumns = false;
+			this->dataGridView->AllowUserToResizeRows = false;
+			this->dataGridView->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView->BackgroundColor = System::Drawing::Color::LightGray;
+			this->dataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->Column_numb,
 					this->Column_name, this->Column_fio, this->Column_napr, this->Column_kurs, this->Column_chas, this->Column_att, this->Column_prim
 			});
-			this->dataGridView_in->Location = System::Drawing::Point(21, 151);
-			this->dataGridView_in->Name = L"dataGridView_in";
-			this->dataGridView_in->ReadOnly = true;
-			this->dataGridView_in->RowHeadersVisible = false;
-			this->dataGridView_in->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->dataGridView_in->Size = System::Drawing::Size(1064, 198);
-			this->dataGridView_in->TabIndex = 77;
+			this->dataGridView->Location = System::Drawing::Point(21, 151);
+			this->dataGridView->Name = L"dataGridView";
+			this->dataGridView->ReadOnly = true;
+			this->dataGridView->RowHeadersVisible = false;
+			this->dataGridView->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->dataGridView->Size = System::Drawing::Size(1064, 198);
+			this->dataGridView->TabIndex = 77;
 			// 
 			// Column_numb
 			// 
@@ -343,29 +288,95 @@ namespace Kurs2021 {
 			this->button_back_req->UseVisualStyleBackColor = true;
 			this->button_back_req->Click += gcnew System::EventHandler(this, &RequestZdForm::button_back_req_Click);
 			// 
+			// projNumber
+			// 
+			this->projNumber->Location = System::Drawing::Point(566, 75);
+			this->projNumber->Mask = L"00-000";
+			this->projNumber->Name = L"projNumber";
+			this->projNumber->Size = System::Drawing::Size(57, 20);
+			this->projNumber->TabIndex = 97;
+			this->projNumber->ValidatingType = System::Int32::typeid;
+			// 
+			// date
+			// 
+			this->date->Location = System::Drawing::Point(149, 75);
+			this->date->Mask = L"00/00/0000";
+			this->date->Name = L"date";
+			this->date->Size = System::Drawing::Size(68, 20);
+			this->date->TabIndex = 96;
+			// 
+			// taskNumber
+			// 
+			this->taskNumber->Location = System::Drawing::Point(55, 75);
+			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(40, 20);
+			this->taskNumber->TabIndex = 95;
+			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			// 
+			// status
+			// 
+			this->status->Location = System::Drawing::Point(813, 75);
+			this->status->MaxLength = 15;
+			this->status->Name = L"status";
+			this->status->Size = System::Drawing::Size(89, 20);
+			this->status->TabIndex = 94;
+			// 
+			// task
+			// 
+			this->task->Location = System::Drawing::Point(408, 75);
+			this->task->MaxLength = 50;
+			this->task->Name = L"task";
+			this->task->Size = System::Drawing::Size(133, 20);
+			this->task->TabIndex = 93;
+			// 
+			// note
+			// 
+			this->note->Location = System::Drawing::Point(939, 75);
+			this->note->MaxLength = 50;
+			this->note->Name = L"note";
+			this->note->Size = System::Drawing::Size(145, 20);
+			this->note->TabIndex = 92;
+			// 
+			// surname
+			// 
+			this->surname->Location = System::Drawing::Point(655, 75);
+			this->surname->MaxLength = 20;
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(121, 20);
+			this->surname->TabIndex = 91;
+			// 
+			// customer
+			// 
+			this->customer->Location = System::Drawing::Point(262, 75);
+			this->customer->MaxLength = 15;
+			this->customer->Name = L"customer";
+			this->customer->Size = System::Drawing::Size(114, 20);
+			this->customer->TabIndex = 90;
+			// 
 			// RequestZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1109, 410);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->projNumber);
+			this->Controls->Add(this->date);
+			this->Controls->Add(this->taskNumber);
+			this->Controls->Add(this->status);
+			this->Controls->Add(this->task);
+			this->Controls->Add(this->note);
+			this->Controls->Add(this->surname);
+			this->Controls->Add(this->customer);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox_fio_in);
-			this->Controls->Add(this->textBox_name_in);
-			this->Controls->Add(this->dataGridView_in);
+			this->Controls->Add(this->dataGridView);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->button_ok_req);
 			this->Controls->Add(this->button_back_req);
@@ -373,7 +384,7 @@ namespace Kurs2021 {
 			this->Name = L"RequestZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Составление запроса по заданиям";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
