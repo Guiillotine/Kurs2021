@@ -70,8 +70,10 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::TextBox^ status;
 	private: System::Windows::Forms::TextBox^ task;
 	private: System::Windows::Forms::TextBox^ note;
-	private: System::Windows::Forms::TextBox^ surname;
+	private: System::Windows::Forms::TextBox^ surname0;
+
 	private: System::Windows::Forms::TextBox^ customer;
+	private: System::Windows::Forms::ComboBox^ surname;
 
 	private:
 		/// <summary>
@@ -112,8 +114,9 @@ namespace Kurs2021 {
 			this->status = (gcnew System::Windows::Forms::TextBox());
 			this->task = (gcnew System::Windows::Forms::TextBox());
 			this->note = (gcnew System::Windows::Forms::TextBox());
-			this->surname = (gcnew System::Windows::Forms::TextBox());
+			this->surname0 = (gcnew System::Windows::Forms::TextBox());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
+			this->surname = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -338,13 +341,13 @@ namespace Kurs2021 {
 			this->note->Size = System::Drawing::Size(145, 20);
 			this->note->TabIndex = 92;
 			// 
-			// surname
+			// surname0
 			// 
-			this->surname->Location = System::Drawing::Point(655, 75);
-			this->surname->MaxLength = 20;
-			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(121, 20);
-			this->surname->TabIndex = 91;
+			this->surname0->Location = System::Drawing::Point(655, 370);
+			this->surname0->MaxLength = 20;
+			this->surname0->Name = L"surname0";
+			this->surname0->Size = System::Drawing::Size(121, 20);
+			this->surname0->TabIndex = 91;
 			// 
 			// customer
 			// 
@@ -354,19 +357,28 @@ namespace Kurs2021 {
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 90;
 			// 
+			// surname
+			// 
+			this->surname->FormattingEnabled = true;
+			this->surname->Location = System::Drawing::Point(655, 75);
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(117, 21);
+			this->surname->TabIndex = 98;
+			// 
 			// RequestZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1109, 410);
+			this->Controls->Add(this->surname);
 			this->Controls->Add(this->projNumber);
 			this->Controls->Add(this->date);
 			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->status);
 			this->Controls->Add(this->task);
 			this->Controls->Add(this->note);
-			this->Controls->Add(this->surname);
+			this->Controls->Add(this->surname0);
 			this->Controls->Add(this->customer);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
@@ -384,6 +396,7 @@ namespace Kurs2021 {
 			this->Name = L"RequestZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Составление запроса по заданиям";
+			this->Load += gcnew System::EventHandler(this, &RequestZdForm::RequestZdForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -392,5 +405,6 @@ namespace Kurs2021 {
 #pragma endregion
 	private: System::Void button_back_req_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button_ok_req_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void RequestZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

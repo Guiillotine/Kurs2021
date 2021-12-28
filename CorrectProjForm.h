@@ -68,10 +68,13 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MaskedTextBox^ dateReg;
 	private: System::Windows::Forms::MaskedTextBox^ cipher;
 	private: System::Windows::Forms::TextBox^ projName;
-	private: System::Windows::Forms::TextBox^ surname;
+
+
 	private: System::Windows::Forms::MaskedTextBox^ number;
 
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::ComboBox^ surname;
+
 
 	private:
 		/// <summary>
@@ -110,9 +113,9 @@ namespace Kurs2021 {
 			this->dateReg = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->cipher = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->projName = (gcnew System::Windows::Forms::TextBox());
-			this->surname = (gcnew System::Windows::Forms::TextBox());
 			this->number = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->surname = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -220,7 +223,7 @@ namespace Kurs2021 {
 			// 
 			// label6
 			// 
-			this->label6->Location = System::Drawing::Point(669, 35);
+			this->label6->Location = System::Drawing::Point(683, 35);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(84, 15);
 			this->label6->TabIndex = 74;
@@ -330,15 +333,6 @@ namespace Kurs2021 {
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 88;
 			// 
-			// surname
-			// 
-			this->surname->Enabled = false;
-			this->surname->Location = System::Drawing::Point(663, 60);
-			this->surname->MaxLength = 20;
-			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(117, 20);
-			this->surname->TabIndex = 87;
-			// 
 			// number
 			// 
 			this->number->Location = System::Drawing::Point(36, 60);
@@ -358,12 +352,22 @@ namespace Kurs2021 {
 			this->label5->TabIndex = 95;
 			this->label5->Text = L"¹";
 			// 
+			// surname
+			// 
+			this->surname->Enabled = false;
+			this->surname->FormattingEnabled = true;
+			this->surname->Location = System::Drawing::Point(663, 59);
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(117, 21);
+			this->surname->TabIndex = 96;
+			// 
 			// CorrectProjForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1104, 267);
+			this->Controls->Add(this->surname);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->number);
 			this->Controls->Add(this->dateEnd);
@@ -372,7 +376,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->dateReg);
 			this->Controls->Add(this->cipher);
 			this->Controls->Add(this->projName);
-			this->Controls->Add(this->surname);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);

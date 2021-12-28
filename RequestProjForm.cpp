@@ -7,9 +7,26 @@
 #include <msclr\marshal_cppstd.h>
 using namespace System;
 using namespace std;
-
 extern TablePKD tablePKD;
+extern string fnameList;
 
+System::Void Kurs2021::RequestProjForm::RequestProjForm_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	fstream f;
+	string str;
+	f.open(fnameList, fstream::in | fstream::out | fstream::app);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		RequestProjForm::Close();
+	}
+	while (!f.eof())
+	{
+		getline(f, str);
+		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+	}
+	f.close();
+}
 System::Void Kurs2021::RequestProjForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)
 {
     RequestProjForm::Close();
@@ -20,23 +37,23 @@ System::Void Kurs2021::RequestProjForm::button_in_ok_Click(System::Object^ sende
 	using namespace System::Runtime::InteropServices;
 	msclr::interop::marshal_context context;
 	RowPKD row;
-	int f = 0, m = 0; //f - Флажок для вывода специального сообщения в случае отсутствия строк по запросу, m - Счётчик совпадений с запросом  
+	int f = 0;
 	while (dataGridView->Rows->Count != 0) dataGridView->Rows->Remove(dataGridView->Rows[dataGridView->Rows->Count - 1]);
 	int ix = 0;
 
 	for (int i = 0; i < tablePKD.GetRowsNum(); i++)
 	{
 		row = tablePKD.GetTableRow(i);
-		if ((this->taskNumber->Text == "  .")|| (row.GetTaskNumber() == context.marshal_as<std::string>(this->taskNumber->Text)));//m++;
+		if ((this->taskNumber->Text == "  .")|| (row.GetTaskNumber() == context.marshal_as<std::string>(this->taskNumber->Text)));
 		else continue;
 
-		if ((this->dateReg->Text == "  .  .")||(row.GetDateReg() == context.marshal_as<std::string>(this->dateReg->Text)));// m++;
+		if ((this->dateReg->Text == "  .  .")||(row.GetDateReg() == context.marshal_as<std::string>(this->dateReg->Text)));
 		else continue;
 
-		if ((this->cipher->Text == "  -")||(row.GetCipher() == context.marshal_as<std::string>(this->cipher->Text)));// m++;
+		if ((this->cipher->Text == "  -")||(row.GetCipher() == context.marshal_as<std::string>(this->cipher->Text)));
 		else continue;
 
-		if ((this->projName->Text == "")||(row.GetProjName() == context.marshal_as<std::string>(this->projName->Text)));// m++;
+		if ((this->projName->Text == "")||(row.GetProjName() == context.marshal_as<std::string>(this->projName->Text)));
 		else continue;
 
 		if ((this->surname->Text == "") || (row.GetSurname() == context.marshal_as<std::string>(this->surname->Text)));
@@ -47,7 +64,7 @@ System::Void Kurs2021::RequestProjForm::button_in_ok_Click(System::Object^ sende
 
 		if (this->volume->Text != "")
 		{
-			if (this->sign->Text == "=") if (row.GetVolume() != Convert::ToInt32(this->volume->Text)) continue;
+			if ((this->sign->Text == "=")||(this->sign->Text == "")) if (row.GetVolume() != Convert::ToInt32(this->volume->Text)) continue;
 			if (this->sign->Text == ">=") if (row.GetVolume() < Convert::ToInt32(this->volume->Text)) continue;
 			if (this->sign->Text == "<=") if (row.GetVolume() > Convert::ToInt32(this->volume->Text)) continue;
 		}

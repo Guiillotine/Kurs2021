@@ -9,7 +9,7 @@
 #include <msclr\marshal_cppstd.h>
 using namespace System;
 using namespace std;
-
+extern string fnameList;
 
 //int f; // Флажок для вывода единственного сообщения о пропущенных полях
 int ix; // Номер строки в таблице введённых строк
@@ -91,4 +91,18 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 }
 System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	ix = 0;
+	fstream f;
+	string str;
+	f.open(fnameList, fstream::in | fstream::out | fstream::app);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		AddZdForm::Close();
+	}
+	while (!f.eof())
+	{
+		getline(f, str);
+		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+	}
+	f.close();
 }

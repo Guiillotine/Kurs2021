@@ -21,6 +21,7 @@ TableRegZd tableRegZd;
 TablePKD tablePKD;
 string fnamePKD = "PKD";
 string fnameRegZd = "RegZ";
+string fnameList = "SurnamesList";
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)

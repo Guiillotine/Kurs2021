@@ -56,7 +56,8 @@ namespace Kurs2021 {
 
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ surname;
+	private: System::Windows::Forms::TextBox^ surname00;
+
 
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
 
@@ -87,6 +88,9 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_kurs;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
+	private: System::Windows::Forms::ComboBox^ surname;
+
+
 
 
 
@@ -110,7 +114,7 @@ namespace Kurs2021 {
 			this->projName = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->surname = (gcnew System::Windows::Forms::TextBox());
+			this->surname00 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -132,6 +136,7 @@ namespace Kurs2021 {
 			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->volume = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->dateEnd = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->surname = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -159,13 +164,13 @@ namespace Kurs2021 {
 			this->label8->TabIndex = 60;
 			this->label8->Text = L"Дата завершения";
 			// 
-			// surname
+			// surname00
 			// 
-			this->surname->Location = System::Drawing::Point(670, 66);
-			this->surname->MaxLength = 20;
-			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(117, 20);
-			this->surname->TabIndex = 59;
+			this->surname00->Location = System::Drawing::Point(671, 259);
+			this->surname00->MaxLength = 20;
+			this->surname00->Name = L"surname00";
+			this->surname00->Size = System::Drawing::Size(117, 20);
+			this->surname00->TabIndex = 59;
 			// 
 			// dataGridView_in
 			// 
@@ -367,12 +372,21 @@ namespace Kurs2021 {
 			this->dateEnd->Size = System::Drawing::Size(68, 20);
 			this->dateEnd->TabIndex = 73;
 			// 
+			// surname
+			// 
+			this->surname->FormattingEnabled = true;
+			this->surname->Location = System::Drawing::Point(671, 67);
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(117, 21);
+			this->surname->TabIndex = 95;
+			// 
 			// AddProjForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1118, 299);
+			this->Controls->Add(this->surname);
 			this->Controls->Add(this->dateEnd);
 			this->Controls->Add(this->volume);
 			this->Controls->Add(this->taskNumber);
@@ -382,7 +396,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->projName);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->surname);
+			this->Controls->Add(this->surname00);
 			this->Controls->Add(this->dataGridView_in);
 			this->Controls->Add(this->buttonOk);
 			this->Controls->Add(this->label6);

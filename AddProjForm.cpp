@@ -15,6 +15,7 @@ using namespace std;
 extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
 extern string fnamePKD;
+extern string fnameList;
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -81,4 +82,18 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	ix = 0;
+	fstream f;
+	string str;
+	f.open(fnameList, fstream::in | fstream::out | fstream::app);
+	if (!f.is_open()) 
+	{ 
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		AddProjForm::Close();
+	}
+	while (!f.eof())
+	{
+		getline(f, str);
+		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) {gcnew String(str.c_str())});
+	}
+	f.close();
 }

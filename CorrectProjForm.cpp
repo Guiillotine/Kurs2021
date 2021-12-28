@@ -6,13 +6,27 @@
 #include "CorrectProjForm.h"
 #include "PKDClass.h"
 #include <msclr\marshal_cppstd.h>
-//extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
 extern TablePKD tablePKD;
 extern string fnamePKD;
+extern string fnameList;
 
 System::Void Kurs2021::CorrectProjForm::CorrectProjForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	dataGridView->Rows->Add();
+	fstream f;
+	string str;
+	f.open(fnameList, fstream::in | fstream::out | fstream::app);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		CorrectProjForm::Close();
+	}
+	while (!f.eof())
+	{
+		getline(f, str);
+		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+	}
+	f.close();
 }
 
 System::Void Kurs2021::CorrectProjForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)

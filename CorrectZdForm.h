@@ -70,11 +70,13 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::TextBox^ status;
 	private: System::Windows::Forms::TextBox^ task;
 	private: System::Windows::Forms::TextBox^ note;
-	private: System::Windows::Forms::TextBox^ surname;
+	private: System::Windows::Forms::TextBox^ surname0;
+
 	private: System::Windows::Forms::TextBox^ customer;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::MaskedTextBox^ number;
+	private: System::Windows::Forms::ComboBox^ surname;
 
 	private:
 		/// <summary>
@@ -114,11 +116,12 @@ namespace Kurs2021 {
 			this->status = (gcnew System::Windows::Forms::TextBox());
 			this->task = (gcnew System::Windows::Forms::TextBox());
 			this->note = (gcnew System::Windows::Forms::TextBox());
-			this->surname = (gcnew System::Windows::Forms::TextBox());
+			this->surname0 = (gcnew System::Windows::Forms::TextBox());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->number = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->surname = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -340,14 +343,14 @@ namespace Kurs2021 {
 			this->note->Size = System::Drawing::Size(133, 20);
 			this->note->TabIndex = 78;
 			// 
-			// surname
+			// surname0
 			// 
-			this->surname->Enabled = false;
-			this->surname->Location = System::Drawing::Point(679, 63);
-			this->surname->MaxLength = 20;
-			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(121, 20);
-			this->surname->TabIndex = 77;
+			this->surname0->Enabled = false;
+			this->surname0->Location = System::Drawing::Point(665, 224);
+			this->surname0->MaxLength = 20;
+			this->surname0->Name = L"surname0";
+			this->surname0->Size = System::Drawing::Size(121, 20);
+			this->surname0->TabIndex = 77;
 			// 
 			// customer
 			// 
@@ -385,12 +388,21 @@ namespace Kurs2021 {
 			this->number->ValidatingType = System::Int32::typeid;
 			this->number->TextChanged += gcnew System::EventHandler(this, &CorrectZdForm::number_TextChanged);
 			// 
+			// surname
+			// 
+			this->surname->FormattingEnabled = true;
+			this->surname->Location = System::Drawing::Point(679, 63);
+			this->surname->Name = L"surname";
+			this->surname->Size = System::Drawing::Size(117, 21);
+			this->surname->TabIndex = 98;
+			// 
 			// CorrectZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1102, 265);
+			this->Controls->Add(this->surname);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->number);
 			this->Controls->Add(this->label10);
@@ -400,7 +412,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->status);
 			this->Controls->Add(this->task);
 			this->Controls->Add(this->note);
-			this->Controls->Add(this->surname);
+			this->Controls->Add(this->surname0);
 			this->Controls->Add(this->customer);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
