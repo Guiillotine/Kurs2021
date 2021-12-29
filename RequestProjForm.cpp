@@ -8,22 +8,26 @@
 using namespace System;
 using namespace std;
 extern TablePKD tablePKD;
-extern string fnameList;
+extern string fnameLogin;
 
 System::Void Kurs2021::RequestProjForm::RequestProjForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	fstream f;
 	string str;
-	f.open(fnameList, fstream::in | fstream::out | fstream::app);
+	f.open(fnameLogin, fstream::in);
 	if (!f.is_open())
 	{
 		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		RequestProjForm::Close();
 	}
+	int k = 0;
 	while (!f.eof())
 	{
-		getline(f, str);
-		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		str = "";
+		f >> str;
+		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		f >> str;
+		k++;
 	}
 	f.close();
 }
@@ -75,7 +79,8 @@ System::Void Kurs2021::RequestProjForm::button_in_ok_Click(System::Object^ sende
 		dataGridView->Rows[ix]->Cells[2]->Value = gcnew String(row.GetCipher().c_str());
 		dataGridView->Rows[ix]->Cells[3]->Value = gcnew String(row.GetProjName().c_str());
 		dataGridView->Rows[ix]->Cells[4]->Value = gcnew String(row.GetSurname().c_str());
-		dataGridView->Rows[ix]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
+		if (row.GetDateEnd() == "00.00.0000") dataGridView->Rows[ix]->Cells[5]->Value = "     -------";
+		else dataGridView->Rows[ix]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
 		dataGridView->Rows[ix]->Cells[6]->Value = row.GetVolume().ToString();
 		ix++;
 	}

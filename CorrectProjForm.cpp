@@ -8,12 +8,31 @@
 #include <msclr\marshal_cppstd.h>
 extern TablePKD tablePKD;
 extern string fnamePKD;
-extern string fnameList;
+extern string fnameLogin;
 
 System::Void Kurs2021::CorrectProjForm::CorrectProjForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	dataGridView->Rows->Add();
 	fstream f;
+	string str;
+	f.open(fnameLogin, fstream::in);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		CorrectProjForm::Close();
+	}
+	int k = 0;
+	while (!f.eof())
+	{
+		str = "";
+		f >> str;
+		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		f >> str;
+		k++;
+	}
+	f.close();
+
+	/*fstream f;
 	string str;
 	f.open(fnameList, fstream::in | fstream::out | fstream::app);
 	if (!f.is_open())
@@ -26,7 +45,7 @@ System::Void Kurs2021::CorrectProjForm::CorrectProjForm_Load(System::Object^ sen
 		getline(f, str);
 		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
 	}
-	f.close();
+	f.close();*/
 }
 
 System::Void Kurs2021::CorrectProjForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)
@@ -68,8 +87,8 @@ System::Void Kurs2021::CorrectProjForm::button_in_ok_Click(System::Object^ sende
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
-	if (this->dateEnd->Text != "  .  .") row.SetDateEnd(stringDateEnd);
-	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	if (this->dateEnd->Text == "  .  .") row.SetDateEnd("00.00.0000");
+	else row.SetDateEnd(stringDateEnd);
 
 	if (this->volume->Text == "")  row.SetVolume(0);
 	else row.SetVolume(Convert::ToInt32(this->volume->Text));
@@ -82,7 +101,8 @@ System::Void Kurs2021::CorrectProjForm::button_in_ok_Click(System::Object^ sende
 		dataGridView->Rows[0]->Cells[2]->Value = gcnew String(row.GetCipher().c_str());
 		dataGridView->Rows[0]->Cells[3]->Value = gcnew String(row.GetProjName().c_str());
 		dataGridView->Rows[0]->Cells[4]->Value = gcnew String(row.GetSurname().c_str());
-		dataGridView->Rows[0]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
+		if (row.GetDateEnd() == "00.00.0000") dataGridView->Rows[0]->Cells[5]->Value = "     -------";
+		else dataGridView->Rows[0]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
 		dataGridView->Rows[0]->Cells[6]->Value = row.GetVolume().ToString();
 		this->number->Text = L"";
 	}

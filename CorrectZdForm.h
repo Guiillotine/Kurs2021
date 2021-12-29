@@ -380,6 +380,7 @@ namespace Kurs2021 {
 			// 
 			// surname
 			// 
+			this->surname->Enabled = false;
 			this->surname->FormattingEnabled = true;
 			this->surname->Location = System::Drawing::Point(679, 63);
 			this->surname->Name = L"surname";

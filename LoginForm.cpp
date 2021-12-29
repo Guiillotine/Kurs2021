@@ -21,7 +21,7 @@ TableRegZd tableRegZd;
 TablePKD tablePKD;
 string fnamePKD = "PKD";
 string fnameRegZd = "RegZ";
-string fnameList = "SurnamesList";
+string password, fnameLogin = "LoginList";
 string login;
 int fmode = 0; //Режим
 
@@ -38,7 +38,7 @@ void main(cli::array<String^>^ args)
 System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	fstream file;
-	string password, fnameLogin = "LoginList";
+	string password;
 	int f = 0;
 	file.open(fnameLogin, fstream::in);
 	if (!file.is_open()) MessageBox::Show("Не удалось открыть файл с логинами и паролями. Авторизация невозможна", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -55,8 +55,8 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 				{
 					f = 1;
 					if (k == 0) fmode = 1;
-					PKDForm^ form = gcnew PKDForm();
-					form->Show();
+					PKDForm^ form1 = gcnew PKDForm(); RegZdForm^ form2 = gcnew RegZdForm();
+					if (!fmode) form1->Show(); else form2->Show();
 					LoginForm::Hide();
 					break;
 				}

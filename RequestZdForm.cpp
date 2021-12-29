@@ -5,11 +5,30 @@
 using namespace System;
 using namespace std;
 extern TableRegZd tableRegZd;
-extern string fnameList;
+extern string fnameLogin;
 
 System::Void Kurs2021::RequestZdForm::RequestZdForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	fstream f;
+	string str;
+	f.open(fnameLogin, fstream::in);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		RequestZdForm::Close();
+	}
+	int k = 0;
+	while (!f.eof())
+	{
+		str = "";
+		f >> str;
+		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		f >> str;
+		k++;
+	}
+	f.close();
+
+	/*fstream f;
 	string str;
 	f.open(fnameList, fstream::in | fstream::out | fstream::app);
 	if (!f.is_open())
@@ -22,7 +41,7 @@ System::Void Kurs2021::RequestZdForm::RequestZdForm_Load(System::Object^ sender,
 		getline(f, str);
 		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
 	}
-	f.close();
+	f.close();*/
 }
 
 System::Void Kurs2021::RequestZdForm::button_back_req_Click(System::Object^ sender, System::EventArgs^ e)
@@ -36,7 +55,7 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 	using namespace System::Runtime::InteropServices;
 	msclr::interop::marshal_context context;
 	RowRegZd row;
-	int f = 0; //f - Флажок для вывода специального сообщения в случае отсутствия строк по запросу
+	int f = 0;
 	while (dataGridView->Rows->Count != 0) dataGridView->Rows->Remove(dataGridView->Rows[dataGridView->Rows->Count - 1]);
 	int ix = 0;
 

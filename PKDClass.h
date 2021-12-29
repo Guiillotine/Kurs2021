@@ -178,7 +178,7 @@ extern string fnamePKD;
             f << " ÇÀÄÀÍÈß  ÐÅÃÈÑÒÐÀÖÈÈ  ÏÐÎÅÊÒÀ                                                                                ÏÐÎÅÊÒÀ   (â  ë.À4)\n";
             for (int i = from - 1; i < to; i++)
             {
-                if ((tableRows[i].GetVolume() == 0)||(tableRows[i].GetDateEnd() == "00.00.000")) continue;
+                if ((tableRows[i].GetVolume() == 0) || (tableRows[i].GetDateEnd() == "00.00.0000")) continue;
                 f << "| ";
                 f << tableRows[i].GetTaskNumber();
                 for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';

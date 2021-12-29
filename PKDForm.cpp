@@ -11,9 +11,11 @@
 #include "PKDClass.h"
 extern TablePKD tablePKD;
 extern int fmode;
+extern string login;
 
 System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+	this->Text = L"Учет ПКД (Пользователь: " + gcnew String(login.c_str()) + ")";
 	if (!fmode)
 	{
 		this->toolStripButtonCorrect->Visible = false;
@@ -100,7 +102,9 @@ System::Void Kurs2021::PKDForm::PKDForm_Activated(System::Object^ sender, System
 		dataGridView1->Rows[x]->Cells[3]->Value = gcnew String(tablePKD.GetTableRow(x).GetCipher().c_str());
 		dataGridView1->Rows[x]->Cells[4]->Value = gcnew String(tablePKD.GetTableRow(x).GetProjName().c_str());
 		dataGridView1->Rows[x]->Cells[5]->Value = gcnew String(tablePKD.GetTableRow(x).GetSurname().c_str());
-		dataGridView1->Rows[x]->Cells[6]->Value = gcnew String(tablePKD.GetTableRow(x).GetDateEnd().c_str());
+		if ((tablePKD.GetTableRow(x).GetDateEnd() == "00.00.0000") || tablePKD.GetTableRow(x).GetDateEnd() == "  .  .") 
+			dataGridView1->Rows[x]->Cells[6]->Value = "     -------";
+		else dataGridView1->Rows[x]->Cells[6]->Value = gcnew String(tablePKD.GetTableRow(x).GetDateEnd().c_str());
 		dataGridView1->Rows[x]->Cells[7]->Value = tablePKD.GetTableRow(x).GetVolume().ToString();
 	}
 

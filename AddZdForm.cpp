@@ -8,11 +8,33 @@
 #include <msclr\marshal_cppstd.h>
 using namespace System;
 using namespace std;
-extern string fnameList;
+extern string fnameLogin;
 
-//int f; // Флажок для вывода единственного сообщения о пропущенных полях
 int ix; // Номер строки в таблице введённых строк
 extern TableRegZd tableRegZd;
+
+System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	ix = 0;
+	fstream f;
+	string str;
+
+	f.open(fnameLogin, fstream::in);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		AddZdForm::Close();
+	}
+	int k = 0;
+	while (!f.eof())
+	{
+		str = "";
+		f >> str;
+		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		f >> str;
+		k++;
+	}
+	f.close();
+}
 
 System::Void Kurs2021::AddZdForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -88,23 +110,7 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 	String^ str2 = gcnew String(str.c_str());
 	//
 }
-System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	ix = 0;
-	fstream f;
-	string str;
-	f.open(fnameList, fstream::in | fstream::out | fstream::app);
-	if (!f.is_open())
-	{
-		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		AddZdForm::Close();
-	}
-	while (!f.eof())
-	{
-		getline(f, str);
-		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-	}
-	f.close();
-}
+
 System::Void Kurs2021::AddZdForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
 {
 	e->Handled = true;

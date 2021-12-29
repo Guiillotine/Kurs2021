@@ -13,8 +13,34 @@ extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
 extern string fnamePKD;
 extern string fnameList;
+extern string fnameLogin;
 extern string login;
 extern int fmode;
+
+System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, System::EventArgs^ e)
+{
+	ix = 0;
+	fstream f;
+	string str;
+
+	f.open(fnameLogin, fstream::in);
+	if (!f.is_open())
+	{
+		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		AddProjForm::Close();
+	}
+	int k = 0;
+	while (!f.eof())
+	{
+		str = "";
+		f >> str;
+		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
+		f >> str;
+		k++;
+	}
+	f.close();
+
+}
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -45,15 +71,10 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	if (this->projName->Text != "") row.SetProjName(stringProjName);
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
-	
 	std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
 	if ((this->surname->Text == "") && (f)) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	if ((this->surname->Text != gcnew String(login.c_str())) && (f) && (!fmode)) { f = 0; MessageBox::Show("Укажите свою фамилию в поле \"Исполнитель\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); }
 	else row.SetSurname(stringSurname);
-	
-	/*std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
-	if (this->surname->Text != "") row.SetSurname(stringSurname);
-	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }*/
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
 	if (this->dateEnd->Text == "  .  .") row.SetDateEnd("00.00.0000");
@@ -71,7 +92,8 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 		dataGridView_in->Rows[ix]->Cells[2]->Value = gcnew String(row.GetCipher().c_str());
 		dataGridView_in->Rows[ix]->Cells[3]->Value = gcnew String(row.GetProjName().c_str());
 		dataGridView_in->Rows[ix]->Cells[4]->Value = gcnew String(row.GetSurname().c_str());
-		dataGridView_in->Rows[ix]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
+		if (row.GetDateEnd() == "00.00.0000") dataGridView_in->Rows[ix]->Cells[5]->Value = "     -------";
+		else dataGridView_in->Rows[ix]->Cells[5]->Value = gcnew String(row.GetDateEnd().c_str());
 		dataGridView_in->Rows[ix]->Cells[6]->Value = row.GetVolume().ToString();
 		ix++;
 		this->taskNumber->Text = L"";
@@ -84,24 +106,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	}
     return System::Void();
 }
-System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, System::EventArgs^ e)
-{
-	ix = 0;
-	fstream f;
-	string str;
-	f.open(fnameList, fstream::in | fstream::out | fstream::app);
-	if (!f.is_open()) 
-	{ 
-		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		AddProjForm::Close();
-	}
-	while (!f.eof())
-	{
-		getline(f, str);
-		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) {gcnew String(str.c_str())});
-	}
-	f.close();
-}
+
 System::Void Kurs2021::AddProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
 {
 	e->Handled = true;
