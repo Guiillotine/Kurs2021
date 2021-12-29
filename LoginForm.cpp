@@ -23,6 +23,7 @@ string fnamePKD = "PKD";
 string fnameRegZd = "RegZ";
 string fnameList = "SurnamesList";
 string login;
+int fmode = 0; //Режим
 
 [STAThreadAttribute]
 void main(cli::array<String^>^ args)
@@ -39,10 +40,11 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 	fstream file;
 	string password, fnameLogin = "LoginList";
 	int f = 0;
-	file.open(fnameLogin, fstream::in | fstream::out | fstream::app);
+	file.open(fnameLogin, fstream::in);
 	if (!file.is_open()) MessageBox::Show("Не удалось открыть файл с логинами и паролями. Авторизация невозможна", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	else
 	{
+		int k = 0;
 		while (!file.eof())
 		{
 			file >> login;
@@ -52,11 +54,14 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 				if (this->TBPassword->Text == gcnew String(password.c_str()))
 				{
 					f = 1;
+					if (k == 0) fmode = 1;
 					PKDForm^ form = gcnew PKDForm();
 					form->Show();
 					LoginForm::Hide();
+					break;
 				}
 			}
+			k++;
 		}
 		if (!f) MessageBox::Show("Неверно указан логин или пароль", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}

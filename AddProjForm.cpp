@@ -13,6 +13,8 @@ extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
 extern string fnamePKD;
 extern string fnameList;
+extern string login;
+extern int fmode;
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -43,9 +45,15 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	if (this->projName->Text != "") row.SetProjName(stringProjName);
 	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 
+	
 	std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
+	if ((this->surname->Text == "") && (f)) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	if ((this->surname->Text != gcnew String(login.c_str())) && (f) && (!fmode)) { f = 0; MessageBox::Show("Укажите свою фамилию в поле \"Исполнитель\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); }
+	else row.SetSurname(stringSurname);
+	
+	/*std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
 	if (this->surname->Text != "") row.SetSurname(stringSurname);
-	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }*/
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);
 	if (this->dateEnd->Text == "  .  .") row.SetDateEnd("00.00.0000");

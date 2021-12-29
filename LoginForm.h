@@ -82,6 +82,7 @@ namespace Kurs2021 {
 			// 
 			this->TBPassword->Location = System::Drawing::Point(43, 103);
 			this->TBPassword->Name = L"TBPassword";
+			this->TBPassword->PasswordChar = '*';
 			this->TBPassword->Size = System::Drawing::Size(134, 20);
 			this->TBPassword->TabIndex = 1;
 			// 
