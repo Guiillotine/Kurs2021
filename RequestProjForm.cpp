@@ -82,3 +82,11 @@ System::Void Kurs2021::RequestProjForm::button_in_ok_Click(System::Object^ sende
 	if (!f) MessageBox::Show("По вашему запросу результатов не найдено", "", MessageBoxButtons::OK, MessageBoxIcon::Asterisk);
     return System::Void();
 }
+System::Void Kurs2021::RequestProjForm::sign_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}
+System::Void Kurs2021::RequestProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}

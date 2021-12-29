@@ -52,8 +52,8 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 		if ((this->customer->Text == "") || (row.GetCustomer() == context.marshal_as<std::string>(this->customer->Text)));
 		else continue;
 
-		if ((this->task->Text == "") || (row.GetTask() == context.marshal_as<std::string>(this->task->Text)));
-		else continue;
+		/*if ((this->task->Text == "") || (row.GetTask() == context.marshal_as<std::string>(this->task->Text)));
+		else continue;*/
 
 		if ((this->projNumber->Text == "  -") || (row.GetProjNumber() == context.marshal_as<std::string>(this->projNumber->Text)));
 		else continue;
@@ -64,8 +64,8 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 		if ((this->status->Text == "") || (row.GetStatus() == context.marshal_as<std::string>(this->status->Text)));
 		else continue;
 
-		if ((this->note->Text == "") || (row.GetNote() == context.marshal_as<std::string>(this->note->Text)));
-		else continue;
+		/*if ((this->note->Text == "") || (row.GetNote() == context.marshal_as<std::string>(this->note->Text)));
+		else continue;*/
 
 		f = 1;
 		dataGridView->Rows->Add();
@@ -81,4 +81,8 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 	}
 	if (!f) MessageBox::Show("По вашему запросу результатов не найдено", "", MessageBoxButtons::OK, MessageBoxIcon::Asterisk);
 	return System::Void();
+}
+System::Void Kurs2021::RequestZdForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
 }

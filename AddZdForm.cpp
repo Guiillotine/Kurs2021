@@ -2,7 +2,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <Windows.h>
 
 #include "AddZdForm.h"
 #include "RegZdClass.h"
@@ -105,4 +104,8 @@ System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System:
 		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
 	}
 	f.close();
+}
+System::Void Kurs2021::AddZdForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
 }

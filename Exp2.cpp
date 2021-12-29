@@ -2,7 +2,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <Windows.h>
 
 #include "PKDClass.h"
 #include <msclr\marshal_cppstd.h>

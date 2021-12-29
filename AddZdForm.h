@@ -45,7 +45,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ note;
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ surname0;
+
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
@@ -101,7 +101,6 @@ namespace Kurs2021 {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->note = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->surname0 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -167,14 +166,6 @@ namespace Kurs2021 {
 			this->label8->Size = System::Drawing::Size(51, 19);
 			this->label8->TabIndex = 43;
 			this->label8->Text = L"  Статус";
-			// 
-			// surname0
-			// 
-			this->surname0->Location = System::Drawing::Point(676, 256);
-			this->surname0->MaxLength = 20;
-			this->surname0->Name = L"surname0";
-			this->surname0->Size = System::Drawing::Size(121, 20);
-			this->surname0->TabIndex = 42;
 			// 
 			// label7
 			// 
@@ -285,7 +276,7 @@ namespace Kurs2021 {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(131, 28);
 			this->label6->TabIndex = 38;
-			this->label6->Text = L"            Фамилия инженера-конструктора";
+			this->label6->Text = L"            Фамилия  инженера-конструктора";
 			// 
 			// label5
 			// 
@@ -380,8 +371,9 @@ namespace Kurs2021 {
 			this->surname->FormattingEnabled = true;
 			this->surname->Location = System::Drawing::Point(669, 65);
 			this->surname->Name = L"surname";
-			this->surname->Size = System::Drawing::Size(117, 21);
+			this->surname->Size = System::Drawing::Size(128, 21);
 			this->surname->TabIndex = 97;
+			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &AddZdForm::surname_KeyPress);
 			// 
 			// AddZdForm
 			// 
@@ -399,7 +391,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->note);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->surname0);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->dataGridView_in);
 			this->Controls->Add(this->button_in_ok);
@@ -424,5 +415,6 @@ namespace Kurs2021 {
 	private: System::Void button_in_back_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void AddZdForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

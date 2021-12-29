@@ -56,7 +56,7 @@ namespace Kurs2021 {
 
 
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ surname00;
+
 
 
 	private: System::Windows::Forms::DataGridView^ dataGridView_in;
@@ -114,7 +114,6 @@ namespace Kurs2021 {
 			this->projName = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->surname00 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView_in = (gcnew System::Windows::Forms::DataGridView());
 			this->Column_numb = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -163,14 +162,6 @@ namespace Kurs2021 {
 			this->label8->Size = System::Drawing::Size(99, 18);
 			this->label8->TabIndex = 60;
 			this->label8->Text = L"Дата завершения";
-			// 
-			// surname00
-			// 
-			this->surname00->Location = System::Drawing::Point(671, 259);
-			this->surname00->MaxLength = 20;
-			this->surname00->Name = L"surname00";
-			this->surname00->Size = System::Drawing::Size(117, 20);
-			this->surname00->TabIndex = 59;
 			// 
 			// dataGridView_in
 			// 
@@ -379,6 +370,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 95;
+			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &AddProjForm::surname_KeyPress);
 			// 
 			// AddProjForm
 			// 
@@ -396,7 +388,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->projName);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->surname00);
 			this->Controls->Add(this->dataGridView_in);
 			this->Controls->Add(this->buttonOk);
 			this->Controls->Add(this->label6);
@@ -419,5 +410,6 @@ namespace Kurs2021 {
 	private: System::Void buttonBack_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void AddProjForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

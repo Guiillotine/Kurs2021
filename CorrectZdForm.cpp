@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <Windows.h>
+
 #include "CorrectZdForm.h"
 #include "RegZdClass.h"
 #include <msclr\marshal_cppstd.h>
@@ -139,4 +139,8 @@ System::Void Kurs2021::CorrectZdForm::number_TextChanged(System::Object^ sender,
 		this->status->Enabled = false;
 		this->note->Enabled = false;
 	}
+}
+System::Void Kurs2021::CorrectZdForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
 }

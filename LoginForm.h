@@ -34,9 +34,18 @@ namespace Kurs2021 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBoxLog;
+	private: System::Windows::Forms::TextBox^ TBLogin;
+	private: System::Windows::Forms::TextBox^ TBPassword;
 	protected:
-	private: System::Windows::Forms::TextBox^ textBoxPassw;
+
+
+	protected:
+
+
+	protected:
+
+	protected:
+
 	private: System::Windows::Forms::Label^ labelLog;
 	private: System::Windows::Forms::Label^ labelPassw;
 	private: System::Windows::Forms::Button^ buttonOk;
@@ -55,26 +64,26 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBoxLog = (gcnew System::Windows::Forms::TextBox());
-			this->textBoxPassw = (gcnew System::Windows::Forms::TextBox());
+			this->TBLogin = (gcnew System::Windows::Forms::TextBox());
+			this->TBPassword = (gcnew System::Windows::Forms::TextBox());
 			this->labelLog = (gcnew System::Windows::Forms::Label());
 			this->labelPassw = (gcnew System::Windows::Forms::Label());
 			this->buttonOk = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// textBoxLog
+			// TBLogin
 			// 
-			this->textBoxLog->Location = System::Drawing::Point(43, 47);
-			this->textBoxLog->Name = L"textBoxLog";
-			this->textBoxLog->Size = System::Drawing::Size(134, 20);
-			this->textBoxLog->TabIndex = 0;
+			this->TBLogin->Location = System::Drawing::Point(43, 47);
+			this->TBLogin->Name = L"TBLogin";
+			this->TBLogin->Size = System::Drawing::Size(134, 20);
+			this->TBLogin->TabIndex = 0;
 			// 
-			// textBoxPassw
+			// TBPassword
 			// 
-			this->textBoxPassw->Location = System::Drawing::Point(43, 103);
-			this->textBoxPassw->Name = L"textBoxPassw";
-			this->textBoxPassw->Size = System::Drawing::Size(134, 20);
-			this->textBoxPassw->TabIndex = 1;
+			this->TBPassword->Location = System::Drawing::Point(43, 103);
+			this->TBPassword->Name = L"TBPassword";
+			this->TBPassword->Size = System::Drawing::Size(134, 20);
+			this->TBPassword->TabIndex = 1;
 			// 
 			// labelLog
 			// 
@@ -113,8 +122,8 @@ namespace Kurs2021 {
 			this->Controls->Add(this->buttonOk);
 			this->Controls->Add(this->labelPassw);
 			this->Controls->Add(this->labelLog);
-			this->Controls->Add(this->textBoxPassw);
-			this->Controls->Add(this->textBoxLog);
+			this->Controls->Add(this->TBPassword);
+			this->Controls->Add(this->TBLogin);
 			this->MaximizeBox = false;
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

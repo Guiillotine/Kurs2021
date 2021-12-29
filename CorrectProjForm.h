@@ -360,6 +360,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 96;
+			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectProjForm::surname_KeyPress);
 			// 
 			// CorrectProjForm
 			// 
@@ -402,5 +403,6 @@ namespace Kurs2021 {
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void number_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void CorrectProjForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

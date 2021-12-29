@@ -67,7 +67,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MaskedTextBox^ dateReg;
 	private: System::Windows::Forms::MaskedTextBox^ cipher;
 	private: System::Windows::Forms::TextBox^ projName;
-	private: System::Windows::Forms::TextBox^ surname0;
+
 
 	private: System::Windows::Forms::ComboBox^ sign;
 	private: System::Windows::Forms::ComboBox^ surname;
@@ -112,7 +112,6 @@ namespace Kurs2021 {
 			this->dateReg = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->cipher = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->projName = (gcnew System::Windows::Forms::TextBox());
-			this->surname0 = (gcnew System::Windows::Forms::TextBox());
 			this->sign = (gcnew System::Windows::Forms::ComboBox());
 			this->surname = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
@@ -326,23 +325,16 @@ namespace Kurs2021 {
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 88;
 			// 
-			// surname0
-			// 
-			this->surname0->Location = System::Drawing::Point(655, 395);
-			this->surname0->MaxLength = 20;
-			this->surname0->Name = L"surname0";
-			this->surname0->Size = System::Drawing::Size(117, 20);
-			this->surname0->TabIndex = 87;
-			// 
 			// sign
 			// 
-			this->sign->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->sign->FormattingEnabled = true;
 			this->sign->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"=", L"<=", L">=" });
 			this->sign->Location = System::Drawing::Point(962, 66);
 			this->sign->Name = L"sign";
 			this->sign->Size = System::Drawing::Size(35, 21);
 			this->sign->TabIndex = 94;
+			this->sign->Text = L"=";
+			this->sign->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RequestProjForm::sign_KeyPress);
 			// 
 			// surname
 			// 
@@ -351,6 +343,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 96;
+			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RequestProjForm::surname_KeyPress);
 			// 
 			// RequestProjForm
 			// 
@@ -366,7 +359,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->dateReg);
 			this->Controls->Add(this->cipher);
 			this->Controls->Add(this->projName);
-			this->Controls->Add(this->surname0);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
@@ -392,5 +384,7 @@ namespace Kurs2021 {
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void button_in_back_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void RequestProjForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void sign_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
+	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

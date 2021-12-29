@@ -2,7 +2,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <Windows.h>
 
 #include "AddProjForm.h"
 #include "PKDClass.h"
@@ -10,8 +9,6 @@
 using namespace System;
 using namespace std;
 
-
-//extern int f; // Флажок для вывода единственного сообщения о пропущенных полях
 extern int ix; // Номер строки в таблице введённых строк
 extern TablePKD tablePKD;
 extern string fnamePKD;
@@ -96,4 +93,8 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) {gcnew String(str.c_str())});
 	}
 	f.close();
+}
+System::Void Kurs2021::AddProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
 }

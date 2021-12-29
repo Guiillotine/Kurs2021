@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
-#include <Windows.h>
+
 #include "CorrectProjForm.h"
 #include "PKDClass.h"
 #include <msclr\marshal_cppstd.h>
@@ -128,4 +128,8 @@ System::Void Kurs2021::CorrectProjForm::number_TextChanged(System::Object^ sende
 		this->dateEnd->Enabled = false;
 		this->volume->Enabled = false;
 	}
+}
+System::Void Kurs2021::CorrectProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
 }

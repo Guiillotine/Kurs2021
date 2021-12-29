@@ -70,7 +70,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::TextBox^ status;
 	private: System::Windows::Forms::TextBox^ task;
 	private: System::Windows::Forms::TextBox^ note;
-	private: System::Windows::Forms::TextBox^ surname0;
+
 
 	private: System::Windows::Forms::TextBox^ customer;
 	private: System::Windows::Forms::Label^ label10;
@@ -116,7 +116,6 @@ namespace Kurs2021 {
 			this->status = (gcnew System::Windows::Forms::TextBox());
 			this->task = (gcnew System::Windows::Forms::TextBox());
 			this->note = (gcnew System::Windows::Forms::TextBox());
-			this->surname0 = (gcnew System::Windows::Forms::TextBox());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -343,15 +342,6 @@ namespace Kurs2021 {
 			this->note->Size = System::Drawing::Size(133, 20);
 			this->note->TabIndex = 78;
 			// 
-			// surname0
-			// 
-			this->surname0->Enabled = false;
-			this->surname0->Location = System::Drawing::Point(665, 224);
-			this->surname0->MaxLength = 20;
-			this->surname0->Name = L"surname0";
-			this->surname0->Size = System::Drawing::Size(121, 20);
-			this->surname0->TabIndex = 77;
-			// 
 			// customer
 			// 
 			this->customer->Enabled = false;
@@ -395,6 +385,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 98;
+			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectZdForm::surname_KeyPress);
 			// 
 			// CorrectZdForm
 			// 
@@ -412,7 +403,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->status);
 			this->Controls->Add(this->task);
 			this->Controls->Add(this->note);
-			this->Controls->Add(this->surname0);
 			this->Controls->Add(this->customer);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
@@ -440,5 +430,6 @@ namespace Kurs2021 {
 	private: System::Void button_in_back_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void number_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void CorrectZdForm_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }
