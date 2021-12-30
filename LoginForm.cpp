@@ -75,8 +75,7 @@ System::Void Kurs2021::LoginForm::TBPassword_KeyDown(System::Object^ sender, Sys
 {
 	if (e->KeyCode == Keys::Enter)
 	{
-		buttonOk_Click(sender, e);
-		e->Handled = true;
 		e->SuppressKeyPress = true;
+		buttonOk_Click(sender, e);
 	}
 }

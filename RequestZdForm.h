@@ -88,6 +88,7 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RequestZdForm::typeid));
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -348,6 +349,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->button_ok_req);
 			this->Controls->Add(this->button_back_req);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"RequestZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

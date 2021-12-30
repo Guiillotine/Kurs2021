@@ -109,8 +109,7 @@ System::Void Kurs2021::RequestZdForm::taskNumber_KeyDown(System::Object^ sender,
 {
 	if (e->KeyCode == Keys::Enter)
 	{
+		e->SuppressKeyPress = true;
 		button_ok_req_Click(sender, e);
 	}
-	e->Handled = true;
-	e->SuppressKeyPress = true;
 }

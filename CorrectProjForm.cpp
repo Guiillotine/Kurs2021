@@ -157,8 +157,7 @@ System::Void Kurs2021::CorrectProjForm::number_KeyDown(System::Object^ sender, S
 {
 	if (e->KeyCode == Keys::Enter)
 	{
+		e->SuppressKeyPress = true;
 		button_in_ok_Click(sender, e);
 	}
-	e->Handled = true;
-	e->SuppressKeyPress = true;
 }

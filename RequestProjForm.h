@@ -88,6 +88,7 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RequestProjForm::typeid));
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView = (gcnew System::Windows::Forms::DataGridView());
@@ -378,6 +379,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button_in_back);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"RequestProjForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

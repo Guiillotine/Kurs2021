@@ -15,7 +15,7 @@ extern string login;
 System::Void Kurs2021::RegZdForm::RegZdForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	if (!fmode) this->Text = L"Ó÷åò ÏÊÄ (Ïîëüçîâàòåëü: " + gcnew String(login.c_str()) + ")";
-	else this->Text = L"Ó÷åò ÏÊÄ (Ïîëüçîâàòåëü: íà÷àëüíèê îòäåëà)";
+	else this->Text = L"Ó÷åò ÏÊÄ (Ðåæèì ðàñøèðåííîãî äîñòóïà)";
 	if (!fmode)
 	{
 		this->toolStripButtonAdd->Visible = false;
@@ -36,7 +36,6 @@ System::Void Kurs2021::RegZdForm::openPKDToolStripMenuItem_Click(System::Object^
 
 System::Void Kurs2021::RegZdForm::æóðíàëÓ÷åòàÍîìåðîâÏÊÄToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	tableRegZd.Putfile("file");
 	Exp1^ form = gcnew Exp1();
 	form->ShowDialog();
 	return System::Void();

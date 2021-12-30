@@ -154,8 +154,7 @@ System::Void Kurs2021::CorrectZdForm::number_KeyDown(System::Object^ sender, Sys
 {
 	if (e->KeyCode == Keys::Enter)
 	{
+		e->SuppressKeyPress = true;
 		button_in_ok_Click(sender, e);
 	}
-	e->Handled = true;
-	e->SuppressKeyPress = true;
 }

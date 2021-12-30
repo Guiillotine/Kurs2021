@@ -61,6 +61,7 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Exp1::typeid));
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -171,6 +172,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->fileName);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"Exp1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

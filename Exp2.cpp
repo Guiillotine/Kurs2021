@@ -60,8 +60,7 @@ System::Void Kurs2021::Exp2::fileName_KeyDown(System::Object^ sender, System::Wi
 {
     if (e->KeyCode == Keys::Enter)
     {
-        buttonOk_Click(sender, e);
-        e->Handled = true;
         e->SuppressKeyPress = true;
+        buttonOk_Click(sender, e);
     }
 }

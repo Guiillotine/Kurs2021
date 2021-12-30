@@ -16,7 +16,7 @@ extern string login;
 System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
 	if (!fmode) this->Text = L"Учет ПКД (Пользователь: " + gcnew String(login.c_str()) + ")";
-	else this->Text = L"Учет ПКД (Пользователь: начальник отдела)";
+	else this->Text = L"Учет ПКД (Режим расширенного доступа)";
 	if (!fmode)
 	{
 		this->toolStripButtonCorrect->Visible = false;

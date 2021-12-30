@@ -89,6 +89,7 @@ namespace Kurs2021 {
 			this->ClientSize = System::Drawing::Size(302, 427);
 			this->Controls->Add(this->button_close);
 			this->Controls->Add(this->textBox1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"HelpForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

@@ -99,8 +99,7 @@ System::Void Kurs2021::RequestProjForm::taskNumber_KeyDown(System::Object^ sende
 {
 	if (e->KeyCode == Keys::Enter)
 	{
+		e->SuppressKeyPress = true;
 		button_in_ok_Click(sender, e);
 	}
-	e->Handled = true;
-	e->SuppressKeyPress = true;
 }

@@ -64,6 +64,7 @@ namespace Kurs2021 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->TBLogin = (gcnew System::Windows::Forms::TextBox());
 			this->TBPassword = (gcnew System::Windows::Forms::TextBox());
 			this->labelLog = (gcnew System::Windows::Forms::Label());
@@ -127,6 +128,7 @@ namespace Kurs2021 {
 			this->Controls->Add(this->labelLog);
 			this->Controls->Add(this->TBPassword);
 			this->Controls->Add(this->TBLogin);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
