@@ -295,6 +295,7 @@ namespace Kurs2021 {
 			this->projNumber->Size = System::Drawing::Size(57, 20);
 			this->projNumber->TabIndex = 83;
 			this->projNumber->ValidatingType = System::Int32::typeid;
+			this->projNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// date
 			// 
@@ -304,6 +305,7 @@ namespace Kurs2021 {
 			this->date->Name = L"date";
 			this->date->Size = System::Drawing::Size(68, 20);
 			this->date->TabIndex = 82;
+			this->date->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// taskNumber
 			// 
@@ -314,6 +316,7 @@ namespace Kurs2021 {
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 81;
 			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// status
 			// 
@@ -323,6 +326,7 @@ namespace Kurs2021 {
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 80;
+			this->status->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// task
 			// 
@@ -332,6 +336,7 @@ namespace Kurs2021 {
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 79;
+			this->task->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// note
 			// 
@@ -341,6 +346,7 @@ namespace Kurs2021 {
 			this->note->Name = L"note";
 			this->note->Size = System::Drawing::Size(133, 20);
 			this->note->TabIndex = 78;
+			this->note->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// customer
 			// 
@@ -350,6 +356,7 @@ namespace Kurs2021 {
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 76;
+			this->customer->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// label10
 			// 
@@ -377,6 +384,7 @@ namespace Kurs2021 {
 			this->number->TabIndex = 96;
 			this->number->ValidatingType = System::Int32::typeid;
 			this->number->TextChanged += gcnew System::EventHandler(this, &CorrectZdForm::number_TextChanged);
+			this->number->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
 			// surname
 			// 
@@ -386,6 +394,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 98;
+			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectZdForm::surname_KeyPress);
 			// 
 			// CorrectZdForm
@@ -432,5 +441,6 @@ namespace Kurs2021 {
 	private: System::Void number_TextChanged(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void CorrectZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
+	private: System::Void number_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

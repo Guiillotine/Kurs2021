@@ -13,6 +13,7 @@
 #include "HelpForm.h"
 #include "RegZdClass.h"
 #include "PKDClass.h"
+#include "TableClass.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -68,4 +69,14 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 	/*PKDForm^ form = gcnew PKDForm();
 	form->Show();
 	LoginForm::Hide();*/
+}
+
+System::Void Kurs2021::LoginForm::TBPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyCode == Keys::Enter)
+	{
+		buttonOk_Click(sender, e);
+		e->Handled = true;
+		e->SuppressKeyPress = true;
+	}
 }

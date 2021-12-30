@@ -281,6 +281,7 @@ namespace Kurs2021 {
 			this->dateEnd->Name = L"dateEnd";
 			this->dateEnd->Size = System::Drawing::Size(68, 20);
 			this->dateEnd->TabIndex = 93;
+			this->dateEnd->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// volume
 			// 
@@ -290,6 +291,7 @@ namespace Kurs2021 {
 			this->volume->Size = System::Drawing::Size(42, 20);
 			this->volume->TabIndex = 92;
 			this->volume->ValidatingType = System::Int32::typeid;
+			this->volume->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// taskNumber
 			// 
@@ -299,6 +301,7 @@ namespace Kurs2021 {
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 91;
 			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// dateReg
 			// 
@@ -307,6 +310,7 @@ namespace Kurs2021 {
 			this->dateReg->Name = L"dateReg";
 			this->dateReg->Size = System::Drawing::Size(68, 20);
 			this->dateReg->TabIndex = 90;
+			this->dateReg->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// cipher
 			// 
@@ -316,6 +320,7 @@ namespace Kurs2021 {
 			this->cipher->Size = System::Drawing::Size(57, 20);
 			this->cipher->TabIndex = 89;
 			this->cipher->ValidatingType = System::Int32::typeid;
+			this->cipher->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// projName
 			// 
@@ -324,6 +329,7 @@ namespace Kurs2021 {
 			this->projName->Name = L"projName";
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 88;
+			this->projName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			// 
 			// sign
 			// 
@@ -334,6 +340,7 @@ namespace Kurs2021 {
 			this->sign->Size = System::Drawing::Size(35, 21);
 			this->sign->TabIndex = 94;
 			this->sign->Text = L"=";
+			this->sign->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			this->sign->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RequestProjForm::sign_KeyPress);
 			// 
 			// surname
@@ -343,6 +350,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(117, 21);
 			this->surname->TabIndex = 96;
+			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestProjForm::taskNumber_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RequestProjForm::surname_KeyPress);
 			// 
 			// RequestProjForm
@@ -386,5 +394,6 @@ namespace Kurs2021 {
 	private: System::Void RequestProjForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void sign_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
+	private: System::Void taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

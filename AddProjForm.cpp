@@ -111,3 +111,13 @@ System::Void Kurs2021::AddProjForm::surname_KeyPress(System::Object^ sender, Sys
 {
 	e->Handled = true;
 }
+
+System::Void Kurs2021::AddProjForm::taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyCode == Keys::Enter)
+	{
+		buttonOk_Click(sender, e);
+		e->Handled = true;
+		e->SuppressKeyPress = true;
+	}
+}

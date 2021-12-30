@@ -104,14 +104,19 @@ System::Void Kurs2021::AddZdForm::button_in_ok_Click(System::Object^ sender, Sys
 		this->note->Text = L"";
 	}
     return System::Void();
-
-	//Из массива в текстбокс
-	string str = "test";
-	String^ str2 = gcnew String(str.c_str());
-	//
 }
 
 System::Void Kurs2021::AddZdForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
 {
 	e->Handled = true;
+}
+
+System::Void Kurs2021::AddZdForm::taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyCode == Keys::Enter)
+	{
+		button_in_ok_Click(sender, e);
+		e->Handled = true;
+		e->SuppressKeyPress = true;
+	}
 }

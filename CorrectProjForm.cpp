@@ -153,3 +153,12 @@ System::Void Kurs2021::CorrectProjForm::surname_KeyPress(System::Object^ sender,
 {
 	e->Handled = true;
 }
+System::Void Kurs2021::CorrectProjForm::number_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyCode == Keys::Enter)
+	{
+		button_in_ok_Click(sender, e);
+	}
+	e->Handled = true;
+	e->SuppressKeyPress = true;
+}

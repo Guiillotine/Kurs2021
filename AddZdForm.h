@@ -134,6 +134,7 @@ namespace Kurs2021 {
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 49;
+			this->status->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// task
 			// 
@@ -142,6 +143,7 @@ namespace Kurs2021 {
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 46;
+			this->task->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// label9
 			// 
@@ -158,6 +160,7 @@ namespace Kurs2021 {
 			this->note->Name = L"note";
 			this->note->Size = System::Drawing::Size(145, 20);
 			this->note->TabIndex = 44;
+			this->note->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// label8
 			// 
@@ -319,6 +322,7 @@ namespace Kurs2021 {
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 32;
+			this->customer->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// button_in_back
 			// 
@@ -340,6 +344,7 @@ namespace Kurs2021 {
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 72;
 			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// date
 			// 
@@ -348,6 +353,7 @@ namespace Kurs2021 {
 			this->date->Name = L"date";
 			this->date->Size = System::Drawing::Size(68, 20);
 			this->date->TabIndex = 73;
+			this->date->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// projNumber
 			// 
@@ -357,6 +363,7 @@ namespace Kurs2021 {
 			this->projNumber->Size = System::Drawing::Size(57, 20);
 			this->projNumber->TabIndex = 75;
 			this->projNumber->ValidatingType = System::Int32::typeid;
+			this->projNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			// 
 			// label10
 			// 
@@ -373,6 +380,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(128, 21);
 			this->surname->TabIndex = 97;
+			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddZdForm::taskNumber_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &AddZdForm::surname_KeyPress);
 			// 
 			// AddZdForm
@@ -416,5 +424,6 @@ namespace Kurs2021 {
 	private: System::Void button_in_ok_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void AddZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
+	private: System::Void taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

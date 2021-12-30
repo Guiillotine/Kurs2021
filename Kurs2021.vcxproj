@@ -162,6 +162,8 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PKDClass.h" />
+    <ClInclude Include="RegZdClass.h" />
     <ClInclude Include="RegZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -174,6 +176,7 @@
     <ClInclude Include="RequestZdForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TableClass.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddProjForm.resx">

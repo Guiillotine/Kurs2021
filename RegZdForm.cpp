@@ -14,7 +14,8 @@ extern string login;
 
 System::Void Kurs2021::RegZdForm::RegZdForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	this->Text = L"Учет ПКД (Пользователь: " + gcnew String(login.c_str()) + ")";
+	if (!fmode) this->Text = L"Учет ПКД (Пользователь: " + gcnew String(login.c_str()) + ")";
+	else this->Text = L"Учет ПКД (Пользователь: начальник отдела)";
 	if (!fmode)
 	{
 		this->toolStripButtonAdd->Visible = false;

@@ -277,6 +277,7 @@ namespace Kurs2021 {
 			this->projNumber->Size = System::Drawing::Size(57, 20);
 			this->projNumber->TabIndex = 97;
 			this->projNumber->ValidatingType = System::Int32::typeid;
+			this->projNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			// 
 			// date
 			// 
@@ -285,6 +286,7 @@ namespace Kurs2021 {
 			this->date->Name = L"date";
 			this->date->Size = System::Drawing::Size(68, 20);
 			this->date->TabIndex = 96;
+			this->date->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			// 
 			// taskNumber
 			// 
@@ -294,6 +296,7 @@ namespace Kurs2021 {
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 95;
 			this->taskNumber->ValidatingType = System::DateTime::typeid;
+			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			// 
 			// status
 			// 
@@ -302,6 +305,7 @@ namespace Kurs2021 {
 			this->status->Name = L"status";
 			this->status->Size = System::Drawing::Size(89, 20);
 			this->status->TabIndex = 94;
+			this->status->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			// 
 			// customer
 			// 
@@ -310,6 +314,7 @@ namespace Kurs2021 {
 			this->customer->Name = L"customer";
 			this->customer->Size = System::Drawing::Size(114, 20);
 			this->customer->TabIndex = 90;
+			this->customer->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			// 
 			// surname
 			// 
@@ -318,6 +323,7 @@ namespace Kurs2021 {
 			this->surname->Name = L"surname";
 			this->surname->Size = System::Drawing::Size(138, 21);
 			this->surname->TabIndex = 98;
+			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &RequestZdForm::taskNumber_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &RequestZdForm::surname_KeyPress);
 			// 
 			// RequestZdForm
@@ -357,5 +363,6 @@ namespace Kurs2021 {
 	private: System::Void button_ok_req_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void RequestZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
+	private: System::Void taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

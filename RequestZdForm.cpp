@@ -105,3 +105,12 @@ System::Void Kurs2021::RequestZdForm::surname_KeyPress(System::Object^ sender, S
 {
 	e->Handled = true;
 }
+System::Void Kurs2021::RequestZdForm::taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+{
+	if (e->KeyCode == Keys::Enter)
+	{
+		button_ok_req_Click(sender, e);
+	}
+	e->Handled = true;
+	e->SuppressKeyPress = true;
+}

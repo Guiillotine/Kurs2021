@@ -77,6 +77,7 @@ namespace Kurs2021 {
 			this->TBLogin->Name = L"TBLogin";
 			this->TBLogin->Size = System::Drawing::Size(134, 20);
 			this->TBLogin->TabIndex = 0;
+			this->TBLogin->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &LoginForm::TBPassword_KeyDown);
 			// 
 			// TBPassword
 			// 
@@ -85,6 +86,7 @@ namespace Kurs2021 {
 			this->TBPassword->PasswordChar = '*';
 			this->TBPassword->Size = System::Drawing::Size(134, 20);
 			this->TBPassword->TabIndex = 1;
+			this->TBPassword->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &LoginForm::TBPassword_KeyDown);
 			// 
 			// labelLog
 			// 
@@ -135,5 +137,6 @@ namespace Kurs2021 {
 		}
 #pragma endregion
 	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void TBPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }

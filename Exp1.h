@@ -105,6 +105,7 @@ namespace Kurs2021 {
 			this->fileName->Name = L"fileName";
 			this->fileName->Size = System::Drawing::Size(88, 20);
 			this->fileName->TabIndex = 38;
+			this->fileName->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Exp1::fileName_KeyDown);
 			// 
 			// label1
 			// 
@@ -143,6 +144,7 @@ namespace Kurs2021 {
 			this->to->Size = System::Drawing::Size(31, 20);
 			this->to->TabIndex = 76;
 			this->to->ValidatingType = System::DateTime::typeid;
+			this->to->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Exp1::fileName_KeyDown);
 			// 
 			// from
 			// 
@@ -152,6 +154,7 @@ namespace Kurs2021 {
 			this->from->Size = System::Drawing::Size(31, 20);
 			this->from->TabIndex = 75;
 			this->from->ValidatingType = System::DateTime::typeid;
+			this->from->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Exp1::fileName_KeyDown);
 			// 
 			// Exp1
 			// 
@@ -181,5 +184,6 @@ namespace Kurs2021 {
 	private: System::Void buttonBack_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void Exp1_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void fileName_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }
