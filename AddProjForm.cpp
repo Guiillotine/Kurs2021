@@ -5,12 +5,14 @@
 
 #include "AddProjForm.h"
 #include "PKDClass.h"
+#include "RegZdClass.h"
 #include <msclr\marshal_cppstd.h>
 using namespace System;
 using namespace std;
 
-extern int ix; // Номер строки в таблице введённых строк
+extern int ix;
 extern TablePKD tablePKD;
+extern TableRegZd tableRegZd;
 extern string fnamePKD;
 extern string fnameList;
 extern string fnameLogin;
@@ -39,7 +41,17 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 		k++;
 	}
 	f.close();
-
+	if (!fmode)
+	{
+		for (int i = 0; i < tableRegZd.GetRowsNum(); i++)
+		{
+			if (tableRegZd.GetTableRow(i).GetSurname() == login)
+			{
+				this->taskNumber->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(tableRegZd.GetTableRow(i).GetTaskNumber().c_str()) });
+			}
+		}
+	}
+	else for (int i = 0; i < tableRegZd.GetRowsNum(); i++) this->taskNumber->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(tableRegZd.GetTableRow(i).GetTaskNumber().c_str()) });
 }
 
 System::Void Kurs2021::AddProjForm::buttonBack_Click(System::Object^ sender, System::EventArgs^ e)
@@ -56,8 +68,27 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 	msclr::interop::marshal_context context;
 
 	std::string stringTaskNumber = context.marshal_as<std::string>(this->taskNumber->Text);
-	if (this->taskNumber->Text != "  .") row.SetTaskNumber(stringTaskNumber);
-	else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	{
+		if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
+		else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}
+	/*else
+	{
+		if (this->taskNumber->Text != "")
+		{
+			int k = tableRegZd.GetRowsNum();
+			for (int i = 0; i < tableRegZd.GetRowsNum(); i++)
+			{
+				if ((tableRegZd.GetTableRow(i).GetTaskNumber() == stringTaskNumber) && (tableRegZd.GetTableRow(i).GetSurname() == login))
+				{
+					row.SetTaskNumber(stringTaskNumber);
+					break;
+				}
+				if (i == tableRegZd.GetRowsNum() - 1) { MessageBox::Show("Номер задания указан неверно", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); f = 0; }
+			}			
+		}
+		else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
+	}*/
 
 	std::string stringDateReg = context.marshal_as<std::string>(this->dateReg->Text);
 	if (this->dateReg->Text != "  .  .") row.SetDateReg(stringDateReg);
@@ -108,6 +139,11 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 }
 
 System::Void Kurs2021::AddProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}
+
+System::Void Kurs2021::AddProjForm::taskNumber_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
 {
 	e->Handled = true;
 }

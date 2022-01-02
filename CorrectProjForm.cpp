@@ -5,7 +5,9 @@
 
 #include "CorrectProjForm.h"
 #include "PKDClass.h"
+#include "RegZdClass.h"
 #include <msclr\marshal_cppstd.h>
+extern TableRegZd tableRegZd;
 extern TablePKD tablePKD;
 extern string fnamePKD;
 extern string fnameLogin;
@@ -31,6 +33,8 @@ System::Void Kurs2021::CorrectProjForm::CorrectProjForm_Load(System::Object^ sen
 		k++;
 	}
 	f.close();
+
+	for (int i = 0; i < tableRegZd.GetRowsNum(); i++) this->taskNumber->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(tableRegZd.GetTableRow(i).GetTaskNumber().c_str()) });
 
 	/*fstream f;
 	string str;
@@ -150,6 +154,10 @@ System::Void Kurs2021::CorrectProjForm::number_TextChanged(System::Object^ sende
 	}
 }
 System::Void Kurs2021::CorrectProjForm::surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}
+System::Void Kurs2021::CorrectProjForm::CorrectProjForm_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
 {
 	e->Handled = true;
 }

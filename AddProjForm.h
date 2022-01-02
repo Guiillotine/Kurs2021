@@ -78,7 +78,8 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::MaskedTextBox^ cipher;
 	private: System::Windows::Forms::MaskedTextBox^ dateReg;
-	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
+
+
 	private: System::Windows::Forms::MaskedTextBox^ volume;
 	private: System::Windows::Forms::MaskedTextBox^ dateEnd;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_numb;
@@ -89,6 +90,8 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_chas;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column_att;
 	private: System::Windows::Forms::ComboBox^ surname;
+	private: System::Windows::Forms::ComboBox^ taskNumber;
+
 
 
 
@@ -133,17 +136,17 @@ namespace Kurs2021 {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->cipher = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->dateReg = (gcnew System::Windows::Forms::MaskedTextBox());
-			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->volume = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->dateEnd = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->surname = (gcnew System::Windows::Forms::ComboBox());
+			this->taskNumber = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_in))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// projName
 			// 
 			this->projName->Location = System::Drawing::Point(492, 66);
-			this->projName->MaxLength = 50;
+			this->projName->MaxLength = 100;
 			this->projName->Name = L"projName";
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 63;
@@ -341,16 +344,6 @@ namespace Kurs2021 {
 			this->dateReg->TabIndex = 70;
 			this->dateReg->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddProjForm::taskNumber_KeyDown);
 			// 
-			// taskNumber
-			// 
-			this->taskNumber->Location = System::Drawing::Point(71, 66);
-			this->taskNumber->Mask = L"00/0";
-			this->taskNumber->Name = L"taskNumber";
-			this->taskNumber->Size = System::Drawing::Size(40, 20);
-			this->taskNumber->TabIndex = 71;
-			this->taskNumber->ValidatingType = System::DateTime::typeid;
-			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddProjForm::taskNumber_KeyDown);
-			// 
 			// volume
 			// 
 			this->volume->Location = System::Drawing::Point(985, 67);
@@ -380,16 +373,26 @@ namespace Kurs2021 {
 			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddProjForm::taskNumber_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &AddProjForm::surname_KeyPress);
 			// 
+			// taskNumber
+			// 
+			this->taskNumber->FormattingEnabled = true;
+			this->taskNumber->Location = System::Drawing::Point(65, 65);
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(61, 21);
+			this->taskNumber->TabIndex = 99;
+			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &AddProjForm::taskNumber_KeyDown);
+			this->taskNumber->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &AddProjForm::taskNumber_KeyPress);
+			// 
 			// AddProjForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1118, 299);
+			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->surname);
 			this->Controls->Add(this->dateEnd);
 			this->Controls->Add(this->volume);
-			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->dateReg);
 			this->Controls->Add(this->cipher);
 			this->Controls->Add(this->label7);
@@ -421,5 +424,6 @@ namespace Kurs2021 {
 	private: System::Void AddProjForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 	private: System::Void taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	private: System::Void taskNumber_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

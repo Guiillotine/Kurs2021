@@ -57,9 +57,17 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 					f = 1;
 					if (k == 0) fmode = 1;
 					PKDForm^ form1 = gcnew PKDForm(); RegZdForm^ form2 = gcnew RegZdForm();
-					if (!fmode) form1->Show(); else form2->Show();
-					LoginForm::Hide();
-					break;
+					if (tablePKD.Getfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Учет ПКД\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+					else
+					{
+						if (tableRegZd.Getfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Регистрация заданий на проектирование\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						else
+						{ 
+							if (!fmode) form1->Show(); else form2->Show();
+							LoginForm::Hide();
+							break;
+						}
+					}
 				}
 			}
 			k++;
@@ -78,4 +86,7 @@ System::Void Kurs2021::LoginForm::TBPassword_KeyDown(System::Object^ sender, Sys
 		e->SuppressKeyPress = true;
 		buttonOk_Click(sender, e);
 	}
+}
+System::Void Kurs2021::LoginForm::LoginForm_Load(System::Object^ sender, System::EventArgs^ e)
+{
 }

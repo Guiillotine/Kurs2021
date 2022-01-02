@@ -64,16 +64,20 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Button^ button_in_back;
 	private: System::Windows::Forms::MaskedTextBox^ dateEnd;
 	private: System::Windows::Forms::MaskedTextBox^ volume;
-	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
+
+
 	private: System::Windows::Forms::MaskedTextBox^ dateReg;
 	private: System::Windows::Forms::MaskedTextBox^ cipher;
 	private: System::Windows::Forms::TextBox^ projName;
-
-
 	private: System::Windows::Forms::MaskedTextBox^ number;
+
+
+
+
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::ComboBox^ surname;
+	private: System::Windows::Forms::ComboBox^ taskNumber;
 
 
 	private:
@@ -110,13 +114,13 @@ namespace Kurs2021 {
 			this->button_in_back = (gcnew System::Windows::Forms::Button());
 			this->dateEnd = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->volume = (gcnew System::Windows::Forms::MaskedTextBox());
-			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->dateReg = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->cipher = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->projName = (gcnew System::Windows::Forms::TextBox());
 			this->number = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->surname = (gcnew System::Windows::Forms::ComboBox());
+			this->taskNumber = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -259,11 +263,11 @@ namespace Kurs2021 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(100, 35);
+			this->label1->Location = System::Drawing::Point(103, 35);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(86, 13);
+			this->label1->Size = System::Drawing::Size(89, 13);
 			this->label1->TabIndex = 70;
-			this->label1->Text = L"Номер задания";
+			this->label1->Text = L" Номер задания";
 			// 
 			// button_in_back
 			// 
@@ -298,17 +302,6 @@ namespace Kurs2021 {
 			this->volume->ValidatingType = System::Int32::typeid;
 			this->volume->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectProjForm::number_KeyDown);
 			// 
-			// taskNumber
-			// 
-			this->taskNumber->Enabled = false;
-			this->taskNumber->Location = System::Drawing::Point(127, 60);
-			this->taskNumber->Mask = L"00/0";
-			this->taskNumber->Name = L"taskNumber";
-			this->taskNumber->Size = System::Drawing::Size(40, 20);
-			this->taskNumber->TabIndex = 91;
-			this->taskNumber->ValidatingType = System::DateTime::typeid;
-			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectProjForm::number_KeyDown);
-			// 
 			// dateReg
 			// 
 			this->dateReg->Enabled = false;
@@ -334,7 +327,7 @@ namespace Kurs2021 {
 			// 
 			this->projName->Enabled = false;
 			this->projName->Location = System::Drawing::Point(485, 60);
-			this->projName->MaxLength = 50;
+			this->projName->MaxLength = 100;
 			this->projName->Name = L"projName";
 			this->projName->Size = System::Drawing::Size(133, 20);
 			this->projName->TabIndex = 88;
@@ -371,18 +364,26 @@ namespace Kurs2021 {
 			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectProjForm::number_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectProjForm::surname_KeyPress);
 			// 
+			// taskNumber
+			// 
+			this->taskNumber->FormattingEnabled = true;
+			this->taskNumber->Location = System::Drawing::Point(115, 59);
+			this->taskNumber->Name = L"taskNumber";
+			this->taskNumber->Size = System::Drawing::Size(61, 21);
+			this->taskNumber->TabIndex = 100;
+			// 
 			// CorrectProjForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1104, 267);
+			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->surname);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->number);
 			this->Controls->Add(this->dateEnd);
 			this->Controls->Add(this->volume);
-			this->Controls->Add(this->taskNumber);
 			this->Controls->Add(this->dateReg);
 			this->Controls->Add(this->cipher);
 			this->Controls->Add(this->projName);
@@ -403,6 +404,8 @@ namespace Kurs2021 {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Редактирование проектов";
 			this->Load += gcnew System::EventHandler(this, &CorrectProjForm::CorrectProjForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectProjForm::number_KeyDown);
+			this->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectProjForm::CorrectProjForm_KeyPress);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -415,5 +418,6 @@ namespace Kurs2021 {
 	private: System::Void CorrectProjForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 	private: System::Void number_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	private: System::Void CorrectProjForm_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }

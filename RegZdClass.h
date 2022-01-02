@@ -186,14 +186,14 @@ public:
         ofstream f;
         f.open(fname);
         if (!f.is_open()) return 0;
-        f << "                                                                         ÆÓĞÍÀË ĞÅÃÈÑÒĞÀÖÈÈ ÇÀÄÀÍÈÉ ÍÀ ÏĞÎÅÊÒÈĞÎÂÀÍÈÅ\n\n";
-        f << "  ÍÎÌÅĞ    ÄÀÒÀ ÂÛÄ.     ÍÀÈÌÅÍÎÂÀÍÈÅ                     ÑÎÄÅĞÆÀÍÈÅ ÇÀÄÀÍÈß                   ÍÎÌÅĞ          ÔÀÌÈËÈß              ÑÒÀÒÓÑ                          ÏĞÈÌÅ×ÀÍÈÅ\n";
-        f << " ÇÀÄÀÍÈß   ÇÀÄÀÍÈß        ÇÀÊÀÇ×ÈÊÀ                                                           ÏĞÎÅÊÒÀ  ÈÍÆÅÍÅĞÀ-ÊÎÍÑÒĞÓÊÒÎĞÀ\n";
+        f << "                                                                                          ÆÓĞÍÀË ĞÅÃÈÑÒĞÀÖÈÈ ÇÀÄÀÍÈÉ ÍÀ ÏĞÎÅÊÒÈĞÎÂÀÍÈÅ\n\n";
+        f << "  ÍÎÌÅĞ      ÄÀÒÀ ÂÛÄ.     ÍÀÈÌÅÍÎÂÀÍÈÅ                                             ÑÎÄÅĞÆÀÍÈÅ ÇÀÄÀÍÈß                                            ÍÎÌÅĞ          ÔÀÌÈËÈß              ÑÒÀÒÓÑ                    ÏĞÈÌÅ×ÀÍÈÅ\n";
+        f << " ÇÀÄÀÍÈß     ÇÀÄÀÍÈß        ÇÀÊÀÇ×ÈÊÀ                                                                                                            ÏĞÎÅÊÒÀ  ÈÍÆÅÍÅĞÀ-ÊÎÍÑÒĞÓÊÒÎĞÀ\n";
         for (int i = from - 1; i < to; i++)
         {
             f << "| ";
             f << tableRows[i].GetTaskNumber();
-            for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+            for (int j = tableRows[i].GetTaskNumber().length(); j < 8; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetDate();
             for (int j = tableRows[i].GetDate().length(); j < 11; j++) f << ' ';
@@ -202,7 +202,7 @@ public:
             for (int j = tableRows[i].GetCustomer().length(); j < 16; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetTask();
-            for (int j = tableRows[i].GetTask().length(); j < 51; j++) f << ' ';
+            for (int j = tableRows[i].GetTask().length(); j < 101; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetProjNumber();
             for (int j = tableRows[i].GetProjNumber().length(); j < 7; j++) f << ' ';
@@ -214,7 +214,7 @@ public:
             for (int j = tableRows[i].GetStatus().length(); j < 16; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetNote();
-            for (int j = tableRows[i].GetNote().length(); j < 51; j++) f << ' ';
+            for (int j = tableRows[i].GetNote().length(); j < 36; j++) f << ' ';
             f << "|\n";
         }
         f.close();

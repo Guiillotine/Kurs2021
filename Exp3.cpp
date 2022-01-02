@@ -11,12 +11,12 @@ extern string fnameRegZd;
 
 System::Void Kurs2021::Exp3::Exp3_Load(System::Object^ sender, System::EventArgs^ e)
 {
-    if (tableRegZd.GetRowsNum() == 0) 
-        if (tableRegZd.Getfile(fnameRegZd) == 0) 
+    /*if (tableRegZd.GetRowsNum() == 0)
+        if (tableRegZd.Getfile(fnameRegZd) == 0)
         {
             MessageBox::Show("Не удалось открыть файл с таблицей регистрации заданий для экспорта", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); 
             Exp3::Close();
-        }
+        }*/
     if (tableRegZd.GetRowsNum() != 0) this->from->Text = L"1"; else this->from->Text = L"0";
     this->to->Text = tableRegZd.GetRowsNum().ToString();
     return System::Void();
@@ -50,8 +50,6 @@ System::Void Kurs2021::Exp3::buttonOk_Click(System::Object^ sender, System::Even
         else
         {
             MessageBox::Show("Таблица экспортирована в файл \"" + this->fileName->Text + "\"", "", MessageBoxButtons::OK, MessageBoxIcon::None);
-            this->from->Text = L"";
-            this->to->Text = L"";
             this->fileName->Text = L"";
         }
     }

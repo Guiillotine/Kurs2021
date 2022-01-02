@@ -312,7 +312,7 @@ namespace Kurs2021 {
 			// 
 			this->taskNumber->Enabled = false;
 			this->taskNumber->Location = System::Drawing::Point(102, 63);
-			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Mask = L"00/000";
 			this->taskNumber->Name = L"taskNumber";
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 81;
@@ -333,7 +333,7 @@ namespace Kurs2021 {
 			// 
 			this->task->Enabled = false;
 			this->task->Location = System::Drawing::Point(427, 63);
-			this->task->MaxLength = 50;
+			this->task->MaxLength = 100;
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 79;
@@ -343,7 +343,7 @@ namespace Kurs2021 {
 			// 
 			this->note->Enabled = false;
 			this->note->Location = System::Drawing::Point(936, 63);
-			this->note->MaxLength = 50;
+			this->note->MaxLength = 35;
 			this->note->Name = L"note";
 			this->note->Size = System::Drawing::Size(133, 20);
 			this->note->TabIndex = 78;

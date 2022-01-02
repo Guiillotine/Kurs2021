@@ -175,15 +175,15 @@ public:
         ofstream f;
         f.open(fname);
         if (!f.is_open()) return 0;
-        f << "                                  ÆÓĞÍÀË Ó×ÅÒÀ ÂÛÏÎËÍÅÍÍÎÉ ÏĞÎÅÊÒÍÎ-ÊÎÍÑÒĞÓÊÒÎĞÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
-        f << "  ÍÎÌÅĞ       ÄÀÒÀ      ØÈÔĞ                    ÍÀÈÌÅÍÎÂÀÍÈÅ ÏĞÎÅÊÒÀ                     ÈÑÏÎËÍÈÒÅËÜ      ÄÀÒÀ ÇÀÂÅĞØÅÍÈß ÎÁÚÅÌ\n";
-        f << " ÇÀÄÀÍÈß  ĞÅÃÈÑÒĞÀÖÈÈ  ÏĞÎÅÊÒÀ                                                                                ÏĞÎÅÊÒÀ   (â  ë.À4)\n";
+        f << "                                                           ÆÓĞÍÀË Ó×ÅÒÀ ÂÛÏÎËÍÅÍÍÎÉ ÏĞÎÅÊÒÍÎ-ÊÎÍÑÒĞÓÊÒÎĞÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
+        f << "   ÍÎÌÅĞ       ÄÀÒÀ      ØÈÔĞ                                            ÍÀÈÌÅÍÎÂÀÍÈÅ ÏĞÎÅÊÒÀ                                                ÈÑÏÎËÍÈÒÅËÜ      ÄÀÒÀ ÇÀÂÅĞØÅÍÈß ÎÁÚÅÌ\n";
+        f << "  ÇÀÄÀÍÈß  ĞÅÃÈÑÒĞÀÖÈÈ  ÏĞÎÅÊÒÀ                                                                                                                                   ÏĞÎÅÊÒÀ   (â  ë.À4)\n";
         for (int i = from - 1; i < to; i++)
         {
             if ((tableRows[i].GetVolume() == 0) || (tableRows[i].GetDateEnd() == "00.00.0000")) continue;
             f << "| ";
             f << tableRows[i].GetTaskNumber();
-            for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+            for (int j = tableRows[i].GetTaskNumber().length(); j < 8; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetDateReg();
             for (int j = tableRows[i].GetDateReg().length(); j < 11; j++) f << ' ';
@@ -192,7 +192,7 @@ public:
             for (int j = tableRows[i].GetCipher().length(); j < 7; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetProjName();
-            for (int j = tableRows[i].GetProjName().length(); j < 51; j++) f << ' ';
+            for (int j = tableRows[i].GetProjName().length(); j < 101; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetSurname();
             for (int j = tableRows[i].GetSurname().length(); j < 21; j++) f << ' ';
@@ -212,14 +212,14 @@ public:
         ofstream f;
         f.open(fname);
         if (!f.is_open()) return 0;
-        f << "                         ÆÓĞÍÀË Ó×ÅÒÀ ÍÎÌÅĞÎÂ ÏĞÎÅÊÒÍÎ-ÊÎÍÑÒĞÓÊÒÎĞÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
-        f << "  ÍÎÌÅĞ       ÄÀÒÀ      ØÈÔĞ                    ÍÀÈÌÅÍÎÂÀÍÈÅ ÏĞÎÅÊÒÀ                     ÈÑÏÎËÍÈÒÅËÜ\n";
-        f << " ÇÀÄÀÍÈß  ĞÅÃÈÑÒĞÀÖÈÈ  ÏĞÎÅÊÒÀ\n";
+        f << "                                              ÆÓĞÍÀË Ó×ÅÒÀ ÍÎÌÅĞÎÂ ÏĞÎÅÊÒÍÎ-ÊÎÍÑÒĞÓÊÒÎĞÑÊÎÉ ÄÎÊÓÌÅÍÒÀÖÈÈ\n\n";
+        f << "   ÍÎÌÅĞ       ÄÀÒÀ      ØÈÔĞ                                            ÍÀÈÌÅÍÎÂÀÍÈÅ ÏĞÎÅÊÒÀ                                                ÈÑÏÎËÍÈÒÅËÜ\n";
+        f << "  ÇÀÄÀÍÈß  ĞÅÃÈÑÒĞÀÖÈÈ  ÏĞÎÅÊÒÀ\n";
         for (int i = from - 1; i < to; i++)
         {
             f << "| ";
             f << tableRows[i].GetTaskNumber();
-            for (int j = tableRows[i].GetTaskNumber().length(); j < 6; j++) f << ' ';
+            for (int j = tableRows[i].GetTaskNumber().length(); j < 8; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetDateReg();
             for (int j = tableRows[i].GetDateReg().length(); j < 11; j++) f << ' ';
@@ -228,7 +228,7 @@ public:
             for (int j = tableRows[i].GetCipher().length(); j < 7; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetProjName();
-            for (int j = tableRows[i].GetProjName().length(); j < 51; j++) f << ' ';
+            for (int j = tableRows[i].GetProjName().length(); j < 101; j++) f << ' ';
             f << "| ";
             f << tableRows[i].GetSurname();
             for (int j = tableRows[i].GetSurname().length(); j < 21; j++) f << ' ';

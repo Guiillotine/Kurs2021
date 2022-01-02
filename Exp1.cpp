@@ -11,12 +11,12 @@ extern string fnamePKD;
 
 System::Void Kurs2021::Exp1::Exp1_Load(System::Object^ sender, System::EventArgs^ e)
 {
-    if (tablePKD.GetRowsNum() == 0)
+    /*if (tablePKD.GetRowsNum() == 0)
         if (tablePKD.Getfile(fnamePKD) == 0)
         {
             MessageBox::Show("Не удалось открыть файл с таблицей учета ПКД", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
             Exp1::Close();
-        }
+        }*/
     if (tablePKD.GetRowsNum() != 0) this->from->Text = L"1"; else this->from->Text = L"0";
     this->to->Text = tablePKD.GetRowsNum().ToString();
     return System::Void();
@@ -50,8 +50,6 @@ System::Void Kurs2021::Exp1::buttonOk_Click(System::Object^ sender, System::Even
         else
         {
             MessageBox::Show("Таблица экспортирована в файл \"" + this->fileName->Text + "\"", "", MessageBoxButtons::OK, MessageBoxIcon::None);
-            this->from->Text = L"";
-            this->to->Text = L"";
             this->fileName->Text = L"";
         }
     }

@@ -83,6 +83,8 @@ namespace Kurs2021 {
 
 
 
+
+
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
@@ -140,7 +142,7 @@ namespace Kurs2021 {
 			// task
 			// 
 			this->task->Location = System::Drawing::Point(413, 65);
-			this->task->MaxLength = 50;
+			this->task->MaxLength = 100;
 			this->task->Name = L"task";
 			this->task->Size = System::Drawing::Size(133, 20);
 			this->task->TabIndex = 46;
@@ -157,7 +159,7 @@ namespace Kurs2021 {
 			// note
 			// 
 			this->note->Location = System::Drawing::Point(944, 65);
-			this->note->MaxLength = 50;
+			this->note->MaxLength = 35;
 			this->note->Name = L"note";
 			this->note->Size = System::Drawing::Size(145, 20);
 			this->note->TabIndex = 44;
@@ -340,7 +342,7 @@ namespace Kurs2021 {
 			// taskNumber
 			// 
 			this->taskNumber->Location = System::Drawing::Point(60, 65);
-			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Mask = L"00/000";
 			this->taskNumber->Name = L"taskNumber";
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 72;

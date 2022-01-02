@@ -297,7 +297,7 @@ namespace Kurs2021 {
 			// taskNumber
 			// 
 			this->taskNumber->Location = System::Drawing::Point(70, 66);
-			this->taskNumber->Mask = L"00/0";
+			this->taskNumber->Mask = L"00/00";
 			this->taskNumber->Name = L"taskNumber";
 			this->taskNumber->Size = System::Drawing::Size(40, 20);
 			this->taskNumber->TabIndex = 91;

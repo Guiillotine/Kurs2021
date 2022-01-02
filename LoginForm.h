@@ -133,6 +133,7 @@ namespace Kurs2021 {
 			this->Name = L"LoginForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Авторизация";
+			this->Load += gcnew System::EventHandler(this, &LoginForm::LoginForm_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -140,5 +141,6 @@ namespace Kurs2021 {
 #pragma endregion
 	private: System::Void buttonOk_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void TBPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	private: System::Void LoginForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }
