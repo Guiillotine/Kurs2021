@@ -149,7 +149,10 @@ System::Void Kurs2021::CorrectZdForm::surname_KeyPress(System::Object^ sender, S
 {
 	e->Handled = true;
 }
-
+System::Void Kurs2021::CorrectZdForm::status_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}
 System::Void Kurs2021::CorrectZdForm::number_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
 	if (e->KeyCode == Keys::Enter)

@@ -134,7 +134,7 @@ namespace Kurs2021 {
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 24);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(1439, 25);
+			this->toolStrip1->Size = System::Drawing::Size(1350, 25);
 			this->toolStrip1->TabIndex = 13;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -195,7 +195,7 @@ namespace Kurs2021 {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1439, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1350, 24);
 			this->menuStrip1->TabIndex = 11;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -298,7 +298,7 @@ namespace Kurs2021 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(523, 71);
+			this->label1->Location = System::Drawing::Point(476, 72);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(387, 24);
 			this->label1->TabIndex = 12;
@@ -321,12 +321,12 @@ namespace Kurs2021 {
 					this->Column_numb, this->Column_name, this->Column_fio, this->Column_napr, this->Column_kurs, this->Column_chas, this->Column_att,
 					this->Column_prim
 			});
-			this->dataGridView1->Location = System::Drawing::Point(52, 108);
+			this->dataGridView1->Location = System::Drawing::Point(9, 109);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->dataGridView1->Size = System::Drawing::Size(1333, 686);
+			this->dataGridView1->Size = System::Drawing::Size(1333, 613);
 			this->dataGridView1->TabIndex = 10;
 			// 
 			// Column1
@@ -408,15 +408,14 @@ namespace Kurs2021 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1439, 837);
+			this->ClientSize = System::Drawing::Size(1350, 730);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MaximizeBox = false;
 			this->Name = L"RegZdForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"׃קוע ֿÊִ";

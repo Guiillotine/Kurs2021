@@ -110,7 +110,10 @@ System::Void Kurs2021::AddZdForm::surname_KeyPress(System::Object^ sender, Syste
 {
 	e->Handled = true;
 }
-
+System::Void Kurs2021::AddZdForm::status_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
+{
+	e->Handled = true;
+}
 System::Void Kurs2021::AddZdForm::taskNumber_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
 {
 	if (e->KeyCode == Keys::Enter)

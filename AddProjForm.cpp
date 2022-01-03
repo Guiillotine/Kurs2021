@@ -47,7 +47,11 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 		{
 			if (tableRegZd.GetTableRow(i).GetSurname() == login)
 			{
-				this->taskNumber->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(tableRegZd.GetTableRow(i).GetTaskNumber().c_str()) });
+				for (int j = 0; j < tablePKD.GetRowsNum(); j++)
+				{
+					if (tablePKD.GetTableRow(j).GetTaskNumber() == tableRegZd.GetTableRow(i).GetTaskNumber()) break;
+					if (j == tablePKD.GetRowsNum() - 1)this->taskNumber->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(tableRegZd.GetTableRow(i).GetTaskNumber().c_str()) });
+				}
 			}
 		}
 	}
@@ -72,23 +76,6 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 		if (this->taskNumber->Text != "") row.SetTaskNumber(stringTaskNumber);
 		else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
 	}
-	/*else
-	{
-		if (this->taskNumber->Text != "")
-		{
-			int k = tableRegZd.GetRowsNum();
-			for (int i = 0; i < tableRegZd.GetRowsNum(); i++)
-			{
-				if ((tableRegZd.GetTableRow(i).GetTaskNumber() == stringTaskNumber) && (tableRegZd.GetTableRow(i).GetSurname() == login))
-				{
-					row.SetTaskNumber(stringTaskNumber);
-					break;
-				}
-				if (i == tableRegZd.GetRowsNum() - 1) { MessageBox::Show("Номер задания указан неверно", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error); f = 0; }
-			}			
-		}
-		else if (f) { f = 0; MessageBox::Show("Введены не все данные", "Внимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
-	}*/
 
 	std::string stringDateReg = context.marshal_as<std::string>(this->dateReg->Text);
 	if (this->dateReg->Text != "  .  .") row.SetDateReg(stringDateReg);

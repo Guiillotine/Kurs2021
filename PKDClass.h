@@ -109,6 +109,10 @@ public:
     {
         rowsNum = 0;
     }*/
+    ~TablePKD()
+    {
+        delete[] tableRows;
+    }
     void AddStr(RowPKD tableRow)
     {
         if (rowsNum > 0) ArrResize();

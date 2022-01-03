@@ -67,14 +67,6 @@ public:
     {
         return(projNumber);
     }
-    /*void SetSurname(string surname)
-    {
-        this->surname = surname;
-    }
-    string GetSurname()
-    {
-        return(surname);
-    }*/
     void SetStatus(string status)
     {
         this->status = status;
@@ -102,23 +94,21 @@ public:
     }
 
 private:
-    //string taskNumber;
     string date;
     string customer;
     string task;
     string projNumber;
-    //string surname;
     string status;
     string note;
 };
 
 public class TableRegZd : public Table
 {
-public:
-    /*TableRegZd()
+public:   
+    ~TableRegZd()
     {
-        rowsNum = 0;
-    }*/
+        delete[] tableRows;
+    }
     void AddStr(RowRegZd tableRow)
     {
         if (rowsNum > 0) ArrResize();

@@ -67,7 +67,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::MaskedTextBox^ projNumber;
 	private: System::Windows::Forms::MaskedTextBox^ date;
 	private: System::Windows::Forms::MaskedTextBox^ taskNumber;
-	private: System::Windows::Forms::TextBox^ status;
+
 	private: System::Windows::Forms::TextBox^ task;
 	private: System::Windows::Forms::TextBox^ note;
 
@@ -77,6 +77,7 @@ namespace Kurs2021 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::MaskedTextBox^ number;
 	private: System::Windows::Forms::ComboBox^ surname;
+	private: System::Windows::Forms::ComboBox^ status;
 
 	private:
 		/// <summary>
@@ -114,7 +115,6 @@ namespace Kurs2021 {
 			this->projNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->date = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->taskNumber = (gcnew System::Windows::Forms::MaskedTextBox());
-			this->status = (gcnew System::Windows::Forms::TextBox());
 			this->task = (gcnew System::Windows::Forms::TextBox());
 			this->note = (gcnew System::Windows::Forms::TextBox());
 			this->customer = (gcnew System::Windows::Forms::TextBox());
@@ -122,6 +122,7 @@ namespace Kurs2021 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->number = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->surname = (gcnew System::Windows::Forms::ComboBox());
+			this->status = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -135,7 +136,7 @@ namespace Kurs2021 {
 			// 
 			// label8
 			// 
-			this->label8->Location = System::Drawing::Point(848, 34);
+			this->label8->Location = System::Drawing::Point(843, 34);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(51, 19);
 			this->label8->TabIndex = 68;
@@ -319,16 +320,6 @@ namespace Kurs2021 {
 			this->taskNumber->ValidatingType = System::DateTime::typeid;
 			this->taskNumber->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			// 
-			// status
-			// 
-			this->status->Enabled = false;
-			this->status->Location = System::Drawing::Point(827, 63);
-			this->status->MaxLength = 15;
-			this->status->Name = L"status";
-			this->status->Size = System::Drawing::Size(89, 20);
-			this->status->TabIndex = 80;
-			this->status->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
-			// 
 			// task
 			// 
 			this->task->Enabled = false;
@@ -398,12 +389,26 @@ namespace Kurs2021 {
 			this->surname->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &CorrectZdForm::number_KeyDown);
 			this->surname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectZdForm::surname_KeyPress);
 			// 
+			// status
+			// 
+			this->status->FormattingEnabled = true;
+			this->status->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
+				L"Принято", L"В работе", L"Отложено", L"Отменено",
+					L"Выполнено"
+			});
+			this->status->Location = System::Drawing::Point(825, 63);
+			this->status->Name = L"status";
+			this->status->Size = System::Drawing::Size(89, 21);
+			this->status->TabIndex = 99;
+			this->status->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &CorrectZdForm::status_KeyPress);
+			// 
 			// CorrectZdForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ClientSize = System::Drawing::Size(1102, 265);
+			this->Controls->Add(this->status);
 			this->Controls->Add(this->surname);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->number);
@@ -411,7 +416,6 @@ namespace Kurs2021 {
 			this->Controls->Add(this->projNumber);
 			this->Controls->Add(this->date);
 			this->Controls->Add(this->taskNumber);
-			this->Controls->Add(this->status);
 			this->Controls->Add(this->task);
 			this->Controls->Add(this->note);
 			this->Controls->Add(this->customer);
@@ -444,5 +448,6 @@ namespace Kurs2021 {
 	private: System::Void CorrectZdForm_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void surname_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 	private: System::Void number_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+	private: System::Void status_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
 };
 }
