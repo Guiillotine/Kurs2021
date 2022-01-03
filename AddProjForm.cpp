@@ -24,7 +24,6 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 	ix = 0;
 	fstream f;
 	string str;
-
 	f.open(fnameLogin, fstream::in);
 	if (!f.is_open())
 	{
@@ -43,6 +42,8 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 	f.close();
 	if (!fmode)
 	{
+		this->dateEnd->Enabled = false;
+		this->volume->Enabled = false;
 		for (int i = 0; i < tableRegZd.GetRowsNum(); i++)
 		{
 			if (tableRegZd.GetTableRow(i).GetSurname() == login)
