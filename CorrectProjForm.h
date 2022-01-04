@@ -145,7 +145,7 @@ namespace Kurs2021 {
 			// 
 			// label8
 			// 
-			this->label8->Location = System::Drawing::Point(809, 35);
+			this->label8->Location = System::Drawing::Point(817, 35);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(99, 18);
 			this->label8->TabIndex = 78;

@@ -48,10 +48,10 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 		int k = 0;
 		while (!file.eof())
 		{
-			file >> login;
+			getline(file, login); //file >> login;
 			if (this->TBLogin->Text == gcnew String(login.c_str()))
 			{ 
-				file >> password;
+				getline(file, password); //file >> password;
 				if (this->TBPassword->Text == gcnew String(password.c_str()))
 				{
 					f = 1;

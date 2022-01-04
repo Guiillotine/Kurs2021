@@ -28,9 +28,9 @@ System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System:
 	while (!f.eof())
 	{
 		str = "";
-		f >> str;
+		getline(f, str); //f >> str;
 		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-		f >> str;
+		getline(f, str); //f >> str;
 		k++;
 	}
 	f.close();

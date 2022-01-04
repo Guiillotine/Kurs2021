@@ -252,7 +252,7 @@ namespace Kurs2021 {
 			// 
 			this->button_ok_req->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button_ok_req->Location = System::Drawing::Point(1017, 370);
+			this->button_ok_req->Location = System::Drawing::Point(1010, 370);
 			this->button_ok_req->Name = L"button_ok_req";
 			this->button_ok_req->Size = System::Drawing::Size(75, 23);
 			this->button_ok_req->TabIndex = 75;
@@ -338,7 +338,7 @@ namespace Kurs2021 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->ClientSize = System::Drawing::Size(1109, 410);
+			this->ClientSize = System::Drawing::Size(1104, 410);
 			this->Controls->Add(this->status);
 			this->Controls->Add(this->surname);
 			this->Controls->Add(this->projNumber);
