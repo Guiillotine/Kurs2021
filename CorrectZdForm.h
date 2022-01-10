@@ -391,6 +391,7 @@ namespace Kurs2021 {
 			// 
 			// status
 			// 
+			this->status->Enabled = false;
 			this->status->FormattingEnabled = true;
 			this->status->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
 				L"Принято", L"В работе", L"Отложено", L"Отменено",

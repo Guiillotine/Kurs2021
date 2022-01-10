@@ -366,6 +366,7 @@ namespace Kurs2021 {
 			// 
 			// taskNumber
 			// 
+			this->taskNumber->Enabled = false;
 			this->taskNumber->FormattingEnabled = true;
 			this->taskNumber->Location = System::Drawing::Point(115, 59);
 			this->taskNumber->Name = L"taskNumber";

@@ -31,17 +31,19 @@ System::Void Kurs2021::AddProjForm::AddProjForm_Load(System::Object^ sender, Sys
 		AddProjForm::Close();
 	}
 	int k = 0;
+	if (fmode)
 	while (!f.eof())
 	{
 		str = "";
-		getline(f, str);//f >> str;
+		getline(f, str);
 		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-		getline(f, str); //f >> str;
+		getline(f, str);
 		k++;
 	}
 	f.close();
 	if (!fmode)
 	{
+		this->surname->Text = gcnew String(login.c_str());
 		this->dateEnd->Enabled = false;
 		this->volume->Enabled = false;
 		for (int i = 0; i < tableRegZd.GetRowsNum(); i++)
@@ -92,7 +94,7 @@ System::Void Kurs2021::AddProjForm::buttonOk_Click(System::Object^ sender, Syste
 
 	std::string stringSurname = context.marshal_as<std::string>(this->surname->Text);
 	if ((this->surname->Text == "") && (f)) { f = 0; MessageBox::Show("¬ведены не все данные", "¬нимание", MessageBoxButtons::OK, MessageBoxIcon::Warning); }
-	if ((this->surname->Text != gcnew String(login.c_str())) && (f) && (!fmode)) { f = 0; MessageBox::Show("”кажите свою фамилию в поле \"»сполнитель\"", "ќшибка", MessageBoxButtons::OK, MessageBoxIcon::Error); }
+	//if ((this->surname->Text != gcnew String(login.c_str())) && (f) && (!fmode)) { f = 0; MessageBox::Show("”кажите свою фамилию в поле \"»сполнитель\"", "ќшибка", MessageBoxButtons::OK, MessageBoxIcon::Error); }
 	else row.SetSurname(stringSurname);
 
 	std::string stringDateEnd = context.marshal_as<std::string>(this->dateEnd->Text);

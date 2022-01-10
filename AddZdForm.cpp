@@ -10,7 +10,7 @@ using namespace System;
 using namespace std;
 extern string fnameLogin;
 
-int ix; // Номер строки в таблице введённых строк
+int ix;
 extern TableRegZd tableRegZd;
 
 System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -28,9 +28,9 @@ System::Void Kurs2021::AddZdForm::AddZdForm_Load(System::Object^ sender, System:
 	while (!f.eof())
 	{
 		str = "";
-		getline(f, str); //f >> str;
+		getline(f, str);
 		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-		getline(f, str); //f >> str;
+		getline(f, str);
 		k++;
 	}
 	f.close();

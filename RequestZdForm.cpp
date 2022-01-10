@@ -21,27 +21,14 @@ System::Void Kurs2021::RequestZdForm::RequestZdForm_Load(System::Object^ sender,
 	while (!f.eof())
 	{
 		str = "";
-		getline(f, str); //f >> str;
+		getline(f, str);
 		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-		getline(f, str); //f >> str;
+		getline(f, str);
 		k++;
 	}
+	this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"" });
+	this->status->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"" });
 	f.close();
-
-	/*fstream f;
-	string str;
-	f.open(fnameList, fstream::in | fstream::out | fstream::app);
-	if (!f.is_open())
-	{
-		MessageBox::Show("Не удалось открыть файл cо списком исполнителей для заполнения таблицы", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		RequestZdForm::Close();
-	}
-	while (!f.eof())
-	{
-		getline(f, str);
-		this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-	}
-	f.close();*/
 }
 
 System::Void Kurs2021::RequestZdForm::button_back_req_Click(System::Object^ sender, System::EventArgs^ e)
@@ -71,9 +58,6 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 		if ((this->customer->Text == "") || (row.GetCustomer() == context.marshal_as<std::string>(this->customer->Text)));
 		else continue;
 
-		/*if ((this->task->Text == "") || (row.GetTask() == context.marshal_as<std::string>(this->task->Text)));
-		else continue;*/
-
 		if ((this->projNumber->Text == "  -") || (row.GetProjNumber() == context.marshal_as<std::string>(this->projNumber->Text)));
 		else continue;
 
@@ -82,9 +66,6 @@ System::Void Kurs2021::RequestZdForm::button_ok_req_Click(System::Object^ sender
 
 		if ((this->status->Text == "") || (row.GetStatus() == context.marshal_as<std::string>(this->status->Text)));
 		else continue;
-
-		/*if ((this->note->Text == "") || (row.GetNote() == context.marshal_as<std::string>(this->note->Text)));
-		else continue;*/
 
 		f = 1;
 		dataGridView->Rows->Add();

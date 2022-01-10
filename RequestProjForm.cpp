@@ -24,11 +24,12 @@ System::Void Kurs2021::RequestProjForm::RequestProjForm_Load(System::Object^ sen
 	while (!f.eof())
 	{
 		str = "";
-		getline(f, str); //f >> str;
+		getline(f, str);
 		if (k) this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { gcnew String(str.c_str()) });
-		getline(f, str); //f >> str;
+		getline(f, str);
 		k++;
 	}
+	this->surname->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"" });
 	f.close();
 }
 System::Void Kurs2021::RequestProjForm::button_in_back_Click(System::Object^ sender, System::EventArgs^ e)

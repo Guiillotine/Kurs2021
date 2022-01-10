@@ -22,7 +22,6 @@ System::Void Kurs2021::PKDForm::PKDForm_Load(System::Object^ sender, System::Eve
 		this->toolStripButtonCorrect->Visible = false;
 		this->изменитьСтрокуToolStripMenuItem->Visible = false;
 	}
-	//if (tablePKD.GetRowsNum() == 0) if (tablePKD.Getfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	return System::Void();
 }
 

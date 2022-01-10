@@ -130,7 +130,7 @@ namespace Kurs2021 {
 			// 
 			// buttonOk
 			// 
-			this->buttonOk->Location = System::Drawing::Point(240, 135);
+			this->buttonOk->Location = System::Drawing::Point(184, 135);
 			this->buttonOk->Name = L"buttonOk";
 			this->buttonOk->Size = System::Drawing::Size(60, 23);
 			this->buttonOk->TabIndex = 46;
@@ -163,7 +163,7 @@ namespace Kurs2021 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->ClientSize = System::Drawing::Size(312, 170);
+			this->ClientSize = System::Drawing::Size(258, 170);
 			this->Controls->Add(this->to);
 			this->Controls->Add(this->from);
 			this->Controls->Add(this->buttonBack);

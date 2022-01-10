@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -27,14 +26,6 @@ public:
         this->dateEnd = row.dateEnd;
         this->volume = row.volume;
     }
-    /*void SetTaskNumber(string taskNumber)
-    {
-        this->taskNumber = taskNumber;
-    }
-    string GetTaskNumber()
-    {
-        return(taskNumber);
-    }*/
     void SetDateReg(string dateReg)
     {
         this->dateReg = dateReg;
@@ -59,14 +50,6 @@ public:
     {
         return(projName);
     }
-    /*void SetSurname(string surname)
-     {
-         this->surname = surname;
-     }
-     string GetSurname()
-     {
-         return(surname);
-     }*/
     void SetDateEnd(string dateEnd)
     {
         this->dateEnd = dateEnd;
@@ -93,11 +76,9 @@ public:
         return (1);
     }
 private:
-    //string taskNumber;
     string dateReg;
     string cipher;
     string projName;
-    //string surname;
     string dateEnd;
     int volume;
 };
@@ -105,10 +86,6 @@ private:
 public class TablePKD : public Table
 {
 public:
-    /*TablePKD()
-    {
-        rowsNum = 0;
-    }*/
     ~TablePKD()
     {
         delete[] tableRows;
@@ -129,10 +106,10 @@ public:
         for (int i = 0; i < rowsNum; i++) tableRows2[i] = tableRows[i];
         tableRows = tableRows2;
     }
-    int GetRowsNum()
+    /*int GetRowsNum()
     {
         return(rowsNum);
-    }
+    }*/
     RowPKD GetTableRow(int index)
     {
         return *(tableRows + (index));
@@ -243,5 +220,4 @@ public:
     }
 private:
     RowPKD* tableRows = new RowPKD[1];
-    //int rowsNum;
 };

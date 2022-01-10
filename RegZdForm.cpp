@@ -22,7 +22,6 @@ System::Void Kurs2021::RegZdForm::RegZdForm_Load(System::Object^ sender, System:
 		this->toolStripButtonCorrect->Visible = false; 
 		this->редактироватьToolStripMenuItem->Visible = false;
 	}
-	//if (tableRegZd.GetRowsNum() == 0) if (tableRegZd.Getfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	return System::Void();
 }
 

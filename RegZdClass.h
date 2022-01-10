@@ -27,14 +27,6 @@ public:
         this->status = row.status;
         this->note = row.note;
     }
-    /*void SetTaskNumber(string taskNumber)
-    {
-        this->taskNumber = taskNumber;
-    }
-    string GetTaskNumber()
-    {
-        return(taskNumber);
-    }*/
     void SetDate(string date)
     {
         this->date = date;
@@ -125,10 +117,10 @@ public:
         for (int i = 0; i < rowsNum; i++) tableRow2[i] = tableRows[i];
         tableRows = tableRow2;
     }
-    int GetRowsNum()
+    /*int GetRowsNum()
     {
         return(rowsNum);
-    }
+    }*/
     RowRegZd GetTableRow(int index)
     {
         return *(tableRows + (index));
@@ -212,5 +204,4 @@ public:
     }
 private:
     RowRegZd* tableRows = new RowRegZd[1];
-    //int rowsNum;
 };

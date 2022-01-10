@@ -45,38 +45,39 @@ System::Void Kurs2021::LoginForm::buttonOk_Click(System::Object^ sender, System:
 	if (!file.is_open()) MessageBox::Show("Не удалось открыть файл с логинами и паролями. Авторизация невозможна", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	else
 	{
-		int k = 0;
-		while (!file.eof())
+		if ((this->TBLogin->Text != "") && (this->TBPassword->Text != ""))
 		{
-			getline(file, login); //file >> login;
-			if (this->TBLogin->Text == gcnew String(login.c_str()))
-			{ 
-				getline(file, password); //file >> password;
-				if (this->TBPassword->Text == gcnew String(password.c_str()))
+			int k = 0;
+			while (!file.eof())
+			{
+				getline(file, login);
+				if (this->TBLogin->Text == gcnew String(login.c_str()))
 				{
-					f = 1;
-					if (k == 0) fmode = 1;
-					PKDForm^ form1 = gcnew PKDForm(); RegZdForm^ form2 = gcnew RegZdForm();
-					if (tablePKD.Getfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Учет ПКД\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					else
+					getline(file, password);
+					if (this->TBPassword->Text == gcnew String(password.c_str()))
 					{
-						if (tableRegZd.Getfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Регистрация заданий на проектирование\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+						f = 1;
+						if (k == 0) fmode = 1;
+						PKDForm^ form1 = gcnew PKDForm(); RegZdForm^ form2 = gcnew RegZdForm();
+						if (tablePKD.Getfile(fnamePKD) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Учет ПКД\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 						else
-						{ 
-							if (!fmode) form1->Show(); else form2->Show();
-							LoginForm::Hide();
-							break;
+						{
+							if (tableRegZd.Getfile(fnameRegZd) == 0) MessageBox::Show("Не удалось открыть файл с таблицей \"Регистрация заданий на проектирование\"", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+							else
+							{
+								if (!fmode) form1->Show(); else form2->Show();
+								LoginForm::Hide();
+								break;
+							}
 						}
 					}
 				}
+				k++;
 			}
-			k++;
+			if (!f) MessageBox::Show("Неверно указан логин или пароль", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
-		if (!f) MessageBox::Show("Неверно указан логин или пароль", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		else MessageBox::Show("Введите логин и пароль", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
-	/*PKDForm^ form = gcnew PKDForm();
-	form->Show();
-	LoginForm::Hide();*/
 }
 
 System::Void Kurs2021::LoginForm::TBPassword_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
